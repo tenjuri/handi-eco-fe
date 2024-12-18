@@ -5,16 +5,6 @@ import "./globals.css";
 import NavBar from "@/app/components/layout/nav-bar";
 import Footer from "@/app/components/layout/footer";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
