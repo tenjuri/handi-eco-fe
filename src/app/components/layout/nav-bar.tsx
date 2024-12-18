@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
           <HoverCardTrigger asChild>
             <div className="flex items-center gap-1 cursor-pointer">
               <span className="font-medium text-base text-[#FFEBC0]">
-                PRODUCT
+                PRODUCTS
               </span>
               <ChevronDown
                 className={`${
