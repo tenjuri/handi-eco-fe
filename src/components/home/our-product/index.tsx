@@ -25,18 +25,18 @@ const OurProduct: React.FC = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-6 bg-[#F5F5F5] mt-10">
+    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 bg-[#F5F5F5] mt-10">
       <div className="p-10">
-        <h1 className="text-3xl font-bold italic">
+        <h1 className="text-base xl:text-3xl font-bold italic">
           OUR <br />
           PRODUCTS
         </h1>
       </div>
       {products.map((item, index) => (
         <div key={index} className="relative group">
-          <div className="w-full h-[700px] overflow-hidden">
+          <div className="w-full h-[300px] md:h-[400px] xl:h-[700px] overflow-hidden">
             <img
-              key={index}
+              key={index + "img"}
               src={`https://picsum.photos/700/750?v=${index}`}
               alt="Your alt text"
               width={300}
@@ -46,13 +46,13 @@ const OurProduct: React.FC = () => {
           </div>
 
           <div className="absolute bottom-0 w-full p-4">
-            <p className="text-white text-3xl font-medium italic leading-[100%]">
+            <p className="text-white text-base md:text-3xl font-medium italic leading-[100%]">
               {item.name}
             </p>
             <div className="w-16 h-1 bg-white mt-1"></div>
             <Link
               href={`/category/${item.url}`}
-              className="bg-[#d5b36f] text-white text-lg py-2 px-4 rounded-md hover:bg-[#d5b36f]/80 cursor-pointer mt-2 inline-block"
+              className="bg-[#d5b36f] text-white text-base md:text-lg py-1 md:py-2 px-4 rounded-md hover:bg-[#d5b36f]/80 cursor-pointer mt-2 inline-block"
             >
               READ MORE
             </Link>

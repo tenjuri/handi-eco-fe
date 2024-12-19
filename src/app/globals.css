@@ -2,10 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  .one-item {
+    --slide-size: 100%;
+  }
+
+  .two-items {
+    --slide-size: 50%;
+  }
+
+  .three-items {
+    --slide-size: 33.33%;
+  }
+
+  .four-items {
+    --slide-size: 25%;
+  }
+
+  .h-mb {
+    --slide-height: 300px;
+  }
+
+  .h-md {
+    --slide-height: 600px;
+  }
+
+  .h-lg {
+    --slide-height: 800px;
+  }
+
+  .h-xl {
+    --slide-height: 1000px;
+  }
+
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
 
 body {
   color: var(--foreground);

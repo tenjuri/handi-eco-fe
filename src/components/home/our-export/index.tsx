@@ -4,11 +4,11 @@ const OurExport: React.FC = () => {
   return (
     <div className="w-full bg-white mt-10">
       <div className="max-w-[1440px] m-auto mt-10">
-        <div className="flex items-center gap-16 p-10">
+        <div className="block md:flex items-center gap-16 px-10 lg:py-10">
           <h1 className="text-3xl font-bold italic">
-            Our <br /> Export
+            Our <br className="hidden md:block" /> Export
           </h1>
-          <div className="flex flex-col">
+          <div className="flex flex-col mt-5 md:mt-0">
             <p className="font-semibold">
               Handi&Co: Lorem ipsum dolor sit amet consectetur adipiscing elit
             </p>
@@ -23,34 +23,34 @@ const OurExport: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="flex flex-grow w-full mt-10">
-          <div className="w-[42%] h-full p-10">
+        <div className="block md:flex flex-grow w-full mt-10">
+          <div className="w-[100%] md:w-[42%] h-full p-10">
             <img
               src={`https://picsum.photos/300/300?v=11`}
               alt=""
               className="w-full"
             />
           </div>
-          <div className="w-[57%] flex flex-wrap h-max">
+          <div className="w-full md:w-[57%] grid grid-cols-2 md:flex flex-wrap h-max p-10 md:p-0 gap-4 md:gap-0">
             <img
               src={`https://picsum.photos/300/200?v=1`}
               alt=""
-              className="w-1/2 p-10"
+              className="w-full md:w-1/2 md:p-10"
             />
             <img
               src={`https://picsum.photos/300/200?v=2`}
               alt=""
-              className="w-1/2 p-10"
+              className="w-full md:w-1/2 md:p-10"
             />
             <img
               src={`https://picsum.photos/300/200?v=3`}
               alt=""
-              className="w-1/2 p-10"
+              className="w-full md:w-1/2 md:p-10"
             />
             <img
               src={`https://picsum.photos/300/200?v=4`}
               alt=""
-              className="w-1/2 p-10"
+              className="w-full md:w-1/2 md:p-10"
             />
           </div>
         </div>

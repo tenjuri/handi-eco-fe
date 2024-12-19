@@ -32,31 +32,38 @@ const CarouselSection: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div
-      className="embla"
-      style={{ "--slide-size": "100%", "--slide-height": "800px" } as any}
-    >
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <img
-                className="embla__slide__img"
-                src={`/carousel/${index}.jpg`}
-                alt="Your alt text"
-              />
-            </div>
-          ))}
+    <div className="">
+      <div className="embla one-item ">
+        <div
+          className="embla__viewport h-mb md:h-md lg:h-lg xl:h-xl"
+          ref={emblaRef}
+        >
+          <div className="embla__container">
+            {slides.map((index) => (
+              <div className="embla__slide" key={index + "embla"}>
+                <img
+                  className="embla__slide__img object-fill"
+                  src={`/carousel/${index}.jpg`}
+                  alt="Your alt text"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
+            <PrevButton
+              onClick={onPrevButtonClick}
+              disabled={prevBtnDisabled}
+            />
+          </div>
+          <div className="absolute top-1/2 right-10 transform -translate-x-1/2 -translate-y-1/2  w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
+            <NextButton
+              onClick={onNextButtonClick}
+              disabled={nextBtnDisabled}
+            />
+          </div>
         </div>
-        <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        </div>
-        <div className="absolute top-1/2 right-10 transform -translate-x-1/2 -translate-y-1/2  w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-      </div>
 
-      {/* <div className="embla__controls">
+        {/* <div className="embla__controls">
         <div className="embla__buttons">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
@@ -74,6 +81,7 @@ const CarouselSection: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div> */}
+      </div>
     </div>
   );
 };

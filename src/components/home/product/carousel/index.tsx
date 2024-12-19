@@ -5,8 +5,6 @@ import { EmblaOptionsType } from "embla-carousel";
 
 const Feature: React.FC = () => {
   const OPTIONS: EmblaOptionsType = { align: "start", loop: true };
-  const SLIDE_COUNT = 8;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <div className="">
       <div className="flex items-center gap-8">
@@ -16,7 +14,7 @@ const Feature: React.FC = () => {
         </h1>
         <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
       </div>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <EmblaCarousel options={OPTIONS} />
     </div>
   );
 };

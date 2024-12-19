@@ -44,8 +44,8 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={` ${inter.className} bg-green-app`}>
-        <div className="min-h-screen flex flex-col justify-between  gap-4">
+      <body className={` ${inter.className}`}>
+        <div className="min-h-screen relative flex flex-col justify-between  gap-4">
           <NavBar />
           <div className="flex flex-col flex-grow h-full relative w-full">
             {children}
