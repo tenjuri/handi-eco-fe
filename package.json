@@ -1,5 +1,6 @@
 {
-  "name": "next-demo",
+  "name": "handi-eco-fe",
+  "author": "ThanhTuan",
   "version": "0.1.0",
   "private": true,
   "scripts": {
