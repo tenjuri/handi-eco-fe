@@ -6,7 +6,7 @@ import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
-} from "@/app/components/ui/hover-card";
+} from "@/components/ui/hover-card";
 import Image from "next/image";
 
 import "@/app/client/hover-card.css";
@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
     <nav className="m-auto sticky top-0 z-[999] bg-[#11434C] w-full  border-b border-[#D4A875]">
       <div className="max-w-[1440px] m-auto flex items-center gap-6 h-12 px-5">
         <Link href="/" className="cursor-pointer">
-          <Image src="/logo/logo.png" alt="logo" width={150} height={50} />
+          <Image src="/logo-gold.png" alt="logo" width={150} height={28} />
         </Link>
         <HoverCard
           openDelay={0}
@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
           <HoverCardTrigger asChild>
             <div className="flex items-center gap-1 cursor-pointer">
               <span className="font-medium text-base text-[#FFEBC0]">
-                PRODUCTS
+                PRODUCT
               </span>
               <ChevronDown
                 className={`${

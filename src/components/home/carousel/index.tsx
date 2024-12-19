@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
@@ -31,14 +32,17 @@ const CarouselSection: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="embla">
+    <div
+      className="embla"
+      style={{ "--slide-size": "100%", "--slide-height": "800px" } as any}
+    >
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
               <img
                 className="embla__slide__img"
-                src={`https://files.thanhtuan.io.vn/images/${index}.jpg`}
+                src={`/carousel/${index}.jpg`}
                 alt="Your alt text"
               />
             </div>
@@ -75,3 +79,4 @@ const CarouselSection: React.FC<PropType> = (props) => {
 };
 
 export default CarouselSection;
+/* eslint-disable @typescript-eslint/no-explicit-any */

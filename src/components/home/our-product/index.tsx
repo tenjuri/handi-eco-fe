@@ -51,7 +51,7 @@ const OurProduct: React.FC = () => {
             </p>
             <div className="w-16 h-1 bg-white mt-1"></div>
             <Link
-              href={item.url}
+              href={`/category/${item.url}`}
               className="bg-[#d5b36f] text-white text-lg py-2 px-4 rounded-md hover:bg-[#d5b36f]/80 cursor-pointer mt-2 inline-block"
             >
               READ MORE

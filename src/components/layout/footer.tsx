@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-[#1e2b5a] text-white p-4">
+    <div className="bg-green-app text-white p-4">
       <div className="grid grid-cols-2 gap-10">
         <div className="col-span-1 grid grid-cols-2 gap-10">
           <div className="h-10 bg-white"></div>
