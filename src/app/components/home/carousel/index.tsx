@@ -38,7 +38,7 @@ const CarouselSection: React.FC<PropType> = (props) => {
             <div className="embla__slide" key={index}>
               <img
                 className="embla__slide__img"
-                src={`/carousel/${index}.jpg`}
+                src={`https://files.thanhtuan.io.vn/images/${index}.jpg`}
                 alt="Your alt text"
               />
             </div>
