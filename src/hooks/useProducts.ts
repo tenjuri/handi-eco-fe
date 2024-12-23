@@ -11,6 +11,17 @@ import TissueBox from "@/assets/images/tissue-box-made-of-pine-wood.jpg";
 import ServingTray from "@/assets/images/serving-tray-made-of-rattan-and-wood.jpg";
 import TissueBoxRattan from "@/assets/images/tissue-box-made-of-rattan-and-wood.jpg";
 
+export type ProductType = {
+  name: string;
+  material: string[];
+  category: string;
+  url: string;
+  images: {
+    src: string;
+  };
+  featured?: boolean;
+  new?: boolean;
+};
 const useProducts = () => {
   const products = [
     {

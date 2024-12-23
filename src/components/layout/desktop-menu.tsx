@@ -13,7 +13,6 @@ import "@/app/client/hover-card.css";
 const DesktopNav: React.FC = () => {
   const [openProduct, setOpenProduct] = useState(false);
   const [openMaterial, setOpenMaterial] = useState(false);
-  const [openAbout, setOpenAbout] = useState(false);
   const products = [
     {
       name: "Home Decor & Living",
