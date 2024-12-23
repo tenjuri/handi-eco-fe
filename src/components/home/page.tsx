@@ -6,6 +6,7 @@ import OurProduct from "./our-product";
 import OurExport from "./our-export";
 import OurStory from "./our-story";
 import Product from "./product";
+import Material from "./material";
 
 const HomePage: React.FC = () => {
   const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
@@ -20,6 +21,7 @@ const HomePage: React.FC = () => {
       <OurExport />
       <Product />
       <OurStory />
+      <Material />
     </>
   );
 };
