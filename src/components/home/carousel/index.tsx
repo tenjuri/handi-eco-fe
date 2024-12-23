@@ -32,8 +32,8 @@ const CarouselSection: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="">
-      <div className="embla one-item ">
+    <div className="w-full max-w-[2560px] mx-auto">
+      <div className="embla one-item">
         <div
           className="embla__viewport h-mb md:h-md lg:h-lg xl:h-xl"
           ref={emblaRef}
