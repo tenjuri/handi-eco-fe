@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import useProducts from "@/hooks/useProducts";
+import useProducts, { type ProductType } from "@/hooks/useProducts";
 import useCategory from "@/hooks/useCategory";
 
 type PropType = {
   slug: string;
 };
+
 const Category: React.FC<PropType> = ({ slug }) => {
   const { products } = useProducts();
   const { categories } = useCategory();
@@ -15,7 +16,7 @@ const Category: React.FC<PropType> = ({ slug }) => {
     product.material.includes(slug)
   );
 
-  const categoryName = (product: any) => {
+  const categoryName = (product: ProductType) => {
     const category = categories.find((category) =>
       product.material.includes(category.slug)
     );

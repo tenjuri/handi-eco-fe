@@ -1,13 +1,13 @@
 import React, { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import useProducts from "@/hooks/useProducts";
-import useCategory from "@/hooks/useCategory";
+import useProducts, { type ProductType } from "@/hooks/useProducts";
 import useMaterial from "@/hooks/useMaterial";
 
 type PropType = {
   slug: string;
 };
+
 const Material: React.FC<PropType> = ({ slug }) => {
   const { products } = useProducts();
   const { materials } = useMaterial();
@@ -16,7 +16,7 @@ const Material: React.FC<PropType> = ({ slug }) => {
     product.material.includes(slug)
   );
 
-  const materialName = (product: any) => {
+  const materialName = (product: ProductType) => {
     const material = materials.find((material) =>
       product.material.includes(material.slug)
     );
