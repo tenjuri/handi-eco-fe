@@ -43,7 +43,7 @@ const CarouselSection: React.FC<PropType> = (props) => {
               <div className="embla__slide" key={index + "embla"}>
                 <img
                   className="embla__slide__img object-fill"
-                  src={`/carousel/${index}.jpg`}
+                  src={`https://media.handi-eco.vn/images/${index}.jpg`}
                   alt="Your alt text"
                 />
               </div>
