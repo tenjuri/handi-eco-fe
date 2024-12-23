@@ -1,7 +1,36 @@
 import React from "react";
+import useMaterial from "@/hooks/useMaterial";
 
 const Material: React.FC = () => {
-  return <div className="text-black">Material</div>;
+  const { materials } = useMaterial();
+  return (
+    <div className="text-black w-full max-w-[1440px] mx-auto mt-10 mb-10">
+      <div className="flex items-center gap-8">
+        <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
+        <h1 className="text-3xl font-bold italic uppercase text-center">
+          Material
+        </h1>
+        <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-auto mt-10">
+        {materials.map((material) => (
+          <div
+            key={material.name}
+            className="flex flex-col justify-center items-center gap-2"
+          >
+            <img
+              src={material.image.src}
+              alt={material.name}
+              width={300}
+              height={300}
+              className="w-full h-full object-fill"
+            />
+            <span className="text-lg font-semibold">{material.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Material;
