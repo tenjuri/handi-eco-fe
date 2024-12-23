@@ -1,36 +1,33 @@
 import React from "react";
 import { Metadata } from "next";
-import Category from "@/components/category/page";
+import Material from "@/components/material/page";
 
 export const metadata: Metadata = {
-  title: "Handi&Eco - Category",
+  title: "Handi&Eco - Material",
   description: "Handi&Eco - Handmade with Care, Eco for Life",
   openGraph: {
-    title: "Handi&Eco - Category",
+    title: "Handi&Eco - Material",
     description: "Handi&Eco - Handmade with Care, Eco for Life",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Category",
-    description: "Category",
+    title: "Material",
+    description: "Material",
   },
   robots: {
     index: true,
     follow: true,
   },
-  icons: {
-    shortcut: "/favicon.ico",
-  },
 };
 
 export async function generateStaticParams() {
   return [
-    { slug: "home-decor" },
-    { slug: "kitchen-dinning" },
-    { slug: "outdoor-garden" },
-    { slug: "gift-fashion" },
-    { slug: "bathroom-laundry" },
+    { slug: "bamboo" },
+    { slug: "rattan" },
+    { slug: "seagrass" },
+    { slug: "water-hyacinth" },
+    { slug: "loofah" },
     { slug: "bamboo" },
   ];
 }
@@ -41,5 +38,5 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-  return <Category slug={slug} />;
+  return <Material slug={slug} />;
 }
