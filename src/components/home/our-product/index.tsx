@@ -6,22 +6,27 @@ const OurProduct: React.FC = () => {
     {
       name: "HOME DECOR & LIVING",
       url: "/home-decor",
+      banner: "https://media.handi-eco.vn/images/home-decor.jpg",
     },
     {
       name: "KITCHEN & DINNING",
       url: "/kitchen-dinning",
+      banner: "https://media.handi-eco.vn/images/kitchen.jpg",
     },
     {
       name: "OUTDOOR & GARDEN",
       url: "/outdoor-garden",
+      banner: "https://media.handi-eco.vn/images/outdoor.jpg",
     },
     {
       name: "GIFT & FASHION ACCESSORIES",
       url: "/gift-fashion",
+      banner: "https://media.handi-eco.vn/images/gift.jpg",
     },
     {
       name: "BATHROOM & LAUNDRY",
       url: "/bathroom-laundry",
+      banner: "https://media.handi-eco.vn/images/bathroom.jpg",
     },
   ];
   return (
@@ -37,8 +42,8 @@ const OurProduct: React.FC = () => {
           <div className="w-full h-[300px] md:h-[400px] xl:h-[700px] overflow-hidden">
             <img
               key={index + "img"}
-              src={`https://picsum.photos/700/750?v=${index}`}
-              alt="Your alt text"
+              src={item.banner}
+              alt={item.name}
               width={300}
               height={700}
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
