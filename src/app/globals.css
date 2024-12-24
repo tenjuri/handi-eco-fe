@@ -25,19 +25,19 @@
   }
 
   .h-mb {
-    --slide-height: 250px;
+    --slide-height: 200px;
   }
 
   .h-md {
-    --slide-height: 500px;
+    --slide-height: 400px;
   }
 
   .h-lg {
-    --slide-height: 700px;
+    --slide-height: 550px;
   }
 
   .h-xl {
-    --slide-height: 900px;
+    --slide-height: 600px;
   }
 
 }
