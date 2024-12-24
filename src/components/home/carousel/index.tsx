@@ -42,7 +42,7 @@ const CarouselSection: React.FC<PropType> = (props) => {
             {slides.map((index) => (
               <div className="embla__slide" key={index + "embla"}>
                 <img
-                  className="embla__slide__img object-fill"
+                  className="embla__slide__img object-cover"
                   src={`https://media.handi-eco.vn/images/${index}.jpg`}
                   alt="Your alt text"
                 />
