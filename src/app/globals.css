@@ -25,7 +25,7 @@
   }
 
   .h-mb {
-    --slide-height: 200px;
+    --slide-height: 220px;
   }
 
   .h-md {
@@ -33,11 +33,11 @@
   }
 
   .h-lg {
-    --slide-height: 550px;
+    --slide-height: 600px;
   }
 
   .h-xl {
-    --slide-height: 600px;
+    --slide-height: 750px;
   }
 
 }
