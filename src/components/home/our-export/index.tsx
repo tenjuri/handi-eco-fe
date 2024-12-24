@@ -10,45 +10,44 @@ const OurExport: React.FC = () => {
           </h1>
           <div className="flex flex-col mt-5 md:mt-0">
             <p className="font-semibold">
-              Handi&Co: Lorem ipsum dolor sit amet consectetur adipiscing elit
+              Handi&Co: Your go-to partner for premium Vietnamese agricultural
+              exports
             </p>
             <span className="font-medium">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              With over a decade of specialized experience in Europe, Asia, and
+              the Middle East, Handi&Co stands as a trusted expert in delivering
+              top-quality Vietnamese agricultural products. Our dedicated team
+              is committed to ensuring flawless, on-time deliveries to every
+              corner of the globe
             </span>
           </div>
         </div>
         <div className="block md:flex flex-grow w-full mt-10">
-          <div className="w-[100%] md:w-[42%] h-full p-10">
+          <div className="w-[100%] md:w-[49%] h-full p-10">
             <img
-              src={`https://picsum.photos/300/300?v=11`}
+              src={`https://media.handi-eco.vn/images/global-logistics.jpg`}
               alt=""
               className="w-full"
             />
           </div>
-          <div className="w-full md:w-[57%] grid grid-cols-2 md:flex flex-wrap h-max p-10 md:p-0 gap-4 md:gap-0">
+          <div className="w-full md:w-[50%] grid grid-cols-2 md:flex flex-wrap h-max p-10 md:p-0 gap-4 md:gap-0">
             <img
-              src={`https://picsum.photos/300/200?v=1`}
+              src={`https://media.handi-eco.vn/images/global-logistics-1.jpg`}
               alt=""
               className="w-full md:w-1/2 md:p-10"
             />
             <img
-              src={`https://picsum.photos/300/200?v=2`}
+              src={`https://media.handi-eco.vn/images/global-logistics-2.jpg`}
               alt=""
               className="w-full md:w-1/2 md:p-10"
             />
             <img
-              src={`https://picsum.photos/300/200?v=3`}
+              src={`https://media.handi-eco.vn/images/global-logistics-3.jpg`}
               alt=""
               className="w-full md:w-1/2 md:p-10"
             />
             <img
-              src={`https://picsum.photos/300/200?v=4`}
+              src={`https://media.handi-eco.vn/images/global-logistics-4.jpg`}
               alt=""
               className="w-full md:w-1/2 md:p-10"
             />
