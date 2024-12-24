@@ -29,7 +29,7 @@ const Material: React.FC<PropType> = ({ slug }) => {
   }, [slug, materials]);
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto">
+    <div className="w-full max-w-[1440px] mx-auto px-4">
       <div>
         <Link href="/" className="cursor-pointer font-medium">
           HOME
@@ -39,10 +39,10 @@ const Material: React.FC<PropType> = ({ slug }) => {
         <span> / </span>
         <span className="uppercase">{materialHeader}</span>
       </div>
-      <div className="flex gap-5 mt-10">
+      <div className="block md:flex gap-5 mt-10">
         <div className="">
           <div className="text-lg font-semibold">Material</div>
-          <div className="ml-5 flex flex-col border-l border-gold-app">
+          <div className="ml-5  flex flex-col border-l border-gold-app">
             {materials.map((material) => (
               <Link
                 key={material.slug}
@@ -54,9 +54,9 @@ const Material: React.FC<PropType> = ({ slug }) => {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 w-[800px] gap-8 mx-auto">
+        <div className="mt-10 md:mt-0 grid grid-cols-1 md:grid-cols-3 w-[800px] gap-8 mx-auto">
           {filteredProducts.map((product) => (
-            <div key={product.name} className="">
+            <div key={product.name} className="w-full">
               <Link href={product.url}>
                 <Image
                   src={product.images.src}
