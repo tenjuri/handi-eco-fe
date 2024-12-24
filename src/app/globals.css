@@ -21,19 +21,19 @@
   }
 
   .h-mb {
-    --slide-height: 300px;
+    --slide-height: 250px;
   }
 
   .h-md {
-    --slide-height: 600px;
+    --slide-height: 500px;
   }
 
   .h-lg {
-    --slide-height: 800px;
+    --slide-height: 700px;
   }
 
   .h-xl {
-    --slide-height: 1000px;
+    --slide-height: 900px;
   }
 
 }

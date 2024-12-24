@@ -30,7 +30,7 @@ const OurProduct: React.FC = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 bg-[#F5F5F5] mt-10">
+    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 bg-[#F5F5F5]">
       <div className="p-10">
         <h1 className="text-base xl:text-3xl font-bold italic">
           OUR <br />
