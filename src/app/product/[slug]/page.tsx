@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
 import Product from "@/components/product/page";
-import useProducts from "@/hooks/useProducts";
 
 export const metadata: Metadata = {
   title: "Handi&Eco - Product",
@@ -23,8 +22,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  const { products } = useProducts();
-  return products.map((product) => ({ slug: product.slug }));
+  return [{ slug: "vietnam-bamboo-lampshade" }];
 }
 
 export default async function Page({
