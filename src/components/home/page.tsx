@@ -19,8 +19,8 @@ const HomePage: React.FC = () => {
       <OurProduct />
       <Social />
       <OurExport />
-      <Product />
       <OurStory />
+      <Product />
       <Material />
     </>
   );

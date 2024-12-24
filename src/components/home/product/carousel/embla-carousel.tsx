@@ -24,7 +24,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <div className="mt-10" style={{ "--slide-height": "300px" } as any}>
-      <section className="embla one-item md:two-items lg:three-items xl:four-items">
+      <section className="embla one-item md:two-items lg:three-items xl:four-items 2xl:five-items">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">{items}</div>
           <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">

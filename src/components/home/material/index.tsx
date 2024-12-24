@@ -15,7 +15,7 @@ const Material: React.FC = () => {
         </h1>
         <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-auto mt-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-auto mt-10 p-10">
         {materials.map((material) => (
           <div
             key={material.name}
