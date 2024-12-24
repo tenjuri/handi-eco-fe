@@ -16,23 +16,23 @@ const DesktopNav: React.FC = () => {
   const products = [
     {
       name: "Home Decor & Living",
-      url: "/category/home-decor",
+      url: "/our-product/home-decor",
     },
     {
       name: "Kitchen & Dinning",
-      url: "/category/kitchen-dinning",
+      url: "/our-product/kitchen-dinning",
     },
     {
       name: "Outdoor & Garden",
-      url: "/category/outdoor-garden",
+      url: "/our-product/outdoor-garden",
     },
     {
       name: "Gift & Fashion Accessories",
-      url: "/category/gift-fashion",
+      url: "/our-product/gift-fashion",
     },
     {
       name: "Bathroom & Laundry",
-      url: "/category/bathroom-laundry",
+      url: "/our-product/bathroom-laundry",
     },
   ];
 
@@ -92,6 +92,7 @@ const DesktopNav: React.FC = () => {
                 href={product.url}
                 key={product.name}
                 className="cursor-pointer"
+                onClick={() => setOpenProduct(false)}
               >
                 {product.name}
               </Link>
