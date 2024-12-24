@@ -20,6 +20,10 @@
     --slide-size: 25%;
   }
 
+  .five-items {
+    --slide-size: 20%;
+  }
+
   .h-mb {
     --slide-height: 250px;
   }

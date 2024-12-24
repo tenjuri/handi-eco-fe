@@ -27,7 +27,7 @@ const Feature: React.FC = () => {
             src={item.images.src}
             alt={item.name}
             width={300}
-            height={300}
+            height={200}
           />
           <div className="absolute -bottom-11 translate-x-[6%] group-hover:bottom-0 transition-all left-0 w-[88%]">
             <Link

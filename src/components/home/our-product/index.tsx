@@ -56,7 +56,7 @@ const OurProduct: React.FC = () => {
             </p>
             <div className="w-16 h-1 bg-white mt-1"></div>
             <Link
-              href={`/category/${item.url}`}
+              href={`/our-product/${item.url}`}
               className="bg-[#d5b36f] text-white text-base md:text-lg py-1 md:py-2 px-4 rounded-md hover:bg-[#d5b36f]/80 cursor-pointer mt-2 inline-block"
             >
               READ MORE
