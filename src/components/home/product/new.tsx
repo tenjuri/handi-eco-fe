@@ -30,14 +30,14 @@ const New: React.FC = () => {
           />
           <div className="absolute -bottom-11 translate-x-[6%] group-hover:bottom-0 transition-all left-0 w-[88%]">
             <Link
-              href={item.url}
+              href={`/product/${item.slug}`}
               className="w-full text-center bg-[#d5b36f] text-white text-lg py-2 rounded-md cursor-pointer mt-2 inline-block"
             >
               QUICK VIEW
             </Link>
           </div>
         </div>
-        <Link href={item.url} className="cursor-pointer">
+        <Link href={`/product/${item.slug}`} className="cursor-pointer">
           <p className="text-[#777777] font-light">
             {
               categories.find((category) => category.slug === item.category)
@@ -52,11 +52,11 @@ const New: React.FC = () => {
   return (
     <>
       <div className="flex items-center gap-8 mt-10">
-        <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
+        <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
         <h1 className="text-3xl font-bold italic uppercase text-center">
           new products
         </h1>
-        <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
+        <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
       </div>
       <EmblaCarousel options={OPTIONS} items={newProducts} />
     </>

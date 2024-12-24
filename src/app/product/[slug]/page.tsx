@@ -1,6 +1,6 @@
 import React from "react";
-import useCategory from "@/hooks/useCategory";
-import Material from "@/components/material/page";
+import Product from "@/components/product/page";
+import useProducts from "@/hooks/useProducts";
 
 export async function generateMetadata({
   params,
@@ -8,20 +8,20 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const slug = params.slug;
-  const { categories } = useCategory();
-  const category = categories.find((category) => category.slug === slug);
+  const { products } = useProducts();
+  const product = products.find((product) => product.slug === slug);
   return {
-    title: `Handi&Eco - ${category?.name}`,
+    title: `Handi&Eco - ${product?.name}`,
     description: "Handi&Eco - Handmade with Care, Eco for Life",
     openGraph: {
-      title: "Handi&Eco - Material",
+      title: "Handi&Eco - Product",
       description: "Handi&Eco - Handmade with Care, Eco for Life",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Handi&Eco - Material",
-      description: `Handi&Eco - ${category?.name}`,
+      title: "Handi&Eco - Product",
+      description: `Handi&Eco - ${product?.name}`,
     },
     robots: {
       index: true,
@@ -34,14 +34,8 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return [
-    { slug: "bamboo" },
-    { slug: "rattan" },
-    { slug: "seagrass" },
-    { slug: "water-hyacinth" },
-    { slug: "loofah" },
-    { slug: "bamboo" },
-  ];
+  const { products } = useProducts();
+  return products.map((product) => ({ slug: product.slug }));
 }
 
 export default async function Page({
@@ -50,5 +44,5 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-  return <Material slug={slug} />;
+  return <Product slug={slug} />;
 }

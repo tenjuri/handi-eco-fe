@@ -8,11 +8,11 @@ const Feature: React.FC = () => {
   return (
     <div className="">
       <div className="flex items-center gap-8">
-        <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
+        <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
         <h1 className="text-3xl font-bold italic uppercase text-center">
           featured products
         </h1>
-        <b className="flex-1 h-[2px] bg-[#D4A875]"></b>
+        <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
       </div>
       <EmblaCarousel options={OPTIONS} />
     </div>
