@@ -1,11 +1,12 @@
 import React from "react";
 
 const OurStory: React.FC = () => {
+  const images = Array.from(Array(4).keys());
   return (
     <div className="w-full bg-white">
-      <div className="max-w-[1440px] mt-10 px-10 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="">
+      <div className="max-w-[1440px] mt-10 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div className="px-10">
             <span className="text-3xl font-bold">OUR STORY</span>
             <p className="mt-5">It&apos;s all about what we love the most...</p>
             <p>
@@ -22,14 +23,17 @@ const OurStory: React.FC = () => {
               experience in making handmade home decoration products.
             </p>
           </div>
-          <div>
-            <img
-              src="https://media.handi-eco.vn/images/light.jpg"
-              alt=""
-              width={300}
-              height={300}
-              className="w-full h-full"
-            />
+          <div className="grid grid-cols-2 px-10 lg:p-0">
+            {images.map((image, index) => (
+              <img
+                key={image}
+                src={`https://media.handi-eco.vn/images/story-${index}.jpg`}
+                alt={index.toString()}
+                width={100}
+                height={100}
+                className="w-full h-full"
+              />
+            ))}
           </div>
         </div>
       </div>

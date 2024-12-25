@@ -22,34 +22,43 @@ const OurExport: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="block md:flex flex-grow w-full mt-10">
-          <div className="w-[100%] md:w-[49%] h-full p-10">
-            <img
-              src={`https://media.handi-eco.vn/images/global-logistics.jpg`}
-              alt=""
-              className="w-full"
-            />
+        <div className="block xl:flex flex-grow w-full items-center">
+          <div className="w-[100%] xl:w-[50%] h-full p-10 flex flex-grow items-center">
+            <video
+              className="xl:h-[405px] w-full object-cover"
+              loop
+              autoPlay
+              muted
+              playsInline
+            >
+              <source
+                src="https://media.handi-eco.vn/videos/logistics.mp4"
+                type="video/mp4"
+                className="f-full"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
-          <div className="w-full md:w-[50%] grid grid-cols-2 md:flex flex-wrap h-max p-10 md:p-0 gap-4 md:gap-0">
+          <div className="w-full xl:w-[50%] grid grid-cols-2 xl:flex flex-wrap h-max p-10 xl:p-0 gap-4 xl:gap-0">
             <img
               src={`https://media.handi-eco.vn/images/global-logistics-1.jpg`}
               alt=""
-              className="w-full md:w-1/2 md:p-10"
+              className="w-full xl:w-1/2 xl:p-10"
             />
             <img
               src={`https://media.handi-eco.vn/images/global-logistics-2.jpg`}
               alt=""
-              className="w-full md:w-1/2 md:p-10"
+              className="w-full xl:w-1/2 xl:p-10"
             />
             <img
               src={`https://media.handi-eco.vn/images/global-logistics-3.jpg`}
               alt=""
-              className="w-full md:w-1/2 md:p-10"
+              className="w-full xl:w-1/2 xl:p-10"
             />
             <img
               src={`https://media.handi-eco.vn/images/global-logistics-4.jpg`}
               alt=""
-              className="w-full md:w-1/2 md:p-10"
+              className="w-full xl:w-1/2 xl:p-10"
             />
           </div>
         </div>
