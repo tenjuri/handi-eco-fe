@@ -137,7 +137,7 @@ const DesktopNav: React.FC = () => {
         </HoverCardContent>
       </HoverCard>
       <Link
-        href="/products"
+        href="/about-us"
         className="font-medium text-base text-[#FFEBC0] cursor-pointer"
       >
         ABOUT US

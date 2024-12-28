@@ -4,8 +4,9 @@ import CarouselSection from "./carousel";
 import Social from "./social";
 import OurProduct from "./our-product";
 import OurExport from "./our-export";
-import OurStory from "./our-story";
 import Product from "./product";
+import OurStory from "./our-story";
+import OurTeam from "./our-team";
 import Material from "./material";
 
 const HomePage: React.FC = () => {
@@ -25,6 +26,7 @@ const HomePage: React.FC = () => {
       <Social />
       <OurExport />
       <OurStory />
+      <OurTeam />
       <Product />
       <Material />
     </>
