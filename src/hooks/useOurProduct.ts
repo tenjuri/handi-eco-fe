@@ -6,36 +6,58 @@ const useOurProduct = () => {
       url: "/our-product/home-decor",
       content: [
         {
-          title: "Household Basket",
+          title: "Lampshade",
           description: [
-            "Our rattan, seagrass, water hyacinth, and bamboo products are collected naturally in their natural environment and are produced by hand without any processing for the sake of perfect appearance or without using any molds to obtain a fixed size.",
+            "Lampshade is a unique and delicate work of art, creating a beautiful light painting in space. With the thoroughness and talent of the craftsmen, it has been crafted from natural materials such as bamboo, rattan, and wood into a work of art at the pinnacle of handicrafts. With a variety of designs and sizes, Lampshade at Handi&Eco meets the requirements of decorating spaces with many different styles.",
           ],
           url: "/",
-          btnLabel: "BASKET CATALOGUE",
+          btnLabel: "LAMPSHADE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-1.png",
         },
         {
-          title: "Baby Changing Basket",
+          title: "Chair & Bench / Papasan",
           description: [
-            "Our 'Handi&Eco' baby change baskets are made with soft organic seagrass, with colors and patterns exclusive to The Handi&Eco Collective, adding a unique touch to your home and nursery",
-            "Make a great alternative to a traditional baby change table.",
-            "Easily portable, allowing the basket to come to your baby.",
-            "These baskets are lightweight, designed to move with ease from room to room, nappy change to nappy change.",
+            "The papasan chair with a 70s vibe and still cool even today, goes by many names - moon chairs, bucket chairs, saucer chair, etc. You may be more familiar with its another name: Bowl Chair, as it's a bowl-shaped chair made of bamboo, wicker, rattan or wood that rests on a cylindrical base.",
           ],
           url: "/",
-          btnLabel: "BABY CHANGING BASKET CATALOGUE",
+          btnLabel: "CHAIR & BENCH CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-2.png",
         },
         {
-          title: "Hanging Basket",
+          title: "Table",
           description: [
-            "With materials like bamboo, rattan, seagrass, and water hyacinth, artisans have skillfully created beautiful, multi-functional hanging baskets for your living space.",
-            "Plant ornamental plants, decorate your home and living space",
-            "Store and organize food, utensils, save space and create order in the house",
+            "Bamboo is a versatile material that can be used in many different ways in your home. It’s a natural material that is environmentally friendly, and it has a beautiful, natural look and feel. Bamboo is a great choice for any room in your home, and it can be used as a dining table for indoor and outdoor both.",
           ],
           url: "/",
-          btnLabel: "CANDLE HOLDER CATALOGUE",
+          btnLabel: "TABLE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-3.png",
+        },
+        {
+          title: "Cabinet - Shelf - Mirror",
+          description: [
+            "Made from renewable materials such as rattan, bamboo, seagrass, water hyacinth, our mirrors come in a variety of shapes, sizes and styles that can make your space an oasis of style. bohe....These mirrors can be decorated anywhere in your space such as the living room, bedroom, dining room or bathroom.",
+          ],
+          url: "/",
+          btnLabel: "CABINET - SHELF - MIRROR CATALOGUE",
+          banner: "https://media.handi-eco.vn/images/product/home-4.png",
+        },
+        {
+          title: "Decoration",
+          description: [
+            "Transform your living space into a tranquil oasis with Handi&Eco's stunning collection of wall decor crafted from exquisite Rattan & Bamboo. They're perfect for both traditional and modern, so whether you're looking for a statement piece for your living room, a serene backdrop for your bedroom or a unique accent for your office, our collection has you covered. offers a variety of designs to suit your personal style and aesthetic",
+          ],
+          url: "/",
+          btnLabel: "DECORATION CATALOGUE",
+          banner: "https://media.handi-eco.vn/images/product/home-5.png",
+        },
+        {
+          title: "Pet Bed",
+          description: [
+            "Placemat at Handi&Eco is a unique, creative handmade work from natural materials such as rattan, seagrass, water hyacinth, and bamboo. With its natural beauty and delicate combination of natural materials, placemat not only protects your dining table and coffee table from scratches and stains, but also makes your meals and afternoon tea more enjoyable. you become beautiful and unique. Therefore, placemats are often used in formal meetings, wedding parties or served in natural-style restaurants, prairies or coastal restaurants. People who really know how to enjoy life often use this type of placemat.",
+          ],
+          url: "/",
+          btnLabel: "PET BED CATALOGUE",
+          banner: "https://media.handi-eco.vn/images/product/home-6.png",
         },
       ],
     },
@@ -45,31 +67,22 @@ const useOurProduct = () => {
       url: "/our-product/kitchen-dinning",
       content: [
         {
-          title: "Tray",
+          title: "Tableware ",
           description: [
-            "Add Handi&Eco's handcrafted Trays to create a highlight to make your space more sophisticated. Not only in the kitchen or living room, this type of tray is very popular for storing food and fruits at parties, serving food on the beach, and on picnics.",
+            "Spun bamboo plate are simple, classic and ideal for al-fresco occasions. These spun bamboo plate are health and safety, environmental protection and fair labor practices. Similarly, the plate are made of 100% organically-grown bamboo and non-toxic water-based adhesive and natural lacquer derived from cashew nut tree. They also use food-safe polyurethane.",
           ],
           url: "/",
-          btnLabel: "TRAY CATALOGUE",
+          btnLabel: "TABLEWARE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/kit-1.png",
         },
         {
-          title: "Placemat",
+          title: "Kitchenware ",
           description: [
-            "Placemat at Handi&Eco is a unique, creative handmade work from natural materials such as rattan, seagrass, water hyacinth, and bamboo. With its natural beauty and delicate combination of natural materials, placemat not only protects your dining table and coffee table from scratches and stains, but also makes your meals and afternoon tea more enjoyable. you become beautiful and unique. Therefore, placemats are often used in formal meetings, wedding parties or served in natural-style restaurants, prairies or coastal restaurants. People who really know how to enjoy life often use this type of placemat.",
+            "Rattan and bamboo kitchenware offer an excellent alternative to the overwhelming presence of synthetic kitchenware in the global market. Both bamboo and rattan are natural and sustainable materials, known for their rapid reproduction rates without the need for pesticides or fertilizers. These renewable materials are biodegradable, contributing to a cleaner environment. By choosing bamboo and rattan, you can enjoy functional and aesthetically pleasing kitchen utensils while reducing your ecological footprint.",
           ],
           url: "/",
-          btnLabel: "PLACEMAT CATALOGUE",
+          btnLabel: "KITCHENWARE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/kit-2.png",
-        },
-        {
-          title: "Tissue Box",
-          description: [
-            "Tissue boxes at Handi&Eco are designed to keep the tissues inside always dry and mold-free. It can be applied in many office spaces, living rooms, dining rooms, bedrooms, or at parties, restaurants,...",
-          ],
-          url: "/",
-          btnLabel: "TISSUE BOX CATALOGUE",
-          banner: "https://media.handi-eco.vn/images/product/kit-3.png",
         },
       ],
     },
@@ -88,22 +101,31 @@ const useOurProduct = () => {
           banner: "https://media.handi-eco.vn/images/product/out-1.png",
         },
         {
-          title: "Planter",
-          description: [
-            "Add a little green to your home with Handi&Eco's Planter. Made from ECOCAFT's familiar natural materials in different shapes and sizes, Planter is not only an ideal place to grow plants, but also a unique work of art in your space. At the same time, it is a great way for you to connect with the natural environment.",
-          ],
-          url: "/",
-          btnLabel: "PLANTER CATALOGUE",
-          banner: "https://media.handi-eco.vn/images/product/out-2.png",
-        },
-        {
           title: "Vase",
           description: [
             "Add warmth and rustic elegance to your space with Handi&Eco's vases made from bamboo and seagrass. With their sturdy construction, these vases are guaranteed to hold your favorite flowers or decorative branches with ease, adding life and vitality to your home.",
           ],
           url: "/",
           btnLabel: "VASE CATALOGUE",
+          banner: "https://media.handi-eco.vn/images/product/out-2.png",
+        },
+        {
+          title: "Planter",
+          description: [
+            "Add a little green to your home with Handi&Eco's Planter. Made from Handi&Eco's familiar natural materials in different shapes and sizes, Planter is not only an ideal place to grow plants, but also a unique work of art in your space. At the same time, it is a great way for you to connect with the natural environment.",
+          ],
+          url: "/",
+          btnLabel: "PLANTER CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/out-3.png",
+        },
+        {
+          title: "Sun lounger",
+          description: [
+            "Make your garden a haven this summer with the Lila Bamboo garden sun lounger. With a reclining frame, this sun lounger is made for total relaxation and offers a premium finish with a lifted base. You’ll be longing to spend lazy afternoons lounging outdoors.",
+          ],
+          url: "/",
+          btnLabel: "SUN LOUNGER CATALOGUE",
+          banner: "https://media.handi-eco.vn/images/product/out-4.png",
         },
       ],
     },
@@ -129,17 +151,6 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "HANDBAG CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/gift-2.png",
-        },
-        {
-          title: "Flower Basket",
-          description: [
-            "Not just pleasant on the outside, our Pleasant baskets are especially popular among families.",
-            "Made from natural sundried elephant grass, colored with traditional plant and mineral dyes and non-toxic fabric dyes to produce contemporary colors, our baskets are completely sustainable and eco-friendly.",
-            "Double woven 100% leather trim handles provide strength and durability.",
-          ],
-          url: "/",
-          btnLabel: "BASKET CATALOGUE",
-          banner: "https://media.handi-eco.vn/images/product/gift-3.png",
         },
       ],
     },
