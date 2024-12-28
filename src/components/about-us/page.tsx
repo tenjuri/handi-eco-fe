@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Artisans from "@/components/about-us/artisans";
 import { useOurTeam } from "@/hooks/useOurTeam";
 
 const AboutUs: React.FC = () => {
@@ -20,7 +21,8 @@ const AboutUs: React.FC = () => {
       <h1 className="text-lg md:text-2xl font-bold mt-8 w-max title-underlined">
         Trusted Expertise in Global Export
       </h1>
-      <p>
+
+      <p className="mt-6">
         With over a decade of experience, Handi&Eco has successfully exported to
         some of the world’s most demanding markets, including Europe, the United
         States, and Japan. Each region comes with its own rigorous requirements:
@@ -53,16 +55,24 @@ const AboutUs: React.FC = () => {
         products meet the highest benchmarks of safety, quality, and
         sustainability.
       </p>
-      <h1 className="text-lg md:text-2xl font-bold mt-8 w-max title-underlined">
-        Artistry Backed by Generations of Skill
-      </h1>
-      <p>
-        The artisans behind Handi&Eco’s creations are the heart of our brand.
-        Many of them hail from renowned craft villages, bringing 5-10 years of
-        experience and a deep understanding of their craft. This expertise
-        shines through in every detail, making our products both beautiful and
-        durable.
-      </p>
+      <div className="mt-6 mx-auto max-w-[600px] text-center rounded-2xl overflow-hidden">
+        <video
+          className="xl:h-[405px] w-full object-cover mx-auto"
+          loop
+          autoPlay
+          muted
+          playsInline
+        >
+          <source
+            src="https://media.handi-eco.vn/videos/logistics.mp4"
+            type="video/mp4"
+            className="f-full"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <Artisans />
+
       <h1 className="text-lg md:text-2xl font-bold mt-8 w-max title-underlined">
         Why Partner with Handi&Eco?
       </h1>
