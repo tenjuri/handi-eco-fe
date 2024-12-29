@@ -1,20 +1,32 @@
 import React from "react";
 import useOurProduct from "@/hooks/useOurProduct";
 import Button from "../ui/button";
+import { Locale } from "../../../i18n-config";
+import { getDictionary } from "../../../get-dictionary";
 
 type PropType = {
   slug: string;
+  lang: Locale;
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
 };
 
 const OurProduct: React.FC<PropType> = (props) => {
-  const { slug } = props;
+  const { slug, dictionary } = props;
   const { ourProducts } = useOurProduct();
   const product = ourProducts.find((product) => product.slug === slug);
+
+  const getDes = (key: keyof typeof dictionary.products) => {
+    return dictionary.products[key] as string[];
+  };
+
+  const getName = (key: keyof typeof dictionary.products.menu) => {
+    return dictionary.products.menu[key] as string;
+  };
 
   return (
     <div className="w-full max-w-[1200px] mx-auto p-10">
       <h2 className="text-5xl font-bold text-center text-[#11434C] italic">
-        {product?.name}
+        {getName(product?.nameKey as keyof typeof dictionary.products.menu)}
       </h2>
       {product?.content.map((item, index) => (
         <div
@@ -30,7 +42,13 @@ const OurProduct: React.FC<PropType> = (props) => {
               <h3 className="text-4xl font-bold text-[#11434C]">
                 {item.title}
               </h3>
-              <p className="mt-5">{item.description}</p>
+              {getDes(
+                item.description as keyof typeof dictionary.products
+              )?.map((des, index) => (
+                <p key={index} className="">
+                  {des}
+                </p>
+              ))}
             </div>
             <Button className="w-max bg-gold-app">{item.btnLabel}</Button>
           </div>

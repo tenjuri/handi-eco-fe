@@ -25,7 +25,7 @@ const OurStory: React.FC<Props> = ({ dictionary }) => {
                 alt={index.toString()}
                 width={100}
                 height={100}
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
             ))}
           </div>

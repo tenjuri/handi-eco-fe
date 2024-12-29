@@ -6,21 +6,21 @@ export const useOurTeam = () => {
   const ourTeams = [
     {
       name: "Peter Nguyen",
-      position: "CEO",
+      position: "Co-Founder",
       phone: "+84-34-223-6789",
       mail: "peter@handi-eco.com",
       image: OurTeam1,
     },
     {
       name: "Duc Thien Andree",
-      position: "Manager & CoFounder",
+      position: "Co-Founder",
       phone: "+84-823-666-533",
       mail: "andree@handi-eco.com",
       image: OurTeam2,
     },
     {
       name: "Elly Tran",
-      position: "Account Manager",
+      position: "Co-Founder",
       phone: "+84-968-230-564",
       mail: " elly@handi-eco.com",
       image: OurTeam3,

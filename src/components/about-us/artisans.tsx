@@ -29,6 +29,18 @@ const Artisans: React.FC = () => {
               height={100}
               className="w-full h-full object-cover"
             />
+            <img
+              src={`https://media.handi-eco.vn/images/about-us/artisans/3.png`}
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <img
+              src={`https://media.handi-eco.vn/images/about-us/artisans/4.png`}
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -36,7 +48,7 @@ const Artisans: React.FC = () => {
             <img
               key={item}
               src={`https://media.handi-eco.vn/images/about-us/artisans/${
-                item + 2
+                item + 4
               }.png`}
               alt={item.toString()}
               width={100}

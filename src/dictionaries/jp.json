@@ -1,37 +1,130 @@
 {
-    "products": {
-        "ourProducts": "Our Products",
-        "homeDecorliving": "HOME DECOR & LIVING",
-        "kitchenDinning": "KITCHEN & DINNING",
-        "outdoorGarden": "OUTDOOR & GARDEN",
-        "giftFashionAccessories": "GIFT & FASHION ACCESSORIES",
-        "bathroomLaundry": "BATHROOM & LAUNDRY"
+    "lang": {
+        "title": "言語",
+        "en": "言語：英語",
+        "jp": "言語：日本語"
     },
-    "readMore": "Read More",
-    "ourProducts": "Our Products",
+    "products": {
+        "title": "製品",
+        "ourProducts": "私たちの製品",
+        "homeDecorliving": "ホームデコレーション＆リビング",
+        "kitchenDinning": "キッチン＆ダイニング",
+        "outdoorGarden": "アウトドア＆ガーデン",
+        "giftFashionAccessories": "ギフト＆ファッションアクセサリー",
+        "bathroomLaundry": "バスルーム＆ランドリー",
+        "menu": {
+            "homeDecorliving": "ホームデコレーション＆リビング",
+            "kitchenDinning": "キッチン＆ダイニング",
+            "outdoorGarden": "アウトドア＆ガーデン",
+            "giftFashionAccessories": "ギフト＆ファッションアクセサリー",
+            "bathroomLaundry": "バスルーム＆ランドリー"
+        },
+        "lampshade": [
+            "ラタン、竹、木、またはシーグラスで作られた装飾用ランプ、暖かく自然な雰囲気を提供"
+        ],
+        "chairBenchPapasan": [
+            "リラックスチェア、ベンチ、またはパパサンチェア（丸くて居心地の良いデザイン）、快適なリビングスペースに最適"
+        ],
+        "table": [
+            "木材、ラタン、または他の天然素材で作られたテーブル、コーヒーテーブルや作業デスクに最適"
+        ],
+        "cabinetShelfMirror": [
+            "多機能キャビネット、棚、またはラタンや木製フレームの装飾用ミラー"
+        ],
+        "decorationRugWallDecor": [
+            "天然素材のラグ、壁の装飾、または家庭のスタイリングのための他の美的アイテム"
+        ],
+        "petBed": [
+            "水ヒヤシンスやラタンで編まれたペットベッド、快適さとスタイリッシュな外観を提供"
+        ],
+        "tableware": [
+            "セラミック、木材、または竹で作られたカトラリー、プレート、ボウル、カップ、およびナプキンリング",
+            "食事体験のための機能的で装飾的なもの。"
+        ],
+        "kitchenware": [
+            "バスケット：パン、果物、または他の食品アイテム用のバスケット",
+            "ユーテンシルホルダー：竹やラタンの箸、スプーン、フォークのホルダー。",
+            "コースター：テーブル表面を熱や湿気から保護。",
+            "フルーツプラッター：新鮮な果物を提供するための木製またはラタンのプラッター。",
+            "フルーツプラッター：新鮮な果物を提供するための木製またはラタンのプラッター。",
+            "木製カッティングボード：食品の準備に使用。",
+            "スパイスコンテナ：塩、コショウ、または調理油の保存ジャー。",
+            "サービングトレイ：料理を提供するための木製トレイまたはテーブルを設定するためのトレイ。"
+        ],
+        "picnicBasket": [
+            "アウトドア活動中に食べ物や必需品を運ぶためのコンパクトなバスケット"
+        ],
+        "vase": [
+            "花のアレンジメントのためのセラミック、木材、またはラタンで作られた装飾用の花瓶"
+        ],
+        "planter": [
+            "花や植物のための鉢、ラタンや木材で作られることが多い"
+        ],
+        "sunlounger": [
+            "日光浴用の屋外ラウンジチェア、木製フレームまたは編み込みデザイン"
+        ],
+        "giftboxStorageBoxes": [
+            "天然素材で作られたユニークでエコフレンドリーなギフトボックス"
+        ],
+        "fashionBags": [
+            "シーグラス、ラタン、または竹で作られた手作りのバッグ、ギフトやファッションアクセサリーに適しています"
+        ],
+        "handcraftedJewelry": [
+            "竹、ラタン、または木で作られたブレスレットやネックレス"
+        ],
+        "laundryBasket": [
+            "汚れた洗濯物や衣類を収納するためのラタンや水ヒヤシンスで編まれたバスケット"
+        ],
+        "bathSponge": [
+            "植物繊維で作られた天然スポンジ、スキンケアに安全でエコフレンドリー"
+        ],
+        "shelves": [
+            "タオルやトイレタリーを整理するための竹やラタンの棚"
+        ],
+        "soapHolder": [
+            "竹や木で作られた石鹸皿、実用的で美的"
+        ]
+    },
+    "readMore": "もっと読む",
+    "ourProducts": "私たちの製品",
     "ourExport": {
-        "title": "Our Export",
-        "slogan": "Handi&Co: Your go-to partner for premium Vietnamese agricultural exports",
-        "description": "With over a decade of specialized experience in Europe, Asia, and the Middle East, Handi&Co stands as a trusted expert in delivering top-quality Vietnamese agricultural products. Our dedicated team is committed to ensuring flawless, on-time deliveries to every corner of the globe"
+        "title": "私たちの輸出",
+        "slogan": "Handi&Co: プレミアムなベトナム農産物の輸出パートナー",
+        "description": "ヨーロッパ、アジア、中東での10年以上の専門経験を持つHandi&Coは、最高品質のベトナム農産物を提供する信頼できる専門家です。私たちの専任チームは、世界中のどこにでも完璧で時間通りの配送を確実にすることに尽力しています。"
     },
     "ourStory": {
-        "title": "Our Story",
-        "slogan": "It's all about what we love the most...",
-        "description": "For the passion of spreading the beauty of Vietnamese nature to the whole world, Handi & Eco intends to becoming one of the leading companies in Vietnam who is specialized in producing and supplying home decorative products that made from natural materials such as seagrass, waterhyacinth, rattan, bamboo, fern, palm leaf, maize &mldr; we have our own designer team who has been educated in USA. We offer OEM service and willing to develop customer’s own design. Our factory is located in traditional village in Ninh Binh province, where is very famous for handicraft products. We have over 1000 home workers , who has many years of experience in making handmade home decoration products."
+        "title": "私たちの物語",
+        "slogan": "それは私たちが最も愛するものについて...",
+        "description": "ベトナムの自然の美しさを世界中に広める情熱のために、Handi & Ecoは、シーグラス、水ヒヤシンス、ラタン、竹、シダ、ヤシの葉、トウモロコシなどの天然素材から作られた家庭用装飾品を製造および供給することに特化したベトナムの主要企業の1つになることを目指しています。私たちには、米国で教育を受けたデザイナーチームがいます。OEMサービスを提供し、お客様のデザインを開発することを喜んでいます。私たちの工場は、手工芸品で非常に有名なニンビン省の伝統的な村にあります。私たちは、手作りの家庭用装飾品の製作に多くの経験を持つ1000人以上の家庭労働者を抱えています。"
     },
     "ourTeam": {
-        "title": "Our Team",
-        "description": "At Handi&Eco, our mission is to bring the timeless beauty of handcrafted bamboo and rattan products into modern living, while contributing to a sustainable future. Rooted in the traditions of skilled artisans and inspired by the harmony of nature, we create eco-friendly solutions that seamlessly blend with contemporary lifestyles."
+        "title": "私たちのチーム",
+        "description": "Handi&Ecoでは、手作りの竹やラタン製品の時代を超えた美しさを現代の生活に取り入れ、持続可能な未来に貢献することを使命としています。熟練した職人の伝統に根ざし、自然の調和に触発された私たちは、現代のライフスタイルにシームレスに溶け込むエコフレンドリーなソリューションを創造します。"
     },
     "featuredProducts": {
-        "title": "Featured Products",
-        "quickView": "Quick View"
+        "title": "注目の製品",
+        "quickView": "クイックビュー"
     },
     "newProducts": {
-        "title": "New Products",
-        "quickView": "Quick View"
+        "title": "新製品",
+        "quickView": "クイックビュー"
     },
     "material": {
-        "title": "Material"
+        "title": "素材",
+        "bamboo": "竹",
+        "rattan": "ラタン",
+        "seagrass": "シーグラス",
+        "waterHyacinth": "水ヒヤシンス",
+        "loofah": "ルーファ",
+        "wood": "木材"
+    },
+    "aboutUs": {
+        "title": "私たちについて"
+    },
+    "footer": {
+        "quickLinks": "クイックリンク",
+        "home": "ホーム",
+        "aboutUs": "私たちについて",
+        "contactUs": "お問い合わせ"
     }
 }

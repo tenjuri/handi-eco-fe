@@ -1,11 +1,89 @@
 {
+    "lang": {
+        "title": "Language",
+        "en": "Language: English",
+        "jp": "Language: Japanese"
+    },
     "products": {
+        "title": "Product",
         "ourProducts": "Our Products",
         "homeDecorliving": "HOME DECOR & LIVING",
         "kitchenDinning": "KITCHEN & DINNING",
         "outdoorGarden": "OUTDOOR & GARDEN",
         "giftFashionAccessories": "GIFT & FASHION ACCESSORIES",
-        "bathroomLaundry": "BATHROOM & LAUNDRY"
+        "bathroomLaundry": "BATHROOM & LAUNDRY",
+        "menu": {
+            "homeDecorliving": "Home Decor & Living",
+            "kitchenDinning": "Kitchen & Dinning",
+            "outdoorGarden": "Outdoor & Garden",
+            "giftFashionAccessories": "Gift & Fashion Accessories",
+            "bathroomLaundry": "Bathroom & Laundry"
+        },
+        "lampshade": [
+            "Decorative lamps made from rattan, bamboo, wood, or seagrass, providing a warm, natural ambiance"
+        ],
+        "chairBenchPapasan": [
+            "Relaxing chairs, benches, or Papasan chairs (round, cozy design), perfect for a comfortable living space"
+        ],
+        "table": [
+            "Tables crafted from wood, rattan, or other natural materials, ideal as coffee tables or work desks"
+        ],
+        "cabinetShelfMirror": [
+            "Multi-functional cabinets, shelves, or decorative mirrors with rattan or wooden frames"
+        ],
+        "decorationRugWallDecor": [
+            "Natural material rugs, wall decor, or other aesthetic items for home styling"
+        ],
+        "petBed": [
+            "Pet beds woven from water hyacinth or rattan, providing comfort and a stylish look"
+        ],
+        "tableware": [
+            "Cutlery, plates, bowls, cups, and napkin rings made of ceramics, wood, or bamboo",
+            "Functional yet decorative for dining experiences."
+        ],
+        "kitchenware": [
+            "Basket: Baskets for bread, fruits, or other food items",
+            "Utensil Holder: Bamboo or rattan holders for chopsticks, spoons, and forks.",
+            "Coasters: Protects table surfaces from heat or moisture.",
+            "Fruit Platter: Wooden or rattan platters for serving fresh fruits.",
+            "Fruit Platter: Wooden or rattan platters for serving fresh fruits.",
+            "Wooden Cutting Board: Used for food preparation.",
+            "Spice Containers: Storage jars for salt, pepper, or cooking oil.",
+            "Serving Trays: Wooden trays for serving dishes or setting the table."
+        ],
+        "picnicBasket": [
+            "Compact baskets for carrying food and essentials during outdoor activities"
+        ],
+        "vase": [
+            "Decorative vases made of ceramics, wood, or rattan for floral arrangements"
+        ],
+        "planter": [
+            "Pots for flowers or plants, often made of rattan or wood"
+        ],
+        "sunlounger": [
+            "Outdoor lounge chairs for sunbathing, with wooden frames or woven designs"
+        ],
+        "giftboxStorageBoxes": [
+            "Unique, eco-friendly gift boxes made from natural materials"
+        ],
+        "fashionBags": [
+            "Handcrafted bags made from seagrass, rattan, or bamboo, suitable as gifts or fashion accessories"
+        ],
+        "handcraftedJewelry": [
+            "Bracelets or necklaces made from bamboo, rattan, or wood"
+        ],
+        "laundryBasket": [
+            "Woven baskets made from rattan or water hyacinth for storing dirty laundry or clothing"
+        ],
+        "bathSponge": [
+            "Natural sponges made from plant fibers, safe and eco-friendly for skincare"
+        ],
+        "shelves": [
+            "Bamboo or rattan shelves for organizing towels and toiletries"
+        ],
+        "soapHolder": [
+            "Soap dishes made from bamboo or wood, practical and aesthetic"
+        ]
     },
     "readMore": "Read More",
     "ourProducts": "Our Products",
@@ -32,6 +110,21 @@
         "quickView": "Quick View"
     },
     "material": {
-        "title": "Material"
+        "title": "Material",
+        "bamboo": "Bamboo",
+        "rattan": "Rattan",
+        "seagrass": "Seagrass",
+        "waterHyacinth": "Water Hyacinth",
+        "loofah": "Loofah",
+        "wood": "Wood"
+    },
+    "aboutUs": {
+        "title": "About Us"
+    },
+    "footer": {
+        "quickLinks": "Quick Links",
+        "home": "Home",
+        "aboutUs": "About Us",
+        "contactUs": "Contact Us"
     }
 }

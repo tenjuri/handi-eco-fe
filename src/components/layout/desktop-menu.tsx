@@ -10,31 +10,35 @@ import {
 
 import "@/app/client/hover-card.css";
 import { useLangStore } from "@/store/lang.store";
+import { type getDictionary } from "../../../get-dictionary";
 
-const DesktopMenu: React.FC = () => {
+interface NavBarProps {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+}
+const DesktopMenu: React.FC<NavBarProps> = ({ dictionary }) => {
   const [openProduct, setOpenProduct] = useState(false);
   const [openMaterial, setOpenMaterial] = useState(false);
   const { lang } = useLangStore();
   const products = useMemo(() => {
     return [
       {
-        name: "Home Decor & Living",
+        name: dictionary.products.menu.homeDecorliving,
         url: `/${lang}/our-product/home-decor`,
       },
       {
-        name: "Kitchen & Dinning",
+        name: dictionary.products.menu.kitchenDinning,
         url: `/${lang}/our-product/kitchen-dinning`,
       },
       {
-        name: "Outdoor & Garden",
+        name: dictionary.products.menu.outdoorGarden,
         url: `/${lang}/our-product/outdoor-garden`,
       },
       {
-        name: "Gift & Fashion Accessories",
+        name: dictionary.products.menu.giftFashionAccessories,
         url: `/${lang}/our-product/gift-fashion`,
       },
       {
-        name: "Bathroom & Laundry",
+        name: dictionary.products.menu.bathroomLaundry,
         url: `/${lang}/our-product/bathroom-laundry`,
       },
     ];
@@ -43,27 +47,27 @@ const DesktopMenu: React.FC = () => {
   const materials = useMemo(() => {
     return [
       {
-        name: "Bamboo",
+        name: dictionary.material.bamboo,
         url: `/${lang}/material/bamboo`,
       },
       {
-        name: "Rattan",
+        name: dictionary.material.rattan,
         url: `/${lang}/material/rattan`,
       },
       {
-        name: "Seagrass",
+        name: dictionary.material.seagrass,
         url: `/${lang}/material/seagrass`,
       },
       {
-        name: "Water Hyacinth",
+        name: dictionary.material.waterHyacinth,
         url: `/${lang}/material/water-hyacinth`,
       },
       {
-        name: "Loofah",
+        name: dictionary.material.loofah,
         url: `/${lang}/material/loofah`,
       },
       {
-        name: "Wood",
+        name: dictionary.material.wood,
         url: `/${lang}/material/wood`,
       },
     ];
@@ -79,7 +83,7 @@ const DesktopMenu: React.FC = () => {
         <HoverCardTrigger asChild>
           <div className="flex items-center gap-1 cursor-pointer">
             <span className="font-medium text-base text-[#FFEBC0]">
-              PRODUCT
+              {dictionary.products.title}
             </span>
             <ChevronDown
               className={`${
@@ -115,7 +119,7 @@ const DesktopMenu: React.FC = () => {
         <HoverCardTrigger asChild>
           <div className="flex items-center gap-1 cursor-pointer">
             <span className="font-medium text-base text-[#FFEBC0]">
-              MATERIALS
+              {dictionary.material.title}
             </span>
             <ChevronDown
               className={`${
@@ -143,10 +147,10 @@ const DesktopMenu: React.FC = () => {
         </HoverCardContent>
       </HoverCard>
       <Link
-        href="/about-us"
+        href={`/${lang}/about-us`}
         className="font-medium text-base text-[#FFEBC0] cursor-pointer"
       >
-        ABOUT US
+        {dictionary.aboutUs.title}
       </Link>
     </div>
   );

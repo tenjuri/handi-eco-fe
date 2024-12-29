@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { i18n, Locale } from "../../../i18n-config";
 import "@/app/[lang]/globals.css";
+import { getDictionary } from "../../../get-dictionary";
 
 import NavBar from "../../components/layout/nav-bar";
 import Footer from "../../components/layout/footer";
@@ -45,6 +46,8 @@ export default async function Root(props: {
   const params = await props.params;
 
   const { children } = props;
+
+  const dictionary = await getDictionary(params.lang);
   return (
     <html lang={params.lang} suppressHydrationWarning>
       <head>
@@ -53,11 +56,11 @@ export default async function Root(props: {
       </head>
       <body className={` ${inter.className}`}>
         <div className="min-h-screen relative flex flex-col justify-between">
-          <NavBar lang={params.lang} />
+          <NavBar lang={params.lang} dictionary={dictionary} />
           <div className="flex flex-col flex-grow h-full relative w-full">
             {children}
           </div>
-          <Footer />
+          <Footer lang={params.lang} dictionary={dictionary} />
         </div>
       </body>
     </html>

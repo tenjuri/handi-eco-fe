@@ -28,7 +28,7 @@ const useProducts = () => {
       name: "Vietnam bamboo lampshade",
       slug: "vietnam-bamboo-lampshade",
       description:
-        "A handcrafted woven bamboo hanging lampshade from Vietnam, made of natural materials for a warm and eco-friendly lighting solution.",
+        "Decorative lamps made from rattan, bamboo, wood, or seagrass, providing a warm, natural ambiance.",
       material: ["bamboo"],
       category: "home-decor",
       url: "/product/bamboo-lampshade",

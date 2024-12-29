@@ -1,5 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
+import { Locale } from "../../../../../i18n-config";
+import { getDictionary } from "../../../../../get-dictionary";
 import OurProduct from "@/components/our-product/page";
 
 export const metadata: Metadata = {
@@ -35,8 +37,10 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: Locale }>;
 }) {
   const slug = (await params).slug;
-  return <OurProduct slug={slug} />;
+  const lang = (await params).lang;
+  const dictionary = await getDictionary(lang);
+  return <OurProduct slug={slug} lang={lang} dictionary={dictionary} />;
 }

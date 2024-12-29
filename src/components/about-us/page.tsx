@@ -91,6 +91,23 @@ const AboutUs: React.FC = () => {
         Reliable Logistics: Streamlined export processes for timely deliveries
         worldwide.
       </p>
+
+      <h1 className="text-lg md:text-2xl font-bold mt-8 w-max title-underlined">
+        Communicate with foreign partners
+      </h1>
+      <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <img
+          src="https://media.handi-eco.vn/images/about-us/communicate-1.jpg"
+          alt="communication"
+          className="w-full h-full object-cover"
+        />
+        <img
+          src="https://media.handi-eco.vn/images/about-us/communicate-2.jpg"
+          alt="communication"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       <h1 className="text-lg md:text-2xl font-bold mt-8 w-max title-underlined">
         Contact Us
       </h1>

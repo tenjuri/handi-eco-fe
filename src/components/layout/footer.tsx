@@ -3,7 +3,14 @@ import Link from "next/link";
 import { LucidePhoneCall, MailIcon, HomeIcon } from "lucide-react";
 import Image from "next/image";
 
-const Footer: React.FC = () => {
+import { Locale } from "../../../i18n-config";
+import { type getDictionary } from "../../../get-dictionary";
+
+interface FooterProps {
+  lang: Locale;
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+}
+const Footer: React.FC<FooterProps> = ({ lang, dictionary }) => {
   return (
     <div className="bg-green-app text-white p-4">
       <div className="max-w-[1440px] m-auto">
@@ -20,31 +27,29 @@ const Footer: React.FC = () => {
               }}
             />
             <div className="flex flex-col">
-              <p className="font-bold text-lg leading-[100%]">QUICK LINKS</p>
+              <p className="font-bold text-lg leading-[100%] uppercase">
+                {dictionary.footer.quickLinks}
+              </p>
               <div className="w-12 h-1 bg-gold-app mt-1"></div>
               <Link
-                href="/"
+                href={`/${lang}`}
                 className="cursor-pointer block hover:text-base mt-2"
               >
-                Home
+                {dictionary.footer.home}
               </Link>
               <Link
-                href="/about"
+                href={`/${lang}/about-us`}
                 className="cursor-pointer block hover:text-base"
               >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="cursor-pointer block hover:text-base"
-              >
-                Contact
+                {dictionary.footer.aboutUs}
               </Link>
             </div>
           </div>
           <div>
             <div>
-              <p className="font-bold text-lg leading-[100%]">CONTACT US</p>
+              <p className="font-bold text-lg leading-[100%] uppercase">
+                {dictionary.footer.contactUs}
+              </p>
               <div className="w-12 h-1 bg-gold-app mt-1"></div>
             </div>
             <div className="col-span-1 grid grid-cols-1 lg:grid-cols-2 gap-10 mt-2">
