@@ -7,7 +7,13 @@ import Image from "next/image";
 import useProducts from "@/hooks/useProducts";
 import useCategory from "@/hooks/useCategory";
 
-const New: React.FC = () => {
+import { type getDictionary } from "../../../../get-dictionary";
+
+type Props = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+};
+
+const New: React.FC<Props> = ({ dictionary }) => {
   const OPTIONS: EmblaOptionsType = { align: "start", loop: true };
 
   const { products } = useProducts();
@@ -33,7 +39,7 @@ const New: React.FC = () => {
               href={`/product/${item.slug}`}
               className="w-full text-center bg-[#d5b36f] text-white text-lg py-2 rounded-md cursor-pointer mt-2 inline-block"
             >
-              QUICK VIEW
+              {dictionary.newProducts.quickView}
             </Link>
           </div>
         </div>
@@ -54,7 +60,7 @@ const New: React.FC = () => {
       <div className="flex items-center gap-8 mt-10">
         <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
         <h1 className="text-3xl font-bold italic uppercase text-center">
-          new products
+          {dictionary.newProducts.title}
         </h1>
         <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
       </div>

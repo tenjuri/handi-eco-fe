@@ -1,0 +1,37 @@
+{
+    "products": {
+        "ourProducts": "Our Products",
+        "homeDecorliving": "HOME DECOR & LIVING",
+        "kitchenDinning": "KITCHEN & DINNING",
+        "outdoorGarden": "OUTDOOR & GARDEN",
+        "giftFashionAccessories": "GIFT & FASHION ACCESSORIES",
+        "bathroomLaundry": "BATHROOM & LAUNDRY"
+    },
+    "readMore": "Read More",
+    "ourProducts": "Our Products",
+    "ourExport": {
+        "title": "Our Export",
+        "slogan": "Handi&Co: Your go-to partner for premium Vietnamese agricultural exports",
+        "description": "With over a decade of specialized experience in Europe, Asia, and the Middle East, Handi&Co stands as a trusted expert in delivering top-quality Vietnamese agricultural products. Our dedicated team is committed to ensuring flawless, on-time deliveries to every corner of the globe"
+    },
+    "ourStory": {
+        "title": "Our Story",
+        "slogan": "It's all about what we love the most...",
+        "description": "For the passion of spreading the beauty of Vietnamese nature to the whole world, Handi & Eco intends to becoming one of the leading companies in Vietnam who is specialized in producing and supplying home decorative products that made from natural materials such as seagrass, waterhyacinth, rattan, bamboo, fern, palm leaf, maize &mldr; we have our own designer team who has been educated in USA. We offer OEM service and willing to develop customer’s own design. Our factory is located in traditional village in Ninh Binh province, where is very famous for handicraft products. We have over 1000 home workers , who has many years of experience in making handmade home decoration products."
+    },
+    "ourTeam": {
+        "title": "Our Team",
+        "description": "At Handi&Eco, our mission is to bring the timeless beauty of handcrafted bamboo and rattan products into modern living, while contributing to a sustainable future. Rooted in the traditions of skilled artisans and inspired by the harmony of nature, we create eco-friendly solutions that seamlessly blend with contemporary lifestyles."
+    },
+    "featuredProducts": {
+        "title": "Featured Products",
+        "quickView": "Quick View"
+    },
+    "newProducts": {
+        "title": "New Products",
+        "quickView": "Quick View"
+    },
+    "material": {
+        "title": "Material"
+    }
+}

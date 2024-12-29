@@ -1,30 +1,35 @@
 import React from "react";
 import Link from "next/link";
+import { getDictionary } from "../../../../get-dictionary";
 
-const OurProduct: React.FC = () => {
+type Props = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+};
+
+const OurProduct: React.FC<Props> = ({ dictionary }) => {
   const products = [
     {
-      name: "HOME DECOR & LIVING",
+      name: dictionary.products.homeDecorliving,
       url: "/home-decor",
       banner: "https://media.handi-eco.vn/images/home-decor.jpg",
     },
     {
-      name: "KITCHEN & DINNING",
+      name: dictionary.products.kitchenDinning,
       url: "/kitchen-dinning",
       banner: "https://media.handi-eco.vn/images/kitchen.jpg",
     },
     {
-      name: "OUTDOOR & GARDEN",
+      name: dictionary.products.outdoorGarden,
       url: "/outdoor-garden",
       banner: "https://media.handi-eco.vn/images/outdoor.jpg",
     },
     {
-      name: "GIFT & FASHION ACCESSORIES",
+      name: dictionary.products.giftFashionAccessories,
       url: "/gift-fashion",
       banner: "https://media.handi-eco.vn/images/gift.jpg",
     },
     {
-      name: "BATHROOM & LAUNDRY",
+      name: dictionary.products.bathroomLaundry,
       url: "/bathroom-laundry",
       banner: "https://media.handi-eco.vn/images/bathroom.jpg",
     },
@@ -33,9 +38,8 @@ const OurProduct: React.FC = () => {
     <div className="w-full max-w-[1920px] mx-auto bg-[#F5F5F5]">
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 ">
         <div className="p-10">
-          <h1 className="text-base xl:text-3xl font-bold italic">
-            OUR <br />
-            PRODUCTS
+          <h1 className="text-base xl:text-3xl font-bold italic uppercase whitespace-break-spaces">
+            {dictionary.products.ourProducts}
           </h1>
         </div>
         {products.map((item, index) => (
@@ -60,7 +64,7 @@ const OurProduct: React.FC = () => {
                 href={`/our-product/${item.url}`}
                 className="bg-[#d5b36f] text-white text-base md:text-lg py-1 md:py-2 px-4 rounded-md hover:bg-[#d5b36f]/80 cursor-pointer mt-2 inline-block"
               >
-                READ MORE
+                {dictionary.readMore}
               </Link>
             </div>
           </div>

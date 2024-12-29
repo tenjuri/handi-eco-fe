@@ -1,5 +1,6 @@
-import HomePage from "../components/home/page";
+import HomePage from "../../components/home/page";
 import { Metadata } from "next";
+import { Locale } from "../../../i18n-config";
 
 export const metadata: Metadata = {
   title: "Handi&Eco - Home",
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  return <HomePage />;
+export default async function Home(props: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await props.params;
+  return <HomePage lang={lang} />;
 }

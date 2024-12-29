@@ -3,7 +3,13 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import useMaterial from "@/hooks/useMaterial";
 
-const Material: React.FC = () => {
+import { type getDictionary } from "../../../../get-dictionary";
+
+type Props = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+};
+
+const Material: React.FC<Props> = ({ dictionary }) => {
   const { materials } = useMaterial();
   const router = useRouter();
   return (
@@ -11,7 +17,7 @@ const Material: React.FC = () => {
       <div className="flex items-center gap-8">
         <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
         <h1 className="text-3xl font-bold italic uppercase text-center">
-          Material
+          {dictionary.material.title}
         </h1>
         <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
       </div>

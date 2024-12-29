@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { LucidePhoneCall, MailIcon, HomeIcon } from "lucide-react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -8,10 +9,12 @@ const Footer: React.FC = () => {
       <div className="max-w-[1440px] m-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="col-span-1 grid grid-cols-2 gap-10">
-            <img
+            <Image
               src="/logo-lg.jpg"
               alt="logo"
               className="w-36 h-36"
+              width={144}
+              height={144}
               style={{
                 clipPath: "circle(60% at 50% 50%)",
               }}

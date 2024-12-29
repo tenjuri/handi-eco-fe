@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
@@ -9,59 +9,65 @@ import {
 } from "@/components/ui/hover-card";
 
 import "@/app/client/hover-card.css";
+import { useLangStore } from "@/store/lang.store";
 
-const DesktopNav: React.FC = () => {
+const DesktopMenu: React.FC = () => {
   const [openProduct, setOpenProduct] = useState(false);
   const [openMaterial, setOpenMaterial] = useState(false);
-  const products = [
-    {
-      name: "Home Decor & Living",
-      url: "/our-product/home-decor",
-    },
-    {
-      name: "Kitchen & Dinning",
-      url: "/our-product/kitchen-dinning",
-    },
-    {
-      name: "Outdoor & Garden",
-      url: "/our-product/outdoor-garden",
-    },
-    {
-      name: "Gift & Fashion Accessories",
-      url: "/our-product/gift-fashion",
-    },
-    {
-      name: "Bathroom & Laundry",
-      url: "/our-product/bathroom-laundry",
-    },
-  ];
+  const { lang } = useLangStore();
+  const products = useMemo(() => {
+    return [
+      {
+        name: "Home Decor & Living",
+        url: `/${lang}/our-product/home-decor`,
+      },
+      {
+        name: "Kitchen & Dinning",
+        url: `/${lang}/our-product/kitchen-dinning`,
+      },
+      {
+        name: "Outdoor & Garden",
+        url: `/${lang}/our-product/outdoor-garden`,
+      },
+      {
+        name: "Gift & Fashion Accessories",
+        url: `/${lang}/our-product/gift-fashion`,
+      },
+      {
+        name: "Bathroom & Laundry",
+        url: `/${lang}/our-product/bathroom-laundry`,
+      },
+    ];
+  }, [lang]);
 
-  const materials = [
-    {
-      name: "Bamboo",
-      url: "/material/bamboo",
-    },
-    {
-      name: "Rattan",
-      url: "/material/rattan",
-    },
-    {
-      name: "Seagrass",
-      url: "/material/seagrass",
-    },
-    {
-      name: "Water Hyacinth",
-      url: "/material/water-hyacinth",
-    },
-    {
-      name: "Loofah",
-      url: "/material/loofah",
-    },
-    {
-      name: "Wood",
-      url: "/material/wood",
-    },
-  ];
+  const materials = useMemo(() => {
+    return [
+      {
+        name: "Bamboo",
+        url: `/${lang}/material/bamboo`,
+      },
+      {
+        name: "Rattan",
+        url: `/${lang}/material/rattan`,
+      },
+      {
+        name: "Seagrass",
+        url: `/${lang}/material/seagrass`,
+      },
+      {
+        name: "Water Hyacinth",
+        url: `/${lang}/material/water-hyacinth`,
+      },
+      {
+        name: "Loofah",
+        url: `/${lang}/material/loofah`,
+      },
+      {
+        name: "Wood",
+        url: `/${lang}/material/wood`,
+      },
+    ];
+  }, [lang]);
   return (
     <div className="hidden md:flex items-center gap-8">
       <HoverCard
@@ -146,4 +152,4 @@ const DesktopNav: React.FC = () => {
   );
 };
 
-export default DesktopNav;
+export default DesktopMenu;

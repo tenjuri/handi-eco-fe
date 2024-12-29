@@ -1,21 +1,19 @@
 import React from "react";
 import { useOurTeam } from "@/hooks/useOurTeam";
 import { LucidePhoneCall, MailIcon } from "lucide-react";
+import { type getDictionary } from "../../../../get-dictionary";
 
-const OurTeam: React.FC = () => {
+type Props = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+};
+
+const OurTeam: React.FC<Props> = ({ dictionary }) => {
   const { ourTeams } = useOurTeam();
   return (
     <div className="w-full bg-white">
       <div className="max-w-[1440px] mt-10 mx-auto p-10">
-        <span className="text-3xl font-bold">OUR TEAM</span>
-        <p className="mt-5">
-          At Handi&Eco, our mission is to bring the timeless beauty of
-          handcrafted bamboo and rattan products into modern living, while
-          contributing to a sustainable future. Rooted in the traditions of
-          skilled artisans and inspired by the harmony of nature, we create
-          eco-friendly solutions that seamlessly blend with contemporary
-          lifestyles.
-        </p>
+        <span className="text-3xl font-bold">{dictionary.ourTeam.title}</span>
+        <p className="mt-5">{dictionary.ourTeam.description}</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center gap-4 mt-6">
           {ourTeams.map((team) => (
             <div key={team.name} className="flex flex-col gap-6 p-4 xl:p-10">

@@ -1,24 +1,22 @@
 import React from "react";
+import { type getDictionary } from "../../../../get-dictionary";
 
-const OurExport: React.FC = () => {
+type Props = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+};
+
+const OurExport: React.FC<Props> = ({ dictionary }) => {
   return (
     <div className="w-full bg-white mt-10">
       <div className="max-w-[1440px] m-auto mt-10">
         <div className="block md:flex items-center gap-16 px-10 lg:py-10">
-          <h1 className="text-3xl font-bold italic">
-            Our <br className="hidden md:block" /> Export
+          <h1 className="text-3xl font-bold italic uppercase">
+            {dictionary.ourExport.title}
           </h1>
           <div className="flex flex-col mt-5 md:mt-0">
-            <p className="font-semibold">
-              Handi&Co: Your go-to partner for premium Vietnamese agricultural
-              exports
-            </p>
+            <p className="font-semibold">{dictionary.ourExport.slogan}</p>
             <span className="font-medium">
-              With over a decade of specialized experience in Europe, Asia, and
-              the Middle East, Handi&Co stands as a trusted expert in delivering
-              top-quality Vietnamese agricultural products. Our dedicated team
-              is committed to ensuring flawless, on-time deliveries to every
-              corner of the globe
+              {dictionary.ourExport.description}
             </span>
           </div>
         </div>
