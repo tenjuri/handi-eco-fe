@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://handi-eco.vn
+
+# Sitemaps
+Sitemap: https://handi-eco.vn/sitemap.xml

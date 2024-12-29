@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.9",
@@ -25,6 +26,7 @@
     "lucide-react": "^0.468.0",
     "negotiator": "^1.0.0",
     "next": "15.1.0",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.2.0",
