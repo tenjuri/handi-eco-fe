@@ -53,6 +53,10 @@ export default async function Root(props: {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="gh-wviGyqT0JuU4yfWv0g0CoZMo4W15g8iqgkGD--HA"
+        />
       </head>
       <body className={` ${inter.className}`}>
         <div className="min-h-screen relative flex flex-col justify-between">
