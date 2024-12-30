@@ -16,7 +16,7 @@ type HomePageProps = {
 };
 const HomePage: React.FC<HomePageProps> = async ({ lang }) => {
   const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
-  const SLIDE_COUNT = 4;
+  const SLIDE_COUNT = 1;
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   const dictionary = await getDictionary(lang);
 
