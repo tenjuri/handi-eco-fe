@@ -8,20 +8,27 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Handi&Eco - About Us",
     description: "Handi&Eco - Handmade with Care, Eco for Life",
+    url: "https://handi-eco.vn",
+    siteName: "Handi&Eco - About Us",
+    images: ["https://handi-eco.vn/logo-lg.jpg"],
     type: "website",
   },
   twitter: {
+    title: "Handi&Eco - About Us",
     card: "summary_large_image",
-    title: "About Us",
-    description: "About Us",
+    images: ["https://handi-eco.vn/logo-lg.jpg"],
+    description: "Handi&Eco - Handmade with Care, Eco for Life",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    shortcut: "/favicon.ico",
-  },
+  keywords: [
+    "Handmade",
+    "Care",
+    "Eco",
+    "Life",
+    "Eco for Life",
+    "Handmade with Care",
+    "handi eco",
+    "handi & eco",
+  ],
 };
 
 export default async function Page() {

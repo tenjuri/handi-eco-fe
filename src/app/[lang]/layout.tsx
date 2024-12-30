@@ -14,18 +14,27 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Handi&Eco",
     description: "Handi&Eco - Handmade with Care, Eco for Life",
-    url: "https://aethir-dev.netlify.app/dashboard",
-    siteName: "Aethir",
-    images: ["https://aethir.com/twitter-image.png?dcea0e1d09ac3bea"],
+    url: "https://handi-eco.vn",
+    siteName: "Handi&Eco",
+    images: ["https://handi-eco.vn/logo-lg.jpg"],
     type: "website",
   },
   twitter: {
     title: "Handi&Eco",
     card: "summary_large_image",
-    images: ["https://aethir.com/twitter-image.png?dcea0e1d09ac3bea"],
+    images: ["https://handi-eco.vn/logo-lg.jpg"],
     description: "Handi&Eco - Handmade with Care, Eco for Life",
   },
-  keywords: ["Handmade", "Care", "Eco", "Life"],
+  keywords: [
+    "Handmade",
+    "Care",
+    "Eco",
+    "Life",
+    "Eco for Life",
+    "Handmade with Care",
+    "handi eco",
+    "handi & eco",
+  ],
 };
 
 const inter = Inter({
@@ -51,6 +60,7 @@ export default async function Root(props: {
   return (
     <html lang={params.lang} suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/handi-eco.ico" sizes="any" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
