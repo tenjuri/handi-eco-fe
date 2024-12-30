@@ -22,9 +22,13 @@ const HomePage: React.FC<HomePageProps> = async ({ lang }) => {
 
   return (
     <>
-      <CarouselSection slides={SLIDES} options={OPTIONS} />
+      <CarouselSection
+        slides={SLIDES}
+        options={OPTIONS}
+        dictionary={dictionary}
+      />
       <img
-        src="https://media.handi-eco.vn/videos/scroll.gif"
+        src="https://media.handi-eco.vn/videos/scroll-more.gif"
         alt=""
         className="w-full max-w-[1920px] mx-auto"
       />

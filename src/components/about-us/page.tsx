@@ -12,11 +12,12 @@ const AboutUs: React.FC = () => {
         About Us - Handi&Eco
       </h1>
       <p className="max-w-[90%] md:max-w-[70%] mx-auto text-center mt-4 bg-gold-app/50 p-6 border border-gold-app rounded-lg shadow-lg italic">
-        At Handi&Eco, our mission is to bring the timeless beauty of handcrafted
-        bamboo and rattan products into modern living, while contributing to a
-        sustainable future. Rooted in the traditions of skilled artisans and
-        inspired by the harmony of nature, we create eco-friendly solutions that
-        seamlessly blend with contemporary lifestyles.
+        Handmade with Care, Eco for Life <br /> At Handi&Eco, our mission is to
+        bring the timeless beauty of handcrafted bamboo and rattan products into
+        modern living, while contributing to a sustainable future. Rooted in the
+        traditions of skilled artisans and inspired by the harmony of nature, we
+        create eco-friendly solutions that seamlessly blend with contemporary
+        lifestyles.
       </p>
       <h1 className="text-lg md:text-2xl font-bold mt-8 w-max title-underlined">
         Trusted Expertise in Global Export

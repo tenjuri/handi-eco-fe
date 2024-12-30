@@ -20,6 +20,7 @@
     "antd": "^5.22.5",
     "clsx": "^2.1.1",
     "embla-carousel": "^8.5.1",
+    "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-fade": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "i18next": "^24.2.0",
