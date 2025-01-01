@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React from "react";
-import { EmblaOptionsType } from "embla-carousel";
+import React, { useRef, useEffect } from "react";
+import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import { MoveRight } from "lucide-react";
-// import { NextButton, PrevButton, usePrevNextButtons } from "./arrow-button";
-// import { useDotButton } from "./dot-button";
+import { NextButton, PrevButton, usePrevNextButtons } from "./arrow-button";
+import { useDotButton } from "./dot-button";
 
 import "@/app/client/carousel.css";
 
@@ -29,20 +29,57 @@ const CarouselSection: React.FC<PropType> = (props) => {
   //   Autoplay({ playOnInit: true, delay: 6000 }),
   // ]);
 
-  const [emblaRef] = useEmblaCarousel(options, [
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Fade(),
     Autoplay({ playOnInit: true, delay: 6000 }),
   ]);
 
   // const { selectedIndex, scrollSnaps, onDotButtonClick } =
   //   useDotButton(emblaApi);
+  const onBtnClick = (emblaApi: EmblaCarouselType) => {
+    emblaApi.reInit();
+  };
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi, onBtnClick);
 
-  // const {
-  //   prevBtnDisabled,
-  //   nextBtnDisabled,
-  //   onPrevButtonClick,
-  //   onNextButtonClick,
-  // } = usePrevNextButtons(emblaApi);
+  const videoRef = [
+    useRef<HTMLVideoElement>(null),
+    useRef<HTMLVideoElement>(null),
+    useRef<HTMLVideoElement>(null),
+    useRef<HTMLVideoElement>(null),
+  ];
+  const observer = [
+    useRef<IntersectionObserver | null>(null),
+    useRef<IntersectionObserver | null>(null),
+    useRef<IntersectionObserver | null>(null),
+    useRef<IntersectionObserver | null>(null),
+  ];
+  useEffect(() => {
+    videoRef.forEach((ref, index) => {
+      if (ref.current) {
+        observer[index].current = new IntersectionObserver(
+          ([entry]) => {
+            if (entry?.isIntersecting) {
+              ref.current?.play();
+            }
+          },
+          { threshold: 0.5 }
+        );
+        observer[index].current.observe(ref.current);
+      }
+    });
+    return () => {
+      observer.forEach((obs) => {
+        if (obs.current) {
+          obs.current.disconnect();
+        }
+      });
+    };
+  }, [videoRef, observer]);
 
   const openCatalog = () => {
     window.open("https://media.handi-eco.vn/pdf/sample.pdf", "_blank");
@@ -59,9 +96,8 @@ const CarouselSection: React.FC<PropType> = (props) => {
             {slides.map((index) => (
               <div className="embla__slide relative" key={index + "embla"}>
                 <video
+                  ref={videoRef[index]}
                   className="w-full object-cover"
-                  loop
-                  autoPlay
                   muted
                   playsInline
                 >
@@ -86,18 +122,18 @@ const CarouselSection: React.FC<PropType> = (props) => {
               </div>
             ))}
           </div>
-          {/* <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
+          <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}
             />
           </div>
-          <div className="absolute top-1/2 right-10 transform -translate-x-1/2 -translate-y-1/2  w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
+          <div className="absolute top-1/2 right-10 transform translate-x-1/2 -translate-y-1/2  w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
             <NextButton
               onClick={onNextButtonClick}
               disabled={nextBtnDisabled}
             />
-          </div> */}
+          </div>
         </div>
 
         {/* <div className="embla__controls">

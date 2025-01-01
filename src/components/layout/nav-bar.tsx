@@ -44,7 +44,13 @@ const NavBar: React.FC<NavBarProps> = ({ lang, dictionary }) => {
     <nav className="m-auto sticky top-0 z-[999] bg-[#11434C] w-full border-b border-[#D4A875]">
       <div className="max-w-[1440px] m-auto flex items-center gap-6 h-12 px-5 relative">
         <Link href={`/${lang}`} className="cursor-pointer">
-          <Image src="/logo-gold.png" alt="logo" width={150} height={28} />
+          <Image
+            src="/logo-gold.png"
+            alt="logo"
+            width={792}
+            height={160}
+            className="h-[28px] w-[150px]"
+          />
         </Link>
         <DesktopMenu dictionary={dictionary} />
         <MenuIcon
