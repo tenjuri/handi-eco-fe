@@ -6,7 +6,6 @@ type Props = {
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
 };
 const OurStory: React.FC<Props> = ({ dictionary }) => {
-  const images = Array.from(Array(4).keys());
   return (
     <div className="w-full bg-white">
       <div className="max-w-[1440px] mt-10 mx-auto bg-[#124049]">

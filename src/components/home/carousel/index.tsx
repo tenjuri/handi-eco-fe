@@ -8,7 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import { MoveRight } from "lucide-react";
 import { NextButton, PrevButton, usePrevNextButtons } from "./arrow-button";
-import { useDotButton } from "./dot-button";
+// import { useDotButton } from "./dot-button";
 
 import "@/app/client/carousel.css";
 
