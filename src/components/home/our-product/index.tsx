@@ -11,27 +11,27 @@ const OurProduct: React.FC<Props> = ({ dictionary }) => {
     {
       name: dictionary.products.homeDecorliving,
       url: "/home-decor",
-      banner: "https://media.handi-eco.vn/images/home-decor.jpg",
+      banner: "https://media.handi-eco.vn/images/our-product/home-decor.jpg",
     },
     {
       name: dictionary.products.kitchenDinning,
       url: "/kitchen-dinning",
-      banner: "https://media.handi-eco.vn/images/kitchen.jpg",
+      banner: "https://media.handi-eco.vn/images/our-product/kitchen.jpg",
     },
     {
       name: dictionary.products.outdoorGarden,
       url: "/outdoor-garden",
-      banner: "https://media.handi-eco.vn/images/outdoor.jpg",
+      banner: "https://media.handi-eco.vn/images/our-product/outdoor.jpg",
     },
     {
       name: dictionary.products.giftFashionAccessories,
       url: "/gift-fashion",
-      banner: "https://media.handi-eco.vn/images/gift.jpg",
+      banner: "https://media.handi-eco.vn/images/our-product/gift.jpg",
     },
     {
       name: dictionary.products.bathroomLaundry,
       url: "/bathroom-laundry",
-      banner: "https://media.handi-eco.vn/images/bathroom.jpg",
+      banner: "https://media.handi-eco.vn/images/our-product/bathroom.jpg",
     },
   ];
   return (
