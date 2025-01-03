@@ -30,13 +30,13 @@ const OurTeam: React.FC<Props> = ({ dictionary }) => {
                 <div className="mt-2 flex items-center gap-2">
                   <LucidePhoneCall className="text-gold-app w-5 h-5" />
                   <a href={`tel:${team.phone}`} className="cursor-pointer">
-                    +84-823-666-533
+                    {team.phone}
                   </a>
                 </div>
                 <div className="mt-1 flex items-center gap-2">
                   <MailIcon className="text-gold-app w-5 h-" />
                   <a href={`mailto:${team.mail}`} className="cursor-pointer">
-                    andree@handieco.com
+                    {team.mail}
                   </a>
                 </div>
               </div>

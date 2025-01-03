@@ -10,6 +10,8 @@ import StorageBasket from "@/assets/images/storage-basket-from-water-hyacinth.jp
 import TissueBox from "@/assets/images/tissue-box-made-of-pine-wood.jpg";
 import ServingTray from "@/assets/images/serving-tray-made-of-rattan-and-wood.jpg";
 import TissueBoxRattan from "@/assets/images/tissue-box-made-of-rattan-and-wood.jpg";
+import LoofahSponge from "@/assets/images/loofah-sponge.jpg";
+import NaturalLoofahSponge from "@/assets/images/natural-loofah-sponge.jpg";
 
 export type ProductType = {
   name: string;
@@ -136,7 +138,6 @@ const useProducts = () => {
       category: "kitchen-dinning",
       url: "/product/tissue-box-made-of-pine-wood",
       images: TissueBox,
-      new: true,
     },
     {
       name: "Serving tray made of rattan and wood from Vietnam",
@@ -157,6 +158,28 @@ const useProducts = () => {
       category: "kitchen-dinning",
       url: "/product/tissue-box-made-of-rattan-and-wood",
       images: TissueBoxRattan,
+      new: true,
+    },
+    {
+      name: "Loofah Sponge",
+      slug: "natural-loofah-sponge",
+      description:
+        "Loofahs — sometimes spelled luffas — are popular shower accessories used for cleaning and exfoliating your skin. Some people think that “all-natural” loofahs are made of sea sponge or dried coral because of their coarse, spongy consistency. But natural loofahs are actually made from a gourd in the cucumber family.",
+      material: ["loofah"],
+      category: "kitchen-dinning",
+      url: "/product/natural-loofah-sponge",
+      images: NaturalLoofahSponge,
+      new: true,
+    },
+    {
+      name: "Loofah Sponge",
+      slug: "loofah-sponge",
+      description:
+        "Loofahs — sometimes spelled luffas — are popular shower accessories used for cleaning and exfoliating your skin. Some people think that “all-natural” loofahs are made of sea sponge or dried coral because of their coarse, spongy consistency. But natural loofahs are actually made from a gourd in the cucumber family.",
+      material: ["loofah"],
+      category: "kitchen-dinning",
+      url: "/product/loofah-sponge",
+      images: LoofahSponge,
       new: true,
     },
   ];

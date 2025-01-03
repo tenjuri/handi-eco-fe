@@ -15,6 +15,15 @@ export default {
         "gold-app": "#CCAB7D",
       },
     },
+    keyframes: {
+      slide: {
+        "0%": { transform: "translateX(0)" },
+        "100%": { transform: "translateX(-100%)" },
+      },
+    },
+    animation: {
+      slide: "slide 6s linear infinite",
+    },
   },
   plugins: [],
 } satisfies Config;

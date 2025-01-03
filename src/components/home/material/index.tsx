@@ -43,18 +43,28 @@ const Material: React.FC<Props> = ({ dictionary }) => {
         {langMaterial.map((material) => (
           <div
             key={material.name}
-            className="flex flex-col justify-center items-center gap-2 cursor-pointer"
+            className="flex flex-col justify-center items-center gap-2 cursor-pointer w-full"
             onClick={() => {
               router.push(`/material/${material.slug}`);
             }}
           >
-            <img
-              src={material.image.src}
-              alt={material.name}
-              width={300}
-              height={300}
-              className="w-full h-full object-fill"
-            />
+            <div className="w-full flex overflow-hidden ">
+              <div className="flex hover:animate-slide">
+                {Array.from({ length: material.amount }).map((_item, index) => (
+                  <img
+                    key={index + material.name}
+                    src={`https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg`}
+                    alt={material.name}
+                    width={200}
+                    height={200}
+                    className="w-full h-full max-h-[300px] object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "/logo-lg.jpg";
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
             <span className="text-lg font-semibold">{material.name}</span>
           </div>
         ))}

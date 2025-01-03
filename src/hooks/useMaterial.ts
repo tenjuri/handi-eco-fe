@@ -11,6 +11,7 @@ const useMaterial = () => {
       slug: "bamboo",
       url: "/category/bamboo",
       image: Bamboo,
+      amount: 4,
     },
     {
       name: "Rattan",
@@ -18,6 +19,7 @@ const useMaterial = () => {
       slug: "rattan",
       url: "/category/rattan",
       image: Rattan,
+      amount: 3,
     },
     {
       name: "Seagrass",
@@ -25,6 +27,7 @@ const useMaterial = () => {
       slug: "seagrass",
       url: "/category/seagrass",
       image: Seagrass,
+      amount: 4,
     },
     {
       name: "Water Hyacinth",
@@ -32,6 +35,7 @@ const useMaterial = () => {
       slug: "water-hyacinth",
       url: "/category/water-hyacinth",
       image: WaterHyacinth,
+      amount: 4,
     },
     {
       name: "Loofah",
@@ -39,6 +43,7 @@ const useMaterial = () => {
       slug: "loofah",
       url: "/category/loofah",
       image: Rattan,
+      amount: 4,
     },
     {
       name: "Wood",
@@ -46,6 +51,7 @@ const useMaterial = () => {
       slug: "wood",
       url: "/category/wood",
       image: Bamboo,
+      amount: 3,
     },
   ];
   return { materials };
