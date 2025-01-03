@@ -39,7 +39,7 @@ const Material: React.FC<Props> = ({ dictionary }) => {
         </h1>
         <div className="flex-1 h-[2px] bg-[#D4A875]"></div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-auto mt-10 p-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-8 mx-auto mt-10 p-10">
         {langMaterial.map((material) => (
           <div
             key={material.name}
@@ -49,7 +49,7 @@ const Material: React.FC<Props> = ({ dictionary }) => {
             }}
           >
             <div className="w-full flex overflow-hidden ">
-              <div className="flex hover:animate-slide">
+              <div className="flex hover:animate-mb-slide md:hover:animate-slide">
                 {Array.from({ length: material.amount }).map((_item, index) => (
                   <img
                     key={index + material.name}
@@ -57,7 +57,7 @@ const Material: React.FC<Props> = ({ dictionary }) => {
                     alt={material.name}
                     width={200}
                     height={200}
-                    className="w-full h-full max-h-[300px] object-cover"
+                    className="w-full h-full max-h-[120px] md:max-h-[300px] object-cover"
                     onError={(e) => {
                       e.currentTarget.src = "/logo-lg.jpg";
                     }}
@@ -65,7 +65,9 @@ const Material: React.FC<Props> = ({ dictionary }) => {
                 ))}
               </div>
             </div>
-            <span className="text-lg font-semibold">{material.name}</span>
+            <span className="text-sm md:text-lg font-semibold">
+              {material.name}
+            </span>
           </div>
         ))}
       </div>

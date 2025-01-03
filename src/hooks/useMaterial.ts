@@ -19,7 +19,7 @@ const useMaterial = () => {
       slug: "rattan",
       url: "/category/rattan",
       image: Rattan,
-      amount: 3,
+      amount: 4,
     },
     {
       name: "Seagrass",

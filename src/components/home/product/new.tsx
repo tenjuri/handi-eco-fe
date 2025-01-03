@@ -29,7 +29,7 @@ const New: React.FC<Props> = ({ dictionary }) => {
         <div className="relative group overflow-hidden w-full">
           <Image
             className="embla__slide__img rounded-3xl"
-            src={item.images.src}
+            src={item.images}
             alt={item.name}
             width={300}
             height={300}

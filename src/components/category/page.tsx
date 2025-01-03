@@ -40,7 +40,7 @@ const Category: React.FC<PropType> = ({ slug }) => {
             <div key={product.name} className="">
               <Link href={product.url}>
                 <Image
-                  src={product.images.src}
+                  src={product.images}
                   alt={product.name}
                   width={250}
                   height={300}

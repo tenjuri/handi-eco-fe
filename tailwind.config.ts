@@ -20,9 +20,14 @@ export default {
         "0%": { transform: "translateX(0)" },
         "100%": { transform: "translateX(-100%)" },
       },
+      "mb-slide": {
+        "0%": { transform: "translateX(0)" },
+        "100%": { transform: "translateX(-200%)" },
+      },
     },
     animation: {
       slide: "slide 6s linear infinite",
+      "mb-slide": "mb-slide 6s linear infinite",
     },
   },
   plugins: [],
