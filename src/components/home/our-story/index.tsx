@@ -14,7 +14,7 @@ const OurStory: React.FC<Props> = ({ dictionary }) => {
             <span className="text-3xl font-bold uppercase">
               {dictionary.ourStory.title}
             </span>
-            <p>{dictionary.ourStory.description}</p>
+            <p className="text-justify">{dictionary.ourStory.description}</p>
           </div>
           <div className="">
             <Image
@@ -34,8 +34,8 @@ const OurStory: React.FC<Props> = ({ dictionary }) => {
           </div>
         </div>
         <div className="bg-gold-app  text-green-app p-4 mx-10 mt-10 hidden lg:block">
-          PHONE/WHATSAPP LINE/WECHAT: +88-882-566-533 / +84-23-726-7699 /
-          +88-968-230-564
+          PHONE/WHATSAPP/LINE/WECHAT: +84-823-666-533/ +84-34-223-6789/
+          +84-968-230-564
         </div>
       </div>
     </div>
