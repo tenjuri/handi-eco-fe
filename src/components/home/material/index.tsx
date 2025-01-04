@@ -61,7 +61,7 @@ const Material: React.FC<Props> = ({ dictionary }) => {
             `https://media.handi-eco.vn/images/material/${material.slug}/${nextImageId}.jpg`
           );
           image.setAttribute("id", `${nextImageId}-${material.slug}`);
-        }, 400);
+        }, 150);
       }
     };
 
