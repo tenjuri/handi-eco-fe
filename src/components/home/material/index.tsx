@@ -52,11 +52,16 @@ const Material: React.FC<Props> = ({ dictionary }) => {
       const imageId = Number(image?.id?.split("-")[0]);
       const nextImageId = imageId >= material.amount - 1 ? 0 : imageId + 1;
       if (image) {
-        image.setAttribute(
-          "src",
-          `https://media.handi-eco.vn/images/material/${material.slug}/${nextImageId}.jpg`
-        );
-        image.setAttribute("id", `${nextImageId}-${material.slug}`);
+        image.classList.remove("animate-fadeinright");
+        void image.offsetWidth; // Trigger reflow to restart the animation
+        image.classList.add("animate-fadeinright");
+        setTimeout(() => {
+          image.setAttribute(
+            "src",
+            `https://media.handi-eco.vn/images/material/${material.slug}/${nextImageId}.jpg`
+          );
+          image.setAttribute("id", `${nextImageId}-${material.slug}`);
+        }, 300);
       }
     };
 
@@ -72,6 +77,9 @@ const Material: React.FC<Props> = ({ dictionary }) => {
     }
     const image = imageRefs[material.slug as MaterialKeys].current;
     if (image) {
+      image.classList.remove("animate-fadeinright");
+      void image.offsetWidth; // Trigger reflow to restart the animation
+      image.classList.add("animate-fadeinright");
       image.setAttribute(
         "src",
         `https://media.handi-eco.vn/images/material/${material.slug}/0.jpg`
