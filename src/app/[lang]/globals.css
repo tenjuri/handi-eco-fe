@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   .one-item {
     --slide-size: 100%;
@@ -39,14 +38,12 @@
   .h-xl {
     --slide-height: 750px;
   }
-
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-
 
 body {
   color: var(--foreground);
@@ -63,7 +60,7 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #D4A875;
+    background-color: #d4a875;
   }
 }
 
@@ -91,5 +88,4 @@ body {
   100% {
     letter-spacing: 3px;
   }
-
 }

@@ -1,21 +1,22 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import useMaterial from "@/hooks/useMaterial";
 
-type MaterialDictionary = {
-  title: string;
-  bamboo: string;
-  rattan: string;
-  seagrass: string;
-  waterHyacinth: string;
-  loofah: string;
-  wood: string;
-};
+type MaterialKeys =
+  | "bamboo"
+  | "rattan"
+  | "seagrass"
+  | "water-hyacinth"
+  | "loofah"
+  | "wood";
 
 type Props = {
   dictionary: {
-    material: MaterialDictionary;
+    material: {
+      [key: string]: string;
+      title: string;
+    };
   };
 };
 
@@ -30,6 +31,63 @@ const Material: React.FC<Props> = ({ dictionary }) => {
       };
     });
   }, [materials, dictionary.material]);
+
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const imageRefs: Record<
+    MaterialKeys,
+    React.RefObject<HTMLImageElement | null>
+  > = {
+    bamboo: useRef<HTMLImageElement>(null),
+    rattan: useRef<HTMLImageElement>(null),
+    seagrass: useRef<HTMLImageElement>(null),
+    "water-hyacinth": useRef<HTMLImageElement>(null),
+    loofah: useRef<HTMLImageElement>(null),
+    wood: useRef<HTMLImageElement>(null),
+  };
+
+  const changeNextImage = (material: (typeof langMaterial)[number]) => {
+    const setNextImage = () => {
+      const image = imageRefs[material.slug as MaterialKeys].current;
+      const imageId = Number(image?.id?.split("-")[0]);
+      const nextImageId = imageId >= material.amount - 1 ? 0 : imageId + 1;
+      if (image) {
+        image.classList.remove("animate-fadeinright");
+        void image.offsetWidth; // Trigger reflow to restart the animation
+        image.classList.add("animate-fadeinright");
+        setTimeout(() => {
+          image.setAttribute(
+            "src",
+            `https://media.handi-eco.vn/images/material/${material.slug}/${nextImageId}.jpg`
+          );
+          image.setAttribute("id", `${nextImageId}-${material.slug}`);
+        }, 200);
+      }
+    };
+
+    setNextImage();
+
+    intervalRef.current = setInterval(setNextImage, 1500);
+  };
+
+  const setDefaultImage = (material: (typeof langMaterial)[number]) => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    const image = imageRefs[material.slug as MaterialKeys].current;
+    if (image) {
+      image.classList.remove("animate-fadeinright");
+      void image.offsetWidth; // Trigger reflow to restart the animation
+      image.classList.add("animate-fadeinright");
+      image.setAttribute(
+        "src",
+        `https://media.handi-eco.vn/images/material/${material.slug}/0.jpg`
+      );
+      image.setAttribute("id", `0-${material.slug}`);
+    }
+  };
+
   return (
     <div className="text-black w-full max-w-[1440px] mx-auto mt-10 mb-10">
       <div className="flex items-center gap-8">
@@ -48,22 +106,25 @@ const Material: React.FC<Props> = ({ dictionary }) => {
               router.push(`/material/${material.slug}`);
             }}
           >
-            <div className="w-full flex overflow-hidden ">
-              <div className="flex hover:animate-mb-slide md:hover:animate-slide">
-                {Array.from({ length: material.amount }).map((_item, index) => (
-                  <img
-                    key={index + material.name}
-                    src={`https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg`}
-                    alt={material.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full max-h-[120px] md:max-h-[300px] object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "/logo-lg.jpg";
-                    }}
-                  />
-                ))}
-              </div>
+            <div
+              className="w-full overflow-hidden"
+              onMouseEnter={() => changeNextImage(material)}
+              onMouseLeave={() => setDefaultImage(material)}
+              onTouchStart={() => changeNextImage(material)}
+              onTouchEnd={() => setDefaultImage(material)}
+            >
+              <img
+                id={`0-${material.slug}`}
+                ref={imageRefs[material.slug as MaterialKeys]}
+                src={`https://media.handi-eco.vn/images/material/${material.slug}/0.jpg`}
+                alt={material.name}
+                width={200}
+                height={200}
+                className="w-full h-full max-h-[120px] md:max-h-[300px] object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = "/logo-lg.jpg";
+                }}
+              />
             </div>
             <span className="text-sm md:text-lg font-semibold">
               {material.name}

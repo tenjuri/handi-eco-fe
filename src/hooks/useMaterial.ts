@@ -51,7 +51,7 @@ const useMaterial = () => {
       slug: "wood",
       url: "/category/wood",
       image: Bamboo,
-      amount: 3,
+      amount: 4,
     },
   ];
   return { materials };
