@@ -10,6 +10,62 @@ export type ProductType = {
 const useProducts = () => {
   const products = [
     {
+      name: "Rattan & Water Hyacinth Basket",
+      slug: "rattan-water-hyacinth-basket",
+      description: "",
+      material: ["rattan"],
+      category: "home-decor",
+      url: "/product/rattan-water-hyacinth-basket",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/rattan-water-hyacinth-basket.jpg",
+      featured: true,
+    },
+    {
+      name: "This New Collection Is an Earthy, Rustic Call for Minimalism",
+      slug: "new-collection-earthy-rustic",
+      description: "",
+      material: ["rattan"],
+      category: "home-decor",
+      url: "/product/new-collection-earthy-rustic",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/new-collection-earthy-rustic.jpg",
+      featured: true,
+    },
+    {
+      name: "Relaxing chair, natural rattan",
+      slug: "relaxing-chair-natural-rattan",
+      description: "",
+      material: ["rattan"],
+      category: "home-decor",
+      url: "/product/relaxing-chair-natural-rattan",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/relaxing-chair-natural-rattan.jpg",
+      featured: true,
+    },
+    {
+      name: "2-Tiered Japandi Round Walnut Wood Coffee Table with Storage Rattan Base",
+      slug: "2-tiered-japandi-round-walnut-wood-coffee-table",
+      description:
+        "A flat natural wood top gives given open, airy appeal with a rattan base, making the coffee table ideal for adding engaging visual intrigue in a contemporary.",
+      material: ["bamboo"],
+      category: "home-decor",
+      url: "/product/2-tiered-japandi-round-walnut-wood-coffee-table",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/2-tiered-japandi-round-walnut-wood-coffee-table.jpg",
+      featured: true,
+    },
+    {
+      name: "Creative Bamboo Weaving Handmade Table Lamp",
+      slug: "creative-bamboo-weaving-handmade-table-lamp",
+      description: "",
+      material: ["bamboo"],
+      category: "home-decor",
+      url: "/product/creative-bamboo-weaving-handmade-table-lamp",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/creative-bamboo-weaving-handmade-table-lamp.jpg",
+      featured: true,
+    },
+    {
       name: "Vietnam bamboo lampshade",
       slug: "bamboo-lampshade",
       description:
@@ -19,7 +75,6 @@ const useProducts = () => {
       url: "/product/bamboo-lampshade",
       images:
         "https://media.handi-eco.vn/images/material/all-product/bamboo-lampshade.jpg",
-      featured: true,
       new: true,
     },
     {
@@ -32,7 +87,6 @@ const useProducts = () => {
       url: "/product/bamboo-candle-holder-manufactured",
       images:
         "https://media.handi-eco.vn/images/material/all-product/candle-holder-bamboo-basket.jpg",
-      featured: true,
       new: true,
     },
     {
@@ -45,7 +99,6 @@ const useProducts = () => {
       url: "/product/bamboo-hanging-lampshade",
       images:
         "https://media.handi-eco.vn/images/material/all-product/bamboo-hanging-lampshade.jpg",
-      featured: true,
       new: true,
     },
     {
@@ -58,7 +111,6 @@ const useProducts = () => {
       url: "/product/bamboo-fruits-bowl",
       images:
         "https://media.handi-eco.vn/images/material/all-product/spun-bamboo-with-rattan-bowl.jpg",
-      featured: true,
     },
     {
       name: "Woven rattan and fern basket",
@@ -70,7 +122,6 @@ const useProducts = () => {
       url: "/product/woven-rattan-and-fern-basket",
       images:
         "https://media.handi-eco.vn/images/material/all-product/woven-rattan-and-fern-baske.jpg",
-      featured: true,
     },
     {
       name: "Woven rattan box made in Vietnam",

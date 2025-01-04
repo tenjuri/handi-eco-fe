@@ -122,13 +122,13 @@ const CarouselSection: React.FC<PropType> = (props) => {
               </div>
             ))}
           </div>
-          <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
+          <div className="absolute top-1/2 left-10 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full transition-all bg-orange-300/50">
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}
             />
           </div>
-          <div className="absolute top-1/2 right-10 transform translate-x-1/2 -translate-y-1/2  w-14 h-14 rounded-full opacity-35 hover:opacity-100 transition-all bg-orange-300/50">
+          <div className="absolute top-1/2 right-10 transform translate-x-1/2 -translate-y-1/2  w-14 h-14 rounded-full transition-all bg-orange-300/50">
             <NextButton
               onClick={onNextButtonClick}
               disabled={nextBtnDisabled}
