@@ -26,12 +26,7 @@ export default {
       },
       "fade-in-right": {
         "0%": {
-          opacity: "0",
           transform: "translate3d(100%, 0, 0)",
-        },
-        "10%": {
-          opacity: "0",
-          transform: "translate3d(90%, 0, 0)",
         },
         "100%": {
           opacity: "1",
