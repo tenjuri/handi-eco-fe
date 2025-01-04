@@ -18,16 +18,16 @@ export default {
     keyframes: {
       slide: {
         "0%": { transform: "translateX(0)" },
-        "100%": { transform: "translateX(-100%)" },
+        "100%": { transform: "translateX(-300%)" },
       },
       "mb-slide": {
         "0%": { transform: "translateX(0)" },
-        "100%": { transform: "translateX(-200%)" },
+        "100%": { transform: "translateX(-300%)" },
       },
     },
     animation: {
-      slide: "slide 6s linear infinite",
-      "mb-slide": "mb-slide 6s linear infinite",
+      slide: "slide 4s linear infinite",
+      "mb-slide": "mb-slide 3s linear infinite",
     },
   },
   plugins: [],
