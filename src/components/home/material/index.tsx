@@ -1,6 +1,5 @@
 "use client";
-import React, { useMemo, useRef, useCallback } from "react";
-import debounce from "lodash/debounce";
+import React, { useMemo, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useMaterial from "@/hooks/useMaterial";
 
@@ -47,63 +46,58 @@ const Material: React.FC<Props> = ({ dictionary }) => {
     wood: useRef<HTMLImageElement>(null),
   };
 
-  const changeNextImage = useCallback(
-    debounce((material: (typeof langMaterial)[number]) => {
-      let index = 0;
-      let zIndex = 2;
+  const changeNextImage = (material: (typeof langMaterial)[number]) => {
+    let index = 0;
+    let zIndex = 2;
 
-      const imageDom = document.getElementById("images" + material.slug);
-      const images = imageDom?.children;
-      const setNextImage = () => {
-        if (!intervalRef.current || (images && images?.length > 20)) {
-          setDefaultImage(material);
-          return;
+    const imageDom = document.getElementById(material.slug);
+    const images = imageDom?.children;
+    const setNextImage = () => {
+      if (!intervalRef.current || (images && images?.length > 20)) {
+        setDefaultImage(material);
+        return;
+      }
+      if (images) {
+        const newImage = document.createElement("img");
+        newImage.src = `https://media.handi-eco.vn/images/material/${
+          material.slug
+        }/${index + 1}.jpg`;
+        newImage.classList.add(
+          "opacity-0",
+          "absolute",
+          "inset-0",
+          "w-full",
+          "h-[120px]",
+          "max-h-[120px]",
+          "md:h-[300px]",
+          "md:max-h-[300px]",
+          "object-cover",
+          "animate-fadeinright"
+        );
+        newImage.style.zIndex = zIndex.toString();
+        imageRefs[material.slug as MaterialKeys].current?.appendChild(newImage);
+        setTimeout(() => {
+          newImage.classList.remove("opacity-0");
+        }, 500);
+
+        if (index === material.amount - 2) {
+          index = -1;
+        } else {
+          index += 1;
         }
-        if (images) {
-          const newImage = document.createElement("img");
-          newImage.src = `https://media.handi-eco.vn/images/material/${
-            material.slug
-          }/${index + 1}.jpg`;
-          newImage.classList.add(
-            "opacity-0",
-            "absolute",
-            "inset-0",
-            "w-full",
-            "h-[120px]",
-            "max-h-[120px]",
-            "md:h-[300px]",
-            "md:max-h-[300px]",
-            "object-cover",
-            "animate-fadeinright"
-          );
-          newImage.style.zIndex = zIndex.toString();
-          imageRefs[material.slug as MaterialKeys].current?.appendChild(
-            newImage
-          );
-          setTimeout(() => {
-            newImage.classList.remove("opacity-0");
-          }, 500);
+        zIndex += 1;
+      }
+    };
 
-          if (index === material.amount - 2) {
-            index = -1;
-          } else {
-            index += 1;
-          }
-          zIndex += 1;
-        }
-      };
-
-      intervalRef.current = setInterval(setNextImage, 1500);
-      setNextImage();
-    }, 500),
-    []
-  );
+    intervalRef.current = setInterval(setNextImage, 1500);
+    setNextImage();
+  };
 
   const setDefaultImage = (material: (typeof langMaterial)[number]) => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
-      const imageDom = document.getElementById("images" + material.slug);
+      const imageDom = document.getElementById(material.slug);
 
       if (imageDom) {
         const imgs = imageDom.children;
@@ -117,6 +111,37 @@ const Material: React.FC<Props> = ({ dictionary }) => {
       }
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      const imageDom = langMaterial.map((material) => {
+        return document.getElementById(material.slug);
+      });
+      imageDom.forEach((image) => {
+        if (image) {
+          const imageId = image.id;
+          console.log(imageId);
+          const material = langMaterial.find(
+            (ma) => ma.slug === imageId
+          ) as (typeof langMaterial)[number];
+          image.addEventListener("mouseenter", () => {
+            console.log(123);
+
+            changeNextImage(material);
+          });
+          image.addEventListener("touchstart", () => {
+            changeNextImage(material);
+          });
+          image.addEventListener("mouseleave", () => {
+            setDefaultImage(material);
+          });
+          image.addEventListener("touchend", () => {
+            setDefaultImage(material);
+          });
+        }
+      });
+    }, 500);
+  }, [langMaterial]);
 
   return (
     <div className="text-black w-full max-w-[1440px] mx-auto mt-10 mb-10">
@@ -140,13 +165,13 @@ const Material: React.FC<Props> = ({ dictionary }) => {
           >
             <div
               className="w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] relative overflow-hidden"
-              onMouseEnter={() => changeNextImage(material)}
-              onMouseLeave={() => setDefaultImage(material)}
-              onTouchStart={() => changeNextImage(material)}
-              onTouchEnd={() => setDefaultImage(material)}
+              // onMouseEnter={() => changeNextImage(material)}
+              // onMouseLeave={() => setDefaultImage(material)}
+              // onTouchStart={() => changeNextImage(material)}
+              // onTouchEnd={() => setDefaultImage(material)}
             >
               <div
-                id={"images" + material.slug}
+                id={material.slug}
                 ref={imageRefs[material.slug as MaterialKeys]}
                 className="w-full h-full relative"
               >
