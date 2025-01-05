@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useRef, useCallback, useEffect } from "react";
+import React, { useMemo, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useMaterial from "@/hooks/useMaterial";
 
@@ -120,13 +120,10 @@ const Material: React.FC<Props> = ({ dictionary }) => {
       imageDom.forEach((image) => {
         if (image) {
           const imageId = image.id;
-          console.log(imageId);
           const material = langMaterial.find(
             (ma) => ma.slug === imageId
           ) as (typeof langMaterial)[number];
           image.addEventListener("mouseenter", () => {
-            console.log(123);
-
             changeNextImage(material);
           });
           image.addEventListener("touchstart", () => {
