@@ -55,6 +55,10 @@ const Material: React.FC<Props> = ({ dictionary }) => {
       const imageDom = document.getElementById("images" + material.slug);
       const images = imageDom?.children;
       const setNextImage = () => {
+        if (!intervalRef.current || (images && images?.length > 20)) {
+          setDefaultImage(material);
+          return;
+        }
         if (images) {
           const newImage = document.createElement("img");
           newImage.src = `https://media.handi-eco.vn/images/material/${
@@ -89,36 +93,30 @@ const Material: React.FC<Props> = ({ dictionary }) => {
         }
       };
 
-      setNextImage();
-
       intervalRef.current = setInterval(setNextImage, 1500);
+      setNextImage();
     }, 500),
     []
   );
 
-  const setDefaultImage = useCallback(
-    debounce((material: (typeof langMaterial)[number]) => {
-      console.log(intervalRef.current);
+  const setDefaultImage = (material: (typeof langMaterial)[number]) => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+      const imageDom = document.getElementById("images" + material.slug);
 
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-        const imageDom = document.getElementById("images" + material.slug);
-
-        if (imageDom) {
-          const imgs = imageDom.children;
-          if (imgs) {
-            Array.from(imgs).forEach((child, index) => {
-              if (index > 0 && child instanceof HTMLElement) {
-                imageDom.removeChild(child);
-              }
-            });
-          }
+      if (imageDom) {
+        const imgs = imageDom.children;
+        if (imgs) {
+          Array.from(imgs).forEach((child, index) => {
+            if (index > 0 && child instanceof HTMLElement) {
+              imageDom.removeChild(child);
+            }
+          });
         }
       }
-    }, 300),
-    []
-  );
+    }
+  };
 
   return (
     <div className="text-black w-full max-w-[1440px] mx-auto mt-10 mb-10">
