@@ -168,9 +168,8 @@ const Material: React.FC<Props> = ({ dictionary }) => {
                 className="w-full h-full relative"
               >
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <div>
+                  <div key={index + material.slug}>
                     <img
-                      key={index + material.slug}
                       src={`https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg`}
                       alt={material.name}
                       width={200}
