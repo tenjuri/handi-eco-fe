@@ -157,8 +157,6 @@ const Material: React.FC<Props> = ({ dictionary }) => {
             onClick={() => {
               router.push(`/material/${material.slug}`);
             }}
-            onMouseLeave={() => setDefaultImage(material)}
-            onTouchEnd={() => setDefaultImage(material)}
           >
             <div
               className="w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] relative overflow-hidden"
