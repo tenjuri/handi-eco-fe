@@ -141,8 +141,8 @@ const Material: React.FC<Props> = ({ dictionary }) => {
   }, [langMaterial]);
 
   useEffect(() => {
-    const handleContextMenu = (e: any) => {
-      if (e.target.tagName === "IMG") {
+    const handleContextMenu = (e: MouseEvent) => {
+      if (e.target instanceof HTMLImageElement) {
         e.preventDefault();
       }
     };
