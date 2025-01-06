@@ -168,18 +168,21 @@ const Material: React.FC<Props> = ({ dictionary }) => {
                 className="w-full h-full relative"
               >
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <img
-                    key={index + material.slug}
-                    src={`https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg`}
-                    alt={material.name}
-                    width={200}
-                    height={200}
-                    className="absolute inset-0 w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] object-cover"
-                    style={{ zIndex: 1 }}
-                    onError={(e) => {
-                      e.currentTarget.src = "/logo-lg.jpg";
-                    }}
-                  />
+                  <div>
+                    <img
+                      key={index + material.slug}
+                      src={`https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg`}
+                      alt={material.name}
+                      width={200}
+                      height={200}
+                      className="absolute inset-0 w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] object-cover"
+                      style={{ zIndex: 1 }}
+                      onError={(e) => {
+                        e.currentTarget.src = "/logo-lg.jpg";
+                      }}
+                    />
+                    <div className="w-full h-full absolute inset-0 z-[2]"></div>
+                  </div>
                 ))}
               </div>
             </div>
