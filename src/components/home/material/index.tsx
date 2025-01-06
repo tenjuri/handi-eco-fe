@@ -153,10 +153,7 @@ const Material: React.FC<Props> = ({ dictionary }) => {
         {langMaterial.map((material) => (
           <div
             key={material.name}
-            className="flex flex-col justify-center items-center gap-2 cursor-pointer w-full relative"
-            onClick={() => {
-              router.push(`/material/${material.slug}`);
-            }}
+            className="flex flex-col justify-center items-center gap-2 w-full relative"
           >
             <div
               className="w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] relative overflow-hidden"
@@ -186,7 +183,12 @@ const Material: React.FC<Props> = ({ dictionary }) => {
                 ))}
               </div>
             </div>
-            <span className="text-sm md:text-lg font-semibold">
+            <span
+              className="text-sm md:text-lg font-semibold"
+              onClick={() => {
+                router.push(`/material/${material.slug}`);
+              }}
+            >
               {material.name}
             </span>
           </div>
