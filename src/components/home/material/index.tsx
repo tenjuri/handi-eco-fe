@@ -140,6 +140,19 @@ const Material: React.FC<Props> = ({ dictionary }) => {
     }, 500);
   }, [langMaterial]);
 
+  useEffect(() => {
+    const handleContextMenu = (e: any) => {
+      if (e.target.tagName === "IMG") {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
+
   return (
     <div className="text-black w-full max-w-[1440px] mx-auto mt-10 mb-10">
       <div className="flex items-center gap-8">
@@ -175,10 +188,15 @@ const Material: React.FC<Props> = ({ dictionary }) => {
                       width={200}
                       height={200}
                       className="absolute inset-0 w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] object-cover"
-                      style={{ zIndex: 1 }}
+                      style={{
+                        zIndex: 1,
+                        userSelect: "none",
+                        WebkitUserSelect: "none",
+                      }}
                       onError={(e) => {
                         e.currentTarget.src = "/logo-lg.jpg";
                       }}
+                      draggable="false"
                     />
                     <div className="w-full h-full absolute inset-0 z-[2]"></div>
                   </div>
