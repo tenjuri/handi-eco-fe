@@ -85,7 +85,7 @@ const RichTextExample = () => {
 
   const getPost = async () => {
     try {
-      const { data } = await axiosInstance.get("/blogs/lorem-ipsum");
+      const { data } = await axiosInstance.get("/blogs/second");
       const parsedContent = JSON.parse(data.content);
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
         console.log(parsedContent);

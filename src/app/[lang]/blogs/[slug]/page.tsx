@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return [{ slug: "blogs" }];
+  return [{ slug: "lorem-ipsum" }];
 }
 
 export default async function Page({
