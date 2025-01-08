@@ -34,16 +34,13 @@ const Material: React.FC<Props> = ({ dictionary }) => {
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const imageRefs: Record<
-    MaterialKeys,
-    React.RefObject<HTMLImageElement | null>
-  > = {
-    bamboo: useRef<HTMLImageElement>(null),
-    rattan: useRef<HTMLImageElement>(null),
-    seagrass: useRef<HTMLImageElement>(null),
-    "water-hyacinth": useRef<HTMLImageElement>(null),
-    loofah: useRef<HTMLImageElement>(null),
-    wood: useRef<HTMLImageElement>(null),
+  const imageRefs: Record<MaterialKeys, React.RefObject<HTMLDivElement>> = {
+    bamboo: useRef<HTMLDivElement>(null),
+    rattan: useRef<HTMLDivElement>(null),
+    seagrass: useRef<HTMLDivElement>(null),
+    "water-hyacinth": useRef<HTMLDivElement>(null),
+    loofah: useRef<HTMLDivElement>(null),
+    wood: useRef<HTMLDivElement>(null),
   };
 
   const changeNextImage = (material: (typeof langMaterial)[number]) => {
