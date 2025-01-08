@@ -64,5 +64,6 @@ export const config = {
     "/product/:path*",
     "/material/:path*",
     "/about-us",
+    "/blogs/:path*",
   ],
 };

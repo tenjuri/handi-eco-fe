@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Blogs from "@/components/blogs";
+import axiosInstance from "@/utils/axiosConfig";
 
 export const metadata: Metadata = {
   title: "Handi&Eco - Blogs",
@@ -32,9 +33,17 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return [{ slug: "lorem-ipsum" }];
-}
+  try {
+    const blogs = await axiosInstance.get("/blogs");
 
+    return blogs?.data?.map((blog: any) => ({
+      slug: blog.slug,
+    }));
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+}
 export default async function Page({
   params,
 }: {
