@@ -10,6 +10,7 @@ import OurTeam from "./our-team";
 import Material from "./material";
 import { Locale } from "../../../i18n-config";
 import { getDictionary } from "../../../get-dictionary";
+// import axiosInstance from "@/utils/axiosConfig";
 
 type HomePageProps = {
   lang: Locale;
@@ -19,6 +20,9 @@ const HomePage: React.FC<HomePageProps> = async ({ lang }) => {
   const SLIDE_COUNT = 4;
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   const dictionary = await getDictionary(lang);
+
+  // const { data } = await axiosInstance.get("/users/9");
+  // console.log(data);
 
   return (
     <>
