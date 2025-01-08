@@ -3,7 +3,6 @@ const config = {
   siteUrl: 'https://handi-eco.vn',
   generateRobotsTxt: true,
   sitemapSize: 5000,
-  exclude: ['/admin', '/admin/*'],
 };
 
 module.exports = config;
