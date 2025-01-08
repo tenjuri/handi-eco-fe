@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Blogs from "@/components/blogs";
 import axiosInstance from "@/utils/axiosConfig";
+import { Blog } from "@/model/blog.model";
 
 export const metadata: Metadata = {
   title: "Handi&Eco - Blogs",
@@ -34,9 +35,8 @@ export const metadata: Metadata = {
 
 export async function generateStaticParams() {
   try {
-    const blogs = await axiosInstance.get("/blogs");
-
-    return blogs?.data?.map((blog: any) => ({
+    const blogs = await axiosInstance.get<Blog[]>("/blogs");
+    return blogs.data.map((blog: Blog) => ({
       slug: blog.slug,
     }));
   } catch (error) {
