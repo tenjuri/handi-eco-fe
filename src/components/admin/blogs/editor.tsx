@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useEffect } from "react";
+import React, { useCallback, useMemo } from "react";
 import axiosInstance from "@/utils/axiosConfig";
 import imageExtensions from "image-extensions";
 import isHotkey from "is-hotkey";
@@ -118,10 +118,6 @@ const RichTextExample = () => {
       console.error("Error fetching post:", error);
     }
   };
-
-  useEffect(() => {
-    getPost("neww");
-  }, [slug]);
 
   return (
     <div>
