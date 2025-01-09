@@ -43,6 +43,7 @@ import {
   LinkIcon,
   UnlinkIcon,
 } from "lucide-react";
+import { message } from "antd";
 
 import { Button } from "./components";
 
@@ -57,6 +58,7 @@ const LIST_TYPES = ["numbered-list", "bulleted-list", "check-list-item"];
 const TEXT_ALIGN_TYPES = ["left", "center", "right", "justify"];
 
 const RichTextExample = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const renderElement = useCallback(
     (props: RenderElementProps) => <Element {...props} />,
     []
@@ -74,7 +76,7 @@ const RichTextExample = () => {
 
   const [value, setValue] = React.useState<Descendant[]>(initialValue);
   const [title, setTitle] = React.useState("");
-  const [slug, setSlug] = React.useState("neww");
+  const [slug, setSlug] = React.useState("new-2");
 
   const handleSave = async () => {
     if (!title || !value) {
@@ -82,11 +84,11 @@ const RichTextExample = () => {
       return;
     }
     try {
-      const { data } = await axiosInstance.post("/blogs/new", {
+      await axiosInstance.post("/blogs/new", {
         title,
         content: JSON.stringify(value),
       });
-      console.log(data);
+      messageApi.success("Save success");
     } catch (error) {
       console.log(error);
     }
@@ -98,10 +100,10 @@ const RichTextExample = () => {
       return;
     }
     try {
-      const { data } = await axiosInstance.post(`/blogs/${slug}`, {
+      await axiosInstance.post(`/blogs/update/${slug}`, {
         content: JSON.stringify(value),
       });
-      console.log(data);
+      messageApi.success("Edit success");
     } catch (error) {
       console.log(error);
     }
@@ -121,6 +123,7 @@ const RichTextExample = () => {
 
   return (
     <div>
+      {contextHolder}
       <div>
         <div className="border p-4">
           <input

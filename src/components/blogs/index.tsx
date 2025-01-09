@@ -27,7 +27,6 @@ const Blogs: React.FC<BlogProps> = async (props) => {
   const { slug } = props;
   const { data } = await axiosInstance.get(`/blogs/${slug}`);
   const parsedContent = JSON.parse(data.content);
-  console.log(parsedContent);
 
   const renderContent = () => {
     return parsedContent.map((item: Content, index: number) => {
@@ -61,8 +60,6 @@ const Blogs: React.FC<BlogProps> = async (props) => {
             </h2>
           );
         case "heading-three":
-          console.log(item);
-
           return (
             <h3
               key={index}
