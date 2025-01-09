@@ -61,11 +61,13 @@ const Blogs: React.FC<BlogProps> = async (props) => {
             </h2>
           );
         case "heading-three":
+          console.log(item);
+
           return (
             <h3
               key={index}
               className="font-bold text-2xl"
-              style={{ color: item.color }}
+              style={{ color: item.color || item.children?.[0]?.color }}
             >
               {item.children[0].text ? (
                 <span>{item.children[0].text}</span>
@@ -154,7 +156,9 @@ const Blogs: React.FC<BlogProps> = async (props) => {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto my-10">{renderContent()}</div>
+    <div className="w-full max-w-[1440px] mx-auto my-10 px-4 lg:px-10">
+      {renderContent()}
+    </div>
   );
 };
 
