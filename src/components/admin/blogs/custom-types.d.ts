@@ -37,6 +37,20 @@ export type HeadingTwoElement = {
   children: Descendant[];
 };
 
+export type HeadingThreeElement = {
+  type: "heading-three";
+  align?: string;
+  children: Descendant[];
+};
+
+export type HeadingFourElement = {
+  type: "heading-four";
+  align?: string;
+  children: Descendant[];
+};
+
+export type LinkElement = { type: "link"; url: string; children: Descendant[] };
+
 export type ImageElement = {
   type: "image";
   url: string;
@@ -61,6 +75,7 @@ export type ParagraphElement = {
   type: "paragraph";
   align?: string;
   children: Descendant[];
+  color?: string;
 };
 
 export type TableElement = { type: "table"; children: TableRow[] };
@@ -95,6 +110,8 @@ export type CustomElement =
   | EditableVoidElement
   | HeadingElement
   | HeadingTwoElement
+  | HeadingThreeElement
+  | HeadingFourElement
   | ImageElement
   | LinkElement
   | ButtonElement
@@ -116,6 +133,7 @@ export type CustomText = {
   code?: boolean;
   text: string;
   underline?: boolean;
+  color?: string;
 };
 
 export type EmptyText = {

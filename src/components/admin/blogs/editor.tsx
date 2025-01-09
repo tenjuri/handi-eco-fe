@@ -1,4 +1,3 @@
-"use client";
 import React, { useCallback, useMemo, useEffect } from "react";
 import axiosInstance from "@/utils/axiosConfig";
 import imageExtensions from "image-extensions";
@@ -22,6 +21,7 @@ import {
   createEditor,
   Descendant,
   Element as SlateElement,
+  Range,
 } from "slate";
 import { withHistory } from "slate-history";
 import { css } from "@emotion/css";
@@ -29,20 +29,29 @@ import {
   BoldIcon,
   ItalicIcon,
   UnderlineIcon,
-  CodeIcon,
   ImageIcon,
   Heading1,
   Heading2,
+  Heading3,
+  Heading4,
   MessageSquareCode,
   ListIcon,
   AlignCenter,
   AlignLeft,
   AlignRight,
+  PaletteIcon,
+  LinkIcon,
+  UnlinkIcon,
 } from "lucide-react";
 
 import { Button } from "./components";
 
-import { ImageElement, CustomElement, CustomText } from "./custom-types";
+import {
+  ImageElement,
+  CustomElement,
+  CustomText,
+  LinkElement,
+} from "./custom-types";
 
 const LIST_TYPES = ["numbered-list", "bulleted-list", "check-list-item"];
 const TEXT_ALIGN_TYPES = ["left", "center", "right", "justify"];
@@ -57,7 +66,7 @@ const RichTextExample = () => {
     []
   );
   const editor = useMemo(
-    () => withImages(withHistory(withReact(createEditor()))),
+    () => withInlines(withImages(withHistory(withReact(createEditor())))),
     []
   );
 
@@ -67,11 +76,12 @@ const RichTextExample = () => {
   const [title, setTitle] = React.useState("");
 
   const handleSave = async () => {
+    console.log(value);
+
     if (!title || !value) {
       alert("Please enter a title and content");
       return;
     }
-    console.log(title, value);
     try {
       const { data } = await axiosInstance.post("/blogs/new", {
         title,
@@ -85,7 +95,7 @@ const RichTextExample = () => {
 
   const getPost = async () => {
     try {
-      const { data } = await axiosInstance.get("/blogs/second");
+      const { data } = await axiosInstance.get("/blogs/neww");
       const parsedContent = JSON.parse(data.content);
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
         console.log(parsedContent);
@@ -129,9 +139,14 @@ const RichTextExample = () => {
               format="underline"
               icon={<UnderlineIcon className="w-5 h-5" />}
             />
-            <MarkButton format="code" icon={<CodeIcon className="w-5 h-5" />} />
+            <AddLinkButton />
+            <RemoveLinkButton />
+
+            <MarkButton format="color" icon={<PaletteIcon />} />
             <BlockButton format="heading" icon={<Heading1 />} />
             <BlockButton format="heading-two" icon={<Heading2 />} />
+            <BlockButton format="heading-three" icon={<Heading3 />} />
+            <BlockButton format="heading-four" icon={<Heading4 />} />
             <BlockButton format="block-quote" icon={<MessageSquareCode />} />
             <BlockButton format="check-list-item" icon={<ListIcon />} />
             <BlockButton format="left" icon={<AlignLeft />} />
@@ -155,6 +170,159 @@ const RichTextExample = () => {
         </Slate>
       )}
     </div>
+  );
+};
+
+const withInlines = (editor: Editor) => {
+  const { insertData, insertText, isInline, isElementReadOnly, isSelectable } =
+    editor;
+
+  editor.isInline = (element) =>
+    ["link", "button", "badge"].includes(element.type) || isInline(element);
+
+  editor.isElementReadOnly = (element) =>
+    element.type === "badge" || isElementReadOnly(element);
+
+  editor.isSelectable = (element) =>
+    element.type !== "badge" && isSelectable(element);
+
+  editor.insertText = (text) => {
+    if (text && isUrl(text)) {
+      wrapLink(editor, text);
+    } else {
+      insertText(text);
+    }
+  };
+
+  editor.insertData = (data) => {
+    const text = data.getData("text/plain");
+
+    if (text && isUrl(text)) {
+      wrapLink(editor, text);
+    } else {
+      insertData(data);
+    }
+  };
+
+  return editor;
+};
+
+const AddLinkButton: React.FC = () => {
+  const editor = useSlate();
+  return (
+    <Button
+      active={isLinkActive(editor)}
+      onMouseDown={(event: React.MouseEvent) => {
+        event.preventDefault();
+        const url = window.prompt("Enter the URL of the link:");
+        if (!url) return;
+        insertLink(editor, url);
+      }}
+    >
+      <LinkIcon className="w-5 h-5" />
+    </Button>
+  );
+};
+
+const RemoveLinkButton: React.FC = () => {
+  const editor = useSlate();
+
+  return (
+    <Button
+      active={isLinkActive(editor)}
+      onMouseDown={(event: React.MouseEvent) => {
+        event.preventDefault();
+        if (isLinkActive(editor)) {
+          unwrapLink(editor);
+        }
+      }}
+    >
+      <UnlinkIcon className="w-5 h-5" />
+    </Button>
+  );
+};
+
+const insertLink = (editor: Editor, url: string) => {
+  if (editor.selection) {
+    wrapLink(editor, url);
+  }
+};
+
+const unwrapLink = (editor: Editor) => {
+  Transforms.unwrapNodes(editor, {
+    match: (n) =>
+      !Editor.isEditor(n) && SlateElement.isElement(n) && n.type === "link",
+  });
+};
+
+const wrapLink = (editor: Editor, url: string) => {
+  if (isLinkActive(editor)) {
+    unwrapLink(editor);
+  }
+  const { selection } = editor;
+  const isCollapsed = selection && Range.isCollapsed(selection);
+  const link: LinkElement = {
+    type: "link",
+    url,
+    children: isCollapsed ? [{ text: url }] : [],
+  };
+  if (isCollapsed) {
+    Transforms.insertNodes(editor, link);
+  } else {
+    Transforms.wrapNodes(editor, link, { split: true });
+    Transforms.collapse(editor, { edge: "end" });
+  }
+};
+
+const isLinkActive = (editor: Editor) => {
+  const [link] = Editor.nodes(editor, {
+    match: (n) =>
+      !Editor.isEditor(n) && SlateElement.isElement(n) && n.type === "link",
+  });
+  return !!link;
+};
+
+const InlineChromiumBugfix = () => (
+  <span
+    contentEditable={false}
+    className={css`
+      font-size: 0;
+    `}
+  >
+    {String.fromCodePoint(160) /* Non-breaking space */}
+  </span>
+);
+
+type LinkComponentProps = {
+  attributes: RenderElementProps["attributes"];
+  children: React.ReactNode;
+  element: LinkElement;
+};
+
+const LinkComponent: React.FC<LinkComponentProps> = ({
+  attributes,
+  children,
+  element,
+}) => {
+  const allowedSchemes = ["http:", "https:", "mailto:", "tel:"];
+  const safeUrl = useMemo(() => {
+    let parsedUrl: URL | null = null;
+    try {
+      parsedUrl = new URL(element.url);
+      // eslint-disable-next-line no-empty
+    } catch {}
+    if (parsedUrl && allowedSchemes.includes(parsedUrl.protocol)) {
+      return parsedUrl.href;
+    }
+    return "about:blank";
+  }, [element.url]);
+
+  return (
+    <a {...attributes} href={safeUrl} className="text-blue-500 underline">
+      <InlineChromiumBugfix />
+      {children}
+      <InlineChromiumBugfix />
+    </a>
   );
 };
 
@@ -204,11 +372,17 @@ type ToggleMarkProps = {
 };
 const toggleMark = ({ editor, format }: ToggleMarkProps) => {
   const isActive = isMarkActive(editor, format);
+  console.log(format);
 
-  if (isActive) {
-    Editor.removeMark(editor, format);
+  if (format === "color") {
+    const color = window.prompt("Enter color:");
+    Editor.addMark(editor, format, color);
   } else {
-    Editor.addMark(editor, format, true);
+    if (isActive) {
+      Editor.removeMark(editor, format);
+    } else {
+      Editor.addMark(editor, format, true);
+    }
   }
 };
 
@@ -249,10 +423,6 @@ const Leaf = ({ attributes, children, leaf }: CustomRenderLeafProps) => {
     children = <strong>{children}</strong>;
   }
 
-  if (leaf.code) {
-    children = <code>{children}</code>;
-  }
-
   if (leaf.italic) {
     children = <em>{children}</em>;
   }
@@ -260,8 +430,13 @@ const Leaf = ({ attributes, children, leaf }: CustomRenderLeafProps) => {
   if (leaf.underline) {
     children = <u>{children}</u>;
   }
+  console.log(leaf);
 
-  return <span {...attributes}>{children}</span>;
+  return (
+    <span {...attributes} style={{ color: leaf.color }}>
+      {children}
+    </span>
+  );
 };
 
 type BlockButtonProps = {
@@ -381,15 +556,27 @@ const Element = (props: RenderElementProps & { element: CustomElement }) => {
       );
     case "heading":
       return (
-        <h1 style={style} {...attributes} className="font-bold text-xl">
+        <h1 style={style} {...attributes} className="font-bold text-4xl">
           {children}
         </h1>
       );
     case "heading-two":
       return (
-        <h2 style={style} {...attributes} className="font-bold text-lg">
+        <h2 style={style} {...attributes} className="font-bold text-3xl">
           {children}
         </h2>
+      );
+    case "heading-three":
+      return (
+        <h3 style={style} {...attributes} className="font-bold text-2xl">
+          {children}
+        </h3>
+      );
+    case "heading-four":
+      return (
+        <h4 style={style} {...attributes} className="font-bold text-xl">
+          {children}
+        </h4>
       );
     case "list-item":
       return (
@@ -403,6 +590,8 @@ const Element = (props: RenderElementProps & { element: CustomElement }) => {
           {children}
         </div>
       );
+    case "link":
+      return <LinkComponent {...props} element={element as LinkElement} />;
     default:
       return (
         <p style={style} {...attributes}>
