@@ -74,6 +74,7 @@ const RichTextExample = () => {
 
   const [value, setValue] = React.useState<Descendant[]>(initialValue);
   const [title, setTitle] = React.useState("");
+  const [slug, setSlug] = React.useState("neww");
 
   const handleSave = async () => {
     if (!title || !value) {
@@ -91,9 +92,24 @@ const RichTextExample = () => {
     }
   };
 
-  const getPost = async () => {
+  const handleEdit = async () => {
+    if (!slug || !value) {
+      alert("Please enter a slug and content");
+      return;
+    }
     try {
-      const { data } = await axiosInstance.get("/blogs/neww");
+      const { data } = await axiosInstance.post(`/blogs/${slug}`, {
+        content: JSON.stringify(value),
+      });
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getPost = async (slug: string) => {
+    try {
+      const { data } = await axiosInstance.get(`/blogs/${slug}`);
       const parsedContent = JSON.parse(data.content);
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
         setValue(parsedContent);
@@ -102,14 +118,36 @@ const RichTextExample = () => {
       console.error("Error fetching post:", error);
     }
   };
+
   useEffect(() => {
-    getPost();
-  }, []);
+    getPost("neww");
+  }, [slug]);
 
   return (
     <div>
       <div>
-        <p>Title</p>
+        <div className="border p-4">
+          <input
+            type="text"
+            value={slug}
+            placeholder="Enter slug"
+            className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none"
+            onChange={(e) => setSlug(e.target.value)}
+          />
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 "
+            onClick={() => getPost(slug)}
+          >
+            Get this new
+          </button>
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 ml-2"
+            onClick={handleEdit}
+          >
+            Edit
+          </button>
+        </div>
+        <p className=" text-gray-500 mt-10">Title</p>
         <input
           type="text"
           value={title}
@@ -125,7 +163,7 @@ const RichTextExample = () => {
       </div>
       {value.length > 0 && (
         <Slate editor={editor} initialValue={value} onChange={setValue}>
-          <div className="flex items-center gap-2 mt-10">
+          <div className="fixed top-10 right-3  flex flex-col items-center gap-2 mt-10">
             <InsertImageButton />
             <MarkButton format="bold" icon={<BoldIcon className="w-5 h-5" />} />
             <MarkButton
@@ -153,7 +191,6 @@ const RichTextExample = () => {
           <Editable
             renderElement={renderElement}
             renderLeaf={renderLeaf}
-            placeholder="Enter some rich text…"
             autoFocus
             spellCheck={false}
             onKeyDown={(event) => {
@@ -519,10 +556,10 @@ const insertImage = (editor: Editor, url: string) => {
   const text = { text: "" };
   const image: ImageElement = { type: "image", url, children: [text] };
   Transforms.insertNodes(editor, image);
-  Transforms.insertNodes(editor, {
-    type: "paragraph",
-    children: [{ text: "" }],
-  });
+  // Transforms.insertNodes(editor, {
+  //   type: "paragraph",
+  //   children: [{ text: "" }],
+  // });
 };
 
 type TextAlign = "left" | "center" | "right" | "justify";
@@ -609,14 +646,9 @@ const Image: React.FC<ImageProps> = ({ attributes, children, element }) => {
   const selected = useSelected();
   const focused = useFocused();
   return (
-    <div {...attributes}>
+    <div {...attributes} className="inline-flex w-max">
       {children}
-      <div
-        contentEditable={false}
-        className={css`
-          position: relative;
-        `}
-      >
+      <div contentEditable={false} className="inline-flex w-max">
         <img
           src={element.url}
           className={css`

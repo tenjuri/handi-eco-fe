@@ -141,14 +141,33 @@ const Blogs: React.FC<BlogProps> = async (props) => {
                     className="list-disc"
                     style={{ color: item.color }}
                   >
-                    {child.children?.[0]?.text}
+                    {child.children?.map((child: Child, index: number) => {
+                      return (
+                        <span
+                          key={index}
+                          className={`${child.bold ? "font-bold" : ""} ${
+                            child.italic ? "italic" : ""
+                          } ${child.underline ? "underline" : ""}`}
+                          style={{ color: child?.color }}
+                        >
+                          {child.text}
+                        </span>
+                      );
+                    })}
                   </li>
                 );
               })}
             </ul>
           );
         case "image":
-          return <img key={index} src={item.url} alt="image" />;
+          return (
+            <img
+              key={index}
+              src={item.url}
+              alt="image"
+              className="inline-flex w-max"
+            />
+          );
         default:
           return <div key={index}>{item.type}</div>;
       }
