@@ -7,7 +7,7 @@ import { Blog } from "@/model/blog.model";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string; lang: string };
 }): Promise<Metadata> {
   const { slug } = params;
   const { data } = await axiosInstance.get<Blog>(`/blogs/${slug}`);
