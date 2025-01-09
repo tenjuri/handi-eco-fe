@@ -76,8 +76,6 @@ const RichTextExample = () => {
   const [title, setTitle] = React.useState("");
 
   const handleSave = async () => {
-    console.log(value);
-
     if (!title || !value) {
       alert("Please enter a title and content");
       return;
@@ -98,7 +96,6 @@ const RichTextExample = () => {
       const { data } = await axiosInstance.get("/blogs/neww");
       const parsedContent = JSON.parse(data.content);
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
-        console.log(parsedContent);
         setValue(parsedContent);
       }
     } catch (error) {
@@ -430,7 +427,6 @@ const Leaf = ({ attributes, children, leaf }: CustomRenderLeafProps) => {
   if (leaf.underline) {
     children = <u>{children}</u>;
   }
-  console.log(leaf);
 
   return (
     <span {...attributes} style={{ color: leaf.color }}>
