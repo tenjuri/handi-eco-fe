@@ -3,7 +3,30 @@ import { Metadata } from "next";
 import Blogs from "@/components/blogs";
 import axiosInstance from "@/utils/axiosConfig";
 import { Blog } from "@/model/blog.model";
+import { GetStaticProps } from "next";
 
+interface MyPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export const getStaticProps: GetStaticProps<MyPageProps> = async ({
+  params,
+}) => {
+  // Check if params is undefined or null, and provide default values if necessary
+  const slug = typeof params?.slug === "string" ? params.slug : "default-slug";
+  const lang = typeof params?.lang === "string" ? params.lang : "en";
+
+  return {
+    props: {
+      params: {
+        slug,
+        lang,
+      },
+    },
+  };
+};
 export async function generateMetadata({
   params,
 }: {
@@ -54,11 +77,7 @@ export async function generateStaticParams() {
     return [];
   }
 }
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const slug = (await params).slug;
+export default async function Page({ params }: MyPageProps) {
+  const slug = params.slug;
   return <Blogs slug={slug} />;
 }
