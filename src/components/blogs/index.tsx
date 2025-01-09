@@ -27,6 +27,7 @@ const Blogs: React.FC<BlogProps> = async (props) => {
   const { slug } = props;
   const { data } = await axiosInstance.get(`/blogs/${slug}`);
   const parsedContent = JSON.parse(data.content);
+  console.log(parsedContent);
 
   const renderContent = () => {
     return parsedContent.map((item: Content, index: number) => {
@@ -153,7 +154,7 @@ const Blogs: React.FC<BlogProps> = async (props) => {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto mt-10">{renderContent()}</div>
+    <div className="w-full max-w-[1440px] mx-auto my-10">{renderContent()}</div>
   );
 };
 
