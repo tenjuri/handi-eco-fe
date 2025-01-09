@@ -55,26 +55,24 @@ const Material: React.FC<Props> = ({ dictionary }) => {
         return;
       }
       if (images) {
-        const newImage = document.createElement("img");
-        newImage.src = `https://media.handi-eco.vn/images/material/${
-          material.slug
-        }/${index + 1}.jpg`;
-        newImage.classList.add(
+        const newImageDom = document.createElement("div");
+        newImageDom.classList.add(
           "opacity-0",
+          "flex",
+          "flex-grow",
           "absolute",
           "inset-0",
-          "w-full",
-          "h-[120px]",
-          "max-h-[120px]",
-          "md:h-[300px]",
-          "md:max-h-[300px]",
-          "object-cover",
+          "bg-cover",
+          "bg-center",
           "animate-fadeinright"
         );
-        newImage.style.zIndex = zIndex.toString();
-        imageRefs[material.slug as MaterialKeys].current?.appendChild(newImage);
+        newImageDom.style.backgroundImage = `url(https://media.handi-eco.vn/images/material/${
+          material.slug
+        }/${index + 1}.jpg)`;
+        newImageDom.style.zIndex = zIndex.toString();
+        imageDom.appendChild(newImageDom);
         setTimeout(() => {
-          newImage.classList.remove("opacity-0");
+          newImageDom.classList.remove("opacity-0");
         }, 500);
 
         if (index === material.amount - 2) {
@@ -165,38 +163,20 @@ const Material: React.FC<Props> = ({ dictionary }) => {
             key={material.name}
             className="flex flex-col justify-center items-center gap-2 w-full relative"
           >
-            <div
-              className="w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] relative overflow-hidden"
-              // onMouseEnter={() => changeNextImage(material)}
-              // onMouseLeave={() => setDefaultImage(material)}
-              // onTouchStart={() => changeNextImage(material)}
-              // onTouchEnd={() => setDefaultImage(material)}
-            >
+            <div className="w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] relative overflow-hidden">
               <div
                 id={material.slug}
                 ref={imageRefs[material.slug as MaterialKeys]}
-                className="w-full h-full relative"
+                className="w-full h-full flex flex-grow relative"
               >
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <div key={index + material.slug}>
-                    <img
-                      src={`https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg`}
-                      alt={material.name}
-                      width={200}
-                      height={200}
-                      className="absolute inset-0 w-full h-[120px] max-h-[120px] md:h-[300px] md:max-h-[300px] object-cover"
-                      style={{
-                        zIndex: 1,
-                        userSelect: "none",
-                        WebkitUserSelect: "none",
-                      }}
-                      onError={(e) => {
-                        e.currentTarget.src = "/logo-lg.jpg";
-                      }}
-                      draggable="false"
-                    />
-                    <div className="w-full h-full absolute inset-0 z-[2]"></div>
-                  </div>
+                  <div
+                    key={index + material.slug}
+                    className="flex flex-grow absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(https://media.handi-eco.vn/images/material/${material.slug}/${index}.jpg)`,
+                    }}
+                  ></div>
                 ))}
               </div>
             </div>
