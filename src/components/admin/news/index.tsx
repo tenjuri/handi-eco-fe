@@ -5,24 +5,53 @@ import axiosInstance from "@/utils/axiosConfig";
 import { useRouter } from "next/navigation";
 import { New } from "@/model/new.model";
 import Image from "next/image";
+import { useUserStore } from "@/store/user.store";
+import { Button } from "antd";
+import LogoutBtn from "../logout-btn";
 
-const News: React.FC = () => {
+const AdminNews: React.FC = () => {
   const router = useRouter();
+  const isRootAdmin = useUserStore((state) => state.getIsRootAdmin());
+  const isLoggedIn = useUserStore((state) => state.getIsLoggedIn());
+  const refreshUserToken = useUserStore((state) => state.refreshUserToken);
   const [news, setNews] = useState<New[]>([]);
 
-  useEffect(() => {
+  const getNews = () => {
     axiosInstance.get("/news/all").then((res) => setNews(res.data));
+  };
+
+  useEffect(() => {
+    getNews();
   }, []);
+
+  useEffect(() => {
+    refreshUserToken();
+  }, [refreshUserToken]);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/admin");
+    }
+  }, [isLoggedIn]);
+
+  const togglePublish = (slug: string) => {
+    axiosInstance.post(`/blogs/publish/${slug}`).then(() => {
+      getNews();
+    });
+  };
 
   return (
     <div className="w-full max-w-[1440px] mx-auto mt-6 px-6 xl:px-5">
       <p className="text-2xl font-bold">News</p>
+      <LogoutBtn />
+      <Button onClick={() => router.push("/en/admin")} className="mt-4">
+        Go to Admin Page
+      </Button>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 mt-7">
         {news.map((item) => (
           <div
             key={item.id}
             className="border border-gray-200 rounded-lg p-4 cursor-pointer shadow-md group"
-            onClick={() => router.push(`/news/${item.slug}`)}
           >
             <Image
               src={item.banner}
@@ -43,6 +72,16 @@ const News: React.FC = () => {
                   })
                 : "Date not available"}
             </p>
+            {isRootAdmin && (
+              <Button
+                onClick={() => router.push(`/en/admin/blogs?slug=${item.slug}`)}
+              >
+                Edit
+              </Button>
+            )}
+            <Button onClick={() => togglePublish(item.slug)}>
+              {item.isPublished ? "Unpublish" : "Publish"}
+            </Button>
           </div>
         ))}
       </div>
@@ -50,4 +89,4 @@ const News: React.FC = () => {
   );
 };
 
-export default News;
+export default AdminNews;

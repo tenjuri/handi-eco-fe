@@ -125,5 +125,8 @@
         "home": "Home",
         "aboutUs": "About Us",
         "contactUs": "Contact Us"
+    },
+    "news": {
+        "title": "News"
     }
 }

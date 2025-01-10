@@ -3,6 +3,8 @@ export interface New {
   slug: string;
   title: string;
   content: JSON;
+  banner: string;
+  isPublished: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }

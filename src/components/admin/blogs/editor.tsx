@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import axiosInstance from "@/utils/axiosConfig";
 import imageExtensions from "image-extensions";
 import isHotkey from "is-hotkey";
@@ -53,11 +53,16 @@ import {
   CustomText,
   LinkElement,
 } from "./custom-types";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const LIST_TYPES = ["numbered-list", "bulleted-list", "check-list-item"];
 const TEXT_ALIGN_TYPES = ["left", "center", "right", "justify"];
 
 const RichTextExample = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const slugName = searchParams.get("slug");
   const [messageApi, contextHolder] = message.useMessage();
   const renderElement = useCallback(
     (props: RenderElementProps) => <Element {...props} />,
@@ -76,7 +81,7 @@ const RichTextExample = () => {
 
   const [value, setValue] = React.useState<Descendant[]>(initialValue);
   const [title, setTitle] = React.useState("");
-  const [slug, setSlug] = React.useState("new-2");
+  const [banner, setBanner] = React.useState("");
 
   const handleSave = async () => {
     if (!title || !value) {
@@ -87,32 +92,56 @@ const RichTextExample = () => {
       await axiosInstance.post("/blogs/new", {
         title,
         content: JSON.stringify(value),
+        banner: banner,
       });
       messageApi.success("Save success");
+      setTimeout(() => {
+        router.push(`/en/admin/news`);
+      }, 700);
     } catch (error) {
       console.log(error);
     }
   };
 
   const handleEdit = async () => {
-    if (!slug || !value) {
+    if (!slugName || !value) {
       alert("Please enter a slug and content");
       return;
     }
     try {
-      await axiosInstance.post(`/blogs/update/${slug}`, {
+      await axiosInstance.post(`/blogs/update/${slugName}`, {
         content: JSON.stringify(value),
+        banner,
+        title,
       });
       messageApi.success("Edit success");
+      setTimeout(() => {
+        router.push(`/en/admin/news`);
+      }, 700);
     } catch (error) {
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    if (slugName) {
+      getPost(slugName);
+    } else {
+      setValue([
+        {
+          type: "paragraph",
+          children: [{ text: "" }],
+        },
+      ]);
+    }
+  }, [slugName]);
+
   const getPost = async (slug: string) => {
     try {
       const { data } = await axiosInstance.get(`/blogs/${slug}`);
       const parsedContent = JSON.parse(data.content);
+      setBanner(data.banner);
+      setTitle(data.title);
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
         setValue(parsedContent);
       }
@@ -120,33 +149,37 @@ const RichTextExample = () => {
       console.error("Error fetching post:", error);
     }
   };
+  const onSave = () => {
+    if (!title || !value) {
+      alert("Please enter a title and content");
+      return;
+    }
+    if (slugName) {
+      handleEdit();
+    } else {
+      handleSave();
+    }
+  };
 
   return (
     <div>
       {contextHolder}
+      <div
+        onClick={() => router.push("/en/admin")}
+        className="rounded border w-max px-2 py-1 cursor-pointer"
+      >
+        Go to Admin Page
+      </div>
       <div>
-        <div className="border p-4">
-          <input
-            type="text"
-            value={slug}
-            placeholder="Enter slug"
-            className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none"
-            onChange={(e) => setSlug(e.target.value)}
-          />
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 "
-            onClick={() => getPost(slug)}
-          >
-            Get this new
-          </button>
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 ml-2"
-            onClick={handleEdit}
-          >
-            Edit
-          </button>
-        </div>
-        <p className=" text-gray-500 mt-10">Title</p>
+        <p className="text-gray-500">Banner</p>
+        <input
+          type="text"
+          value={banner}
+          placeholder="Enter banner"
+          className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none"
+          onChange={(e) => setBanner(e.target.value)}
+        />
+        <p className=" text-gray-500 mt-4">Title</p>
         <input
           type="text"
           value={title}
@@ -155,7 +188,7 @@ const RichTextExample = () => {
         />
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2"
-          onClick={handleSave}
+          onClick={onSave}
         >
           Save
         </button>

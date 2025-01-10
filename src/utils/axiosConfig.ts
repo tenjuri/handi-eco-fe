@@ -12,9 +12,12 @@ const axiosInstance = axios.create({
 // Add interceptors to include token
 axiosInstance.interceptors.request.use((config) => {
   // Token can be retrieved dynamically
-  const token = process.env.API_TOKEN; // Or use a function to retrieve from secure storage
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+  const userStore = localStorage.getItem("userStore");
+  const user = userStore ? JSON.parse(userStore) : null;
+  const accessToken = user?.state?.accessToken;
+
+  if (accessToken) {
+    config.headers.Authorization = `Bearer ${accessToken}`;
   }
   return config;
 });

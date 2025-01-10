@@ -77,6 +77,9 @@ const MobileMenu: React.FC<PropType> = ({ open, setOpenMenu }) => {
         <Link href="/about-us" onClick={onClose}>
           <p className="text-xl text-gold-app font-bold">ABOUT US</p>
         </Link>
+        <Link href="/news" onClick={onClose}>
+          <p className="text-xl text-gold-app font-bold">NEWS</p>
+        </Link>
       </Drawer>
     </div>
   );

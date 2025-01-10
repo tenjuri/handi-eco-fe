@@ -152,6 +152,13 @@ const DesktopMenu: React.FC<NavBarProps> = ({ dictionary }) => {
       >
         {dictionary.aboutUs.title}
       </Link>
+
+      <Link
+        href={`/${lang}/news`}
+        className="font-medium text-base text-[#FFEBC0] cursor-pointer"
+      >
+        {dictionary.news.title}
+      </Link>
     </div>
   );
 };
