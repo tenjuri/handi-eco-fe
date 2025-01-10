@@ -4,7 +4,7 @@ const config = {
   generateRobotsTxt: true,
   sitemapSize: 5000,
   changefreq: "daily",
-  exclude: ["/admin", "/admin/*"],
+  exclude: ["/*/admin", "/*/admin/*"],
 };
 
 module.exports = config;
