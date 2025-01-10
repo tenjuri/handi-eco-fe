@@ -36,14 +36,13 @@ const AdminNews: React.FC = () => {
       setLoadingNews(false);
     }
   };
+  useEffect(() => {
+    refreshUserToken();
+  }, [refreshUserToken]);
 
   useEffect(() => {
     getNews();
   }, []);
-
-  useEffect(() => {
-    refreshUserToken();
-  }, [refreshUserToken]);
 
   useEffect(() => {
     if (!isLoggedIn) {
