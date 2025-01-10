@@ -16,6 +16,9 @@ const CreateUserForm: React.FC<CreateUserFormProps> = ({ open, onClose }) => {
       await axiosInstance.post("/users/create", values);
       messageApi.success("User created successfully");
       onClose();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       console.log(error);
       messageApi.error("Failed to create user");
@@ -33,7 +36,7 @@ const CreateUserForm: React.FC<CreateUserFormProps> = ({ open, onClose }) => {
           <Input />
         </Form.Item>
         <Form.Item label="Password" name="password">
-          <Input />
+          <Input type="password" />
         </Form.Item>
         <Form.Item label="Is Admin" name="isAdmin" valuePropName="checked">
           <Checkbox />
