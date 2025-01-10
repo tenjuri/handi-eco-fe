@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import axiosInstance from "@/utils/axiosConfig";
 import imageExtensions from "image-extensions";
 import isHotkey from "is-hotkey";
@@ -46,6 +46,7 @@ import {
 import { message } from "antd";
 
 import { Button } from "./components";
+import { Button as AntdButton } from "antd";
 
 import {
   ImageElement,
@@ -55,6 +56,8 @@ import {
 } from "./custom-types";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { getAxiosErrorMessage } from "@/lib/utils";
+import { AxiosError } from "axios";
 
 const LIST_TYPES = ["numbered-list", "bulleted-list", "check-list-item"];
 const TEXT_ALIGN_TYPES = ["left", "center", "right", "justify"];
@@ -64,6 +67,7 @@ const RichTextExample = () => {
   const searchParams = useSearchParams();
   const slugName = searchParams.get("slug");
   const [messageApi, contextHolder] = message.useMessage();
+  const [loading, setLoading] = useState(false);
   const renderElement = useCallback(
     (props: RenderElementProps) => <Element {...props} />,
     []
@@ -85,9 +89,10 @@ const RichTextExample = () => {
 
   const handleSave = async () => {
     if (!title || !value) {
-      alert("Please enter a title and content");
+      messageApi.error("Please enter a title and content");
       return;
     }
+    setLoading(true);
     try {
       await axiosInstance.post("/blogs/new", {
         title,
@@ -98,16 +103,22 @@ const RichTextExample = () => {
       setTimeout(() => {
         router.push(`/en/admin/news`);
       }, 700);
-    } catch (error) {
-      console.log(error);
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        const errorMessage = getAxiosErrorMessage(error);
+        messageApi.error(errorMessage);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleEdit = async () => {
     if (!slugName || !value) {
-      alert("Please enter a slug and content");
+      messageApi.error("Please enter a slug and content");
       return;
     }
+    setLoading(true);
     try {
       await axiosInstance.post(`/blogs/update/${slugName}`, {
         content: JSON.stringify(value),
@@ -118,8 +129,13 @@ const RichTextExample = () => {
       setTimeout(() => {
         router.push(`/en/admin/news`);
       }, 700);
-    } catch (error) {
-      console.log(error);
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        const errorMessage = getAxiosErrorMessage(error);
+        messageApi.error(errorMessage);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -137,6 +153,7 @@ const RichTextExample = () => {
   }, [slugName]);
 
   const getPost = async (slug: string) => {
+    setLoading(true);
     try {
       const { data } = await axiosInstance.get(`/blogs/${slug}`);
       const parsedContent = JSON.parse(data.content);
@@ -145,13 +162,18 @@ const RichTextExample = () => {
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
         setValue(parsedContent);
       }
-    } catch (error) {
-      console.error("Error fetching post:", error);
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        const errorMessage = getAxiosErrorMessage(error);
+        messageApi.error(errorMessage);
+      }
+    } finally {
+      setLoading(false);
     }
   };
   const onSave = () => {
     if (!title || !value) {
-      alert("Please enter a title and content");
+      messageApi.error("Please enter a title and content");
       return;
     }
     if (slugName) {
@@ -186,12 +208,14 @@ const RichTextExample = () => {
           className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none"
           onChange={(e) => setTitle(e.target.value)}
         />
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2"
+        <AntdButton
+          className="bg-blue-500 text-white mt-2"
           onClick={onSave}
+          loading={loading}
+          disabled={loading}
         >
           Save
-        </button>
+        </AntdButton>
       </div>
       {value.length > 0 && (
         <Slate editor={editor} initialValue={value} onChange={setValue}>

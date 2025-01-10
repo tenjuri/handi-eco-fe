@@ -3,9 +3,14 @@ import { message } from "antd";
 import { useUserStore } from "@/store/user.store";
 import axiosInstance from "@/utils/axiosConfig";
 import { useRouter } from "next/navigation";
+import { Button } from "antd";
+import { getAxiosErrorMessage } from "@/lib/utils";
+import { AxiosError } from "axios";
+
 export default function Login() {
   const router = useRouter();
   const [messageApi, contextHolder] = message.useMessage();
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     userName: "",
     password: "",
@@ -16,15 +21,20 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
+      setLoading(true);
       const { data } = await axiosInstance.post("/auth/login", form);
       messageApi.success("Login successful");
       setAccessToken(data.accessToken);
       setRefreshToken(data.refreshToken);
       setUser(data.user);
       router.push("/admin");
-    } catch (error) {
-      console.error("Error logging in:", error);
-      messageApi.error("Login failed");
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        const errorMessage = getAxiosErrorMessage(error);
+        messageApi.error(errorMessage);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,12 +64,14 @@ export default function Login() {
         className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none mt-2"
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
-      <button
-        className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2"
+      <Button
+        className="bg-blue-500 text-white mt-2"
         onClick={handleLogin}
+        loading={loading}
+        disabled={loading}
       >
         Login
-      </button>
+      </Button>
     </div>
   );
 }

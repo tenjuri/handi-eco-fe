@@ -7,3 +7,11 @@ export interface User {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface CreateUser {
+  name: string;
+  userName: string;
+  password: string;
+  isAdmin: boolean;
+  isRootAdmin: boolean;
+}
