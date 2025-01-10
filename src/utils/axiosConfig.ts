@@ -11,10 +11,13 @@ const axiosInstance = axios.create({
 
 // Add interceptors to include token
 axiosInstance.interceptors.request.use((config) => {
-  // Token can be retrieved dynamically
-  const userStore = localStorage.getItem("userStore");
+  // Only access localStorage in browser environment
+  const userStore =
+    typeof window !== "undefined"
+      ? window.localStorage?.getItem("userStore")
+      : null;
   const user = userStore ? JSON.parse(userStore) : null;
-  const accessToken = user?.state?.accessToken;
+  const accessToken = user?.state?.accessToken || "";
 
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;

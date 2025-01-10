@@ -17,7 +17,7 @@ const AdminNews: React.FC = () => {
   const [news, setNews] = useState<New[]>([]);
 
   const getNews = () => {
-    axiosInstance.get("/news/all").then((res) => setNews(res.data));
+    axiosInstance.get("/blogs/all").then((res) => setNews(res.data));
   };
 
   useEffect(() => {
