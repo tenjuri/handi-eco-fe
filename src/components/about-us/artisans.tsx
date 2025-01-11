@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Artisans: React.FC = () => {
   const items = Array.from({ length: 2 }, (_, i) => i + 1);
@@ -17,42 +18,46 @@ const Artisans: React.FC = () => {
             beautiful and durable.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <img
+            <Image
               src={`https://media.handi-eco.vn/images/about-us/artisans/1.png`}
-              width={100}
-              height={100}
+              alt="Artisan 1"
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
             />
-            <img
+            <Image
               src={`https://media.handi-eco.vn/images/about-us/artisans/2.png`}
-              width={100}
-              height={100}
+              alt="Artisan 2"
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
             />
-            <img
+            <Image
               src={`https://media.handi-eco.vn/images/about-us/artisans/3.png`}
-              width={100}
+              alt="Artisan 3"
+              width={10000}
               height={100}
               className="w-full h-full object-cover"
             />
-            <img
+            <Image
               src={`https://media.handi-eco.vn/images/about-us/artisans/4.png`}
-              width={100}
-              height={100}
+              alt="Artisan 4"
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
             />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {items.map((item) => (
-            <img
+            <Image
               key={item}
               src={`https://media.handi-eco.vn/images/about-us/artisans/${
                 item + 4
               }.png`}
               alt={item.toString()}
-              width={100}
-              height={100}
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
             />
           ))}

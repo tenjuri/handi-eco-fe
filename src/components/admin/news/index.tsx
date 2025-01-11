@@ -8,14 +8,12 @@ import { New } from "@/model/new.model";
 import Image from "next/image";
 import { useUserStore } from "@/store/user.store";
 import { Button } from "antd";
-import LogoutBtn from "../logout-btn";
 import { message, Skeleton } from "antd";
 import { getAxiosErrorMessage } from "@/lib/utils";
 const AdminNews: React.FC = () => {
   const router = useRouter();
   const [messageApi, contextHolder] = message.useMessage();
   const isRootAdmin = useUserStore((state) => state.getIsRootAdmin());
-  const isLoggedIn = useUserStore((state) => state.getIsLoggedIn());
   const refreshUserToken = useUserStore((state) => state.refreshUserToken);
   const [news, setNews] = useState<New[]>([]);
   const [loading, setLoading] = useState(false);
@@ -44,12 +42,6 @@ const AdminNews: React.FC = () => {
     getNews();
   }, []);
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      router.push("/admin");
-    }
-  }, [isLoggedIn]);
-
   const togglePublish = async (slug: string) => {
     setLoading(true);
     try {
@@ -69,10 +61,6 @@ const AdminNews: React.FC = () => {
     <div className="w-full max-w-[1440px] mx-auto mt-6 px-6 xl:px-5">
       {contextHolder}
       <p className="text-2xl font-bold">News</p>
-      <LogoutBtn />
-      <Button onClick={() => router.push("/en/admin")} className="mt-4">
-        Go to Admin Page
-      </Button>
       {loadingNews ? (
         <Skeleton active className="h-[200px] w-full mt-10" />
       ) : (

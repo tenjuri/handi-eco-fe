@@ -97,14 +97,18 @@ const AboutUs: React.FC = () => {
         Communicate with foreign partners
       </h1>
       <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <img
+        <Image
           src="https://media.handi-eco.vn/images/about-us/communicate-1.jpg"
           alt="communication"
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover"
         />
-        <img
+        <Image
           src="https://media.handi-eco.vn/images/about-us/communicate-2.jpg"
           alt="communication"
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover"
         />
       </div>
