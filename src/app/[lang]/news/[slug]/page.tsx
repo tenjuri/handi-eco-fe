@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
       title: `${blog.data.title} - Handi&Eco News`,
-      description: "Handi&Eco - Handmade with Care, Eco for Life",
+      description: `${blog.data.description} - Handi&Eco News`,
       openGraph: {
         title: `${blog.data.title} - Handi&Eco News`,
-        description: "Handi&Eco - Handmade with Care, Eco for Life",
+        description: `${blog.data.description} - Handi&Eco News`,
         url: "https://handi-eco.vn",
         siteName: "Handi&Eco - News",
         images: ["https://handi-eco.vn/logo-lg.jpg"],
@@ -27,18 +27,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${blog.data.title} - Handi&Eco News`,
         card: "summary_large_image",
         images: ["https://handi-eco.vn/logo-lg.jpg"],
-        description: "Handi&Eco - Handmade with Care, Eco for Life",
+        description: `${blog.data.description} - Handi&Eco News`,
       },
-      keywords: [
-        "Handmade",
-        "Care",
-        "Eco",
-        "Life",
-        "Eco for Life",
-        "Handmade with Care",
-        "handi eco",
-        "handi & eco",
-      ],
+      keywords:
+        "Handi&Eco, Handmade, Care, Eco, Life, Eco for Life, Handmade with Care, handi eco, handi & eco," +
+        blog.data.title
+          .split(" ")
+          .map((word) => {
+            if (word.includes(",")) {
+              return word.replace(",", "");
+            }
+            return word;
+          })
+          .join(", "),
     };
   } catch (error) {
     console.error("Error generating metadata:", error);
