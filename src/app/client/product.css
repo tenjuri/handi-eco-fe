@@ -1,8 +1,14 @@
 .embla {
   max-width: 100%;
   margin: auto;
-  --slide-height: 320px;
+  --slide-height: 260px;
   --slide-spacing: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .embla {
+    --slide-height: 320px;
+  }
 }
 
 .embla__viewport {

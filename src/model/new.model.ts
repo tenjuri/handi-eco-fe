@@ -2,7 +2,8 @@ export interface New {
   id: number;
   slug: string;
   title: string;
-  content: JSON;
+  description: string;
+  content: string;
   banner: string;
   isPublished: boolean;
   createdAt?: Date;

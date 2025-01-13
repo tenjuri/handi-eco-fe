@@ -8,6 +8,7 @@ import Product from "./product";
 import OurStory from "./our-story";
 import OurTeam from "./our-team";
 import Material from "./material";
+import News from "./news";
 import { Locale } from "../../../i18n-config";
 import { getDictionary } from "../../../get-dictionary";
 // import axiosInstance from "@/utils/axiosConfig";
@@ -43,6 +44,7 @@ const HomePage: React.FC<HomePageProps> = async ({ lang }) => {
       <OurTeam dictionary={dictionary} />
       <Product dictionary={dictionary} />
       <Material dictionary={dictionary} />
+      <News dictionary={dictionary} />
     </>
   );
 };

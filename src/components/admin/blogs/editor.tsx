@@ -64,6 +64,7 @@ const RichTextExample = () => {
 
   const [value, setValue] = React.useState<Descendant[]>(initialValue);
   const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
   const [banner, setBanner] = React.useState("");
 
   const handleSave = async () => {
@@ -77,6 +78,7 @@ const RichTextExample = () => {
         title,
         content: JSON.stringify(value),
         banner: banner,
+        description,
       });
       messageApi.success("Save success");
       setTimeout(() => {
@@ -103,6 +105,7 @@ const RichTextExample = () => {
         content: JSON.stringify(value),
         banner,
         title,
+        description,
       });
       messageApi.success("Edit success");
       setTimeout(() => {
@@ -138,6 +141,7 @@ const RichTextExample = () => {
       const parsedContent = JSON.parse(data.content);
       setBanner(data.banner);
       setTitle(data.title);
+      setDescription(data.description);
       if (Array.isArray(parsedContent) && parsedContent.length > 0) {
         setValue(parsedContent);
       }
@@ -180,6 +184,12 @@ const RichTextExample = () => {
           value={title}
           className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none"
           onChange={(e) => setTitle(e.target.value)}
+        />
+        <p className="text-gray-500 mt-4">Description</p>
+        <textarea
+          value={description}
+          className="w-full border border-gray-300 rounded-md p-2 focus-visible:outline-none"
+          onChange={(e) => setDescription(e.target.value)}
         />
         <AntdButton
           className="bg-blue-500 text-white mt-2"
