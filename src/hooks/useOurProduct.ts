@@ -12,6 +12,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "LAMPSHADE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-1.png",
+          link: "https://drive.google.com/file/d/1rirVDC6M6_cGt8NawCcdLD2enBVoO9IO/view",
         },
         {
           title: "Chair & Bench / Papasan",
@@ -19,6 +20,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "CHAIR & BENCH CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-2.png",
+          link: "https://drive.google.com/file/d/1ddVbXjC6Lcqn1i9mTIiMBKEy_0o6TdKy/view",
         },
         {
           title: "Table",
@@ -26,6 +28,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "TABLE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-3.png",
+          link: "https://drive.google.com/file/d/1LowP4bWP-x0ISpo8u6qT3E9nv6Ow5NFn/view",
         },
         {
           title: "Cabinet - Shelf - Mirror",
@@ -33,6 +36,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "CABINET - SHELF - MIRROR CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-4.png",
+          link: "https://drive.google.com/file/d/1fl4Ik3hbewccMCQgn2RT9twnAGUj44gn/view",
         },
         {
           title: "Decoration (Rug, Wall Decor)",
@@ -40,6 +44,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "DECORATION CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-5.png",
+          link: "https://drive.google.com/file/d/19AhzDiWGRBA9yYS34GfiqT0WcZJPjkk5/view",
         },
         {
           title: "Pet Bed",
@@ -47,6 +52,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "PET BED CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/home-6.png",
+          link: "https://drive.google.com/file/d/19AhzDiWGRBA9yYS34GfiqT0WcZJPjkk5/view",
         },
       ],
     },
@@ -62,6 +68,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "TABLEWARE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/kit-1.png",
+          link: "https://drive.google.com/file/d/1lL60pgGJWi4s_3hOCgVqNtuKOsiANyex/view",
         },
         {
           title: "Kitchenware",
@@ -69,6 +76,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "KITCHENWARE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/kit-2.png",
+          link: "https://drive.google.com/file/d/1-9H3BMKJVBvvFBK2mGFd34mnFyitWNlO/view",
         },
       ],
     },
@@ -84,6 +92,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "PICNIC BASKET",
           banner: "https://media.handi-eco.vn/images/product/out-1.png",
+          link: "https://drive.google.com/file/d/1K7vTRITSbM9A9FAckD7JF9cYKRwsaw60/view",
         },
         {
           title: "Vase",
@@ -91,6 +100,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "VASE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/out-2.png",
+          link: "https://drive.google.com/file/d/1K7vTRITSbM9A9FAckD7JF9cYKRwsaw60/view",
         },
         {
           title: "Planter",
@@ -98,6 +108,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "PLANTER CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/out-3.png",
+          link: "https://drive.google.com/file/d/1K7vTRITSbM9A9FAckD7JF9cYKRwsaw60/view",
         },
         {
           title: "Sun lounger",
@@ -105,6 +116,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "SUN LOUNGER CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/out-4.png",
+          link: "https://drive.google.com/file/d/1fSm0clC9o7Achl2GYO7NaMLkERrUvGDh/view",
         },
       ],
     },
@@ -120,6 +132,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "GIFT BOX CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/gift-1.png",
+          link: "https://drive.google.com/file/d/1MQmuSHDRFOB34vM2hqEUWTxf-pmZfbw8/view",
         },
         {
           title: "Fashion Bags",
@@ -127,6 +140,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "HANDBAG CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/gift-2.png",
+          link: "https://drive.google.com/file/d/1Yeqf93r6YJ7ns0wQjH_GReixW9-gdd19/view",
         },
         {
           title: "Handcrafted Jewelry",
@@ -134,6 +148,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "HANDCRAFTED JEWELRY CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/gift-3.png",
+          link: "https://drive.google.com/file/d/1d4KFLEpe8cvEHuB36j7w5-tJQJURFc6D/view",
         },
       ],
     },
@@ -149,6 +164,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "LAUNDRY BASKET CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/bath-1.png",
+          link: "https://drive.google.com/file/d/1MskaZ6yfNvzJcNQ7HXV18e8eHbwuvBWz/view",
         },
         {
           title: "Bath Sponge",
@@ -156,6 +172,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "BATH SPONGE CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/bath-2.png",
+          link: "https://drive.google.com/file/d/1MskaZ6yfNvzJcNQ7HXV18e8eHbwuvBWz/view",
         },
         {
           title: "Shelves",
@@ -163,6 +180,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "SHELVES CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/bath-3.png",
+          link: "https://drive.google.com/file/d/1MskaZ6yfNvzJcNQ7HXV18e8eHbwuvBWz/view",
         },
         {
           title: "Soap Holder",
@@ -170,6 +188,7 @@ const useOurProduct = () => {
           url: "/",
           btnLabel: "SOAP HOLDER CATALOGUE",
           banner: "https://media.handi-eco.vn/images/product/bath-4.png",
+          link: "https://drive.google.com/file/d/1MskaZ6yfNvzJcNQ7HXV18e8eHbwuvBWz/view",
         },
       ],
     },

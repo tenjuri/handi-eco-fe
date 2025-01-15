@@ -1,5 +1,6 @@
 import React from "react";
 import useOurProduct from "@/hooks/useOurProduct";
+import Link from "next/link";
 import Button from "../ui/button";
 import { Locale } from "../../../i18n-config";
 import { getDictionary } from "../../../get-dictionary";
@@ -50,7 +51,9 @@ const OurProduct: React.FC<PropType> = (props) => {
                 </p>
               ))}
             </div>
-            <Button className="w-max bg-gold-app">{item.btnLabel}</Button>
+            <Link href={item.link} target="_blank">
+              <Button className="w-max bg-gold-app">{item.btnLabel}</Button>
+            </Link>
           </div>
           <div>
             <img

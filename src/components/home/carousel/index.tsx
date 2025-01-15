@@ -82,7 +82,10 @@ const CarouselSection: React.FC<PropType> = (props) => {
   }, [videoRef, observer]);
 
   const openCatalog = () => {
-    window.open("https://media.handi-eco.vn/pdf/sample.pdf", "_blank");
+    window.open(
+      "https://drive.google.com/file/d/1mhewktGpokYjzcwV9tLDTe_jqXQ4C-mo/view",
+      "_blank"
+    );
   };
 
   return (
