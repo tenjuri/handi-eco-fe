@@ -1,132 +1,134 @@
 {
-    "lang": {
-        "title": "Language",
-        "en": "Language: English",
-        "jp": "Language: Japanese"
-    },
-    "products": {
-        "title": "Product",
-        "ourProducts": "Our Products",
-        "homeDecorliving": "HOME DECOR & LIVING",
-        "kitchenDinning": "KITCHEN & DINNING",
-        "outdoorGarden": "OUTDOOR & GARDEN",
-        "giftFashionAccessories": "GIFT & FASHION ACCESSORIES",
-        "bathroomLaundry": "BATHROOM & LAUNDRY",
-        "menu": {
-            "homeDecorliving": "Home Decor & Living",
-            "kitchenDinning": "Kitchen & Dinning",
-            "outdoorGarden": "Outdoor & Garden",
-            "giftFashionAccessories": "Gift & Fashion Accessories",
-            "bathroomLaundry": "Bathroom & Laundry"
-        },
-        "lampshade": [
-            "Decorative lamps made from rattan, bamboo, wood, or seagrass, providing a warm, natural ambiance"
-        ],
-        "chairBenchPapasan": [
-            "Relaxing chairs, benches, or Papasan chairs (round, cozy design), perfect for a comfortable living space"
-        ],
-        "table": [
-            "Tables crafted from wood, rattan, or other natural materials, ideal as coffee tables or work desks"
-        ],
-        "cabinetShelfMirror": [
-            "Multi-functional cabinets, shelves, or decorative mirrors with rattan or wooden frames"
-        ],
-        "decorationRugWallDecor": [
-            "Natural material rugs, wall decor, or other aesthetic items for home styling"
-        ],
-        "petBed": [
-            "Pet beds woven from water hyacinth or rattan, providing comfort and a stylish look"
-        ],
-        "tableware": [
-            "Cutlery, plates, bowls, cups, and napkin rings made of ceramics, wood, or bamboo",
-            "Functional yet decorative for dining experiences."
-        ],
-        "kitchenware": [
-            "Basket: Baskets for bread, fruits, or other food items",
-            "Utensil Holder: Bamboo or rattan holders for chopsticks, spoons, and forks.",
-            "Coasters: Protects table surfaces from heat or moisture.",
-            "Fruit Platter: Wooden or rattan platters for serving fresh fruits.",
-            "Fruit Platter: Wooden or rattan platters for serving fresh fruits.",
-            "Wooden Cutting Board: Used for food preparation.",
-            "Spice Containers: Storage jars for salt, pepper, or cooking oil.",
-            "Serving Trays: Wooden trays for serving dishes or setting the table."
-        ],
-        "picnicBasket": [
-            "Compact baskets for carrying food and essentials during outdoor activities"
-        ],
-        "vase": [
-            "Decorative vases made of ceramics, wood, or rattan for floral arrangements"
-        ],
-        "planter": [
-            "Pots for flowers or plants, often made of rattan or wood"
-        ],
-        "sunlounger": [
-            "Outdoor lounge chairs for sunbathing, with wooden frames or woven designs"
-        ],
-        "giftboxStorageBoxes": [
-            "Unique, eco-friendly gift boxes made from natural materials"
-        ],
-        "fashionBags": [
-            "Handcrafted bags made from seagrass, rattan, or bamboo, suitable as gifts or fashion accessories"
-        ],
-        "handcraftedJewelry": [
-            "Bracelets or necklaces made from bamboo, rattan, or wood"
-        ],
-        "laundryBasket": [
-            "Woven baskets made from rattan or water hyacinth for storing dirty laundry or clothing"
-        ],
-        "bathSponge": [
-            "Natural sponges made from plant fibers, safe and eco-friendly for skincare"
-        ],
-        "shelves": [
-            "Bamboo or rattan shelves for organizing towels and toiletries"
-        ],
-        "soapHolder": [
-            "Soap dishes made from bamboo or wood, practical and aesthetic"
-        ]
-    },
-    "readMore": "Read More",
+  "lang": {
+    "title": "Language",
+    "en": "Language: English",
+    "jp": "Language: Japanese"
+  },
+  "products": {
+    "title": "Product",
     "ourProducts": "Our Products",
-    "ourExport": {
-        "title": "Our Export",
-        "slogan": "Handi&Co: Handmade with Care, Eco for Life. Your go-to partner for premium Vietnamese Eco-Friendly Furniture exports",
-        "description": "With over a decade of specialized experience in Europe, Asia, and the Middle East, Handi&Co stands as a trusted expert in delivering top-quality Vietnamese handicraft and eco-friendly products. Our dedicated team is committed to ensuring flawless, on-time deliveries to every corner of the globe"
+    "homeDecorliving": "HOME DECOR & LIVING",
+    "kitchenDinning": "KITCHEN & DINNING",
+    "outdoorGarden": "OUTDOOR & GARDEN",
+    "giftFashionAccessories": "GIFT & FASHION ACCESSORIES",
+    "bathroomLaundry": "BATHROOM & LAUNDRY",
+    "menu": {
+      "homeDecorliving": "Home Decor & Living",
+      "kitchenDinning": "Kitchen & Dinning",
+      "outdoorGarden": "Outdoor & Garden",
+      "giftFashionAccessories": "Gift & Fashion Accessories",
+      "bathroomLaundry": "Bathroom & Laundry"
     },
-    "ourStory": {
-        "title": "Our Story",
-        "description": "At Handi&Eco, we are fueled by a deep passion for craftsmanship and the products we bring to life. Each item is meticulously handcrafted by skilled artisans, combining timeless charm with exceptional functionality to enrich your everyday living. Our products are made from eco-friendly materials, ensuring they are not only beautiful and durable but also kind to the planet. We believe in creating pieces that resonate with your values, offering practical solutions that inspire sustainable choices. Together, we celebrate the harmony of design, utility, and our shared responsibility to protect the environment."
-    },
-    "ourTeam": {
-        "title": "Our Team",
-        "description": "At Handi&Eco, our mission is to bring the timeless beauty of handcrafted bamboo and rattan products into modern living, while contributing to a sustainable future. Rooted in the traditions of skilled artisans and inspired by the harmony of nature, we create eco-friendly solutions that seamlessly blend with contemporary lifestyles."
-    },
-    "featuredProducts": {
-        "title": "Featured Products",
-        "quickView": "Quick View"
-    },
-    "newProducts": {
-        "title": "New Products",
-        "quickView": "Quick View"
-    },
-    "material": {
-        "title": "Material",
-        "bamboo": "Bamboo",
-        "rattan": "Rattan",
-        "seagrass": "Seagrass",
-        "waterHyacinth": "Water Hyacinth",
-        "loofah": "Loofah",
-        "wood": "Wood"
-    },
-    "aboutUs": {
-        "title": "About Us"
-    },
-    "footer": {
-        "quickLinks": "Quick Links",
-        "home": "Home",
-        "aboutUs": "About Us",
-        "contactUs": "Contact Us"
-    },
-    "news": {
-        "title": "News"
-    }
+    "lampshade": [
+      "Decorative lamps made from rattan, bamboo, wood, or seagrass, providing a warm, natural ambiance"
+    ],
+    "chairBenchPapasan": [
+      "Relaxing chairs, benches, or Papasan chairs (round, cozy design), perfect for a comfortable living space"
+    ],
+    "table": [
+      "Tables crafted from wood, rattan, or other natural materials, ideal as coffee tables or work desks"
+    ],
+    "cabinetShelfMirror": [
+      "Multi-functional cabinets, shelves, or decorative mirrors with rattan or wooden frames"
+    ],
+    "decorationRugWallDecor": [
+      "Natural material rugs, wall decor, or other aesthetic items for home styling"
+    ],
+    "petBed": [
+      "Pet beds woven from water hyacinth or rattan, providing comfort and a stylish look"
+    ],
+    "tableware": [
+      "Cutlery, plates, bowls, cups, and napkin rings made of ceramics, wood, or bamboo",
+      "Functional yet decorative for dining experiences."
+    ],
+    "kitchenware": [
+      "Basket: Baskets for bread, fruits, or other food items",
+      "Utensil Holder: Bamboo or rattan holders for chopsticks, spoons, and forks.",
+      "Coasters: Protects table surfaces from heat or moisture.",
+      "Fruit Platter: Wooden or rattan platters for serving fresh fruits.",
+      "Fruit Platter: Wooden or rattan platters for serving fresh fruits.",
+      "Wooden Cutting Board: Used for food preparation.",
+      "Spice Containers: Storage jars for salt, pepper, or cooking oil.",
+      "Serving Trays: Wooden trays for serving dishes or setting the table."
+    ],
+    "picnicBasket": [
+      "Compact baskets for carrying food and essentials during outdoor activities"
+    ],
+    "vase": [
+      "Decorative vases made of ceramics, wood, or rattan for floral arrangements"
+    ],
+    "planter": ["Pots for flowers or plants, often made of rattan or wood"],
+    "sunlounger": [
+      "Outdoor lounge chairs for sunbathing, with wooden frames or woven designs"
+    ],
+    "giftboxStorageBoxes": [
+      "Unique, eco-friendly gift boxes made from natural materials"
+    ],
+    "fashionBags": [
+      "Handcrafted bags made from seagrass, rattan, or bamboo, suitable as gifts or fashion accessories"
+    ],
+    "handcraftedJewelry": [
+      "Bracelets or necklaces made from bamboo, rattan, or wood"
+    ],
+    "laundryBasket": [
+      "Woven baskets made from rattan or water hyacinth for storing dirty laundry or clothing"
+    ],
+    "bathSponge": [
+      "Natural sponges made from plant fibers, safe and eco-friendly for skincare"
+    ],
+    "shelves": [
+      "Bamboo or rattan shelves for organizing towels and toiletries"
+    ],
+    "soapHolder": [
+      "Soap dishes made from bamboo or wood, practical and aesthetic"
+    ]
+  },
+  "readMore": "Read More",
+  "ourProducts": "Our Products",
+  "ourExport": {
+    "title": "Our Export",
+    "slogan": "Handi&Eco: Handmade with Care, Eco for Life. Your go-to partner for premium Vietnamese Eco-Friendly Furniture exports",
+    "description": "With over a decade of specialized experience in Europe, Asia, and the Middle East, Handi&Eco stands as a trusted expert in delivering top-quality Vietnamese handicraft and eco-friendly products. Our dedicated team is committed to ensuring flawless, on-time deliveries to every corner of the globe"
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "description": "At Handi&Eco, we are fueled by a deep passion for craftsmanship and the products we bring to life. Each item is meticulously handcrafted by skilled artisans, combining timeless charm with exceptional functionality to enrich your everyday living. Our products are made from eco-friendly materials, ensuring they are not only beautiful and durable but also kind to the planet. We believe in creating pieces that resonate with your values, offering practical solutions that inspire sustainable choices. Together, we celebrate the harmony of design, utility, and our shared responsibility to protect the environment."
+  },
+  "ourTeam": {
+    "title": "Our Team",
+    "description": "At Handi&Eco, our mission is to bring the timeless beauty of handcrafted bamboo and rattan products into modern living, while contributing to a sustainable future. Rooted in the traditions of skilled artisans and inspired by the harmony of nature, we create eco-friendly solutions that seamlessly blend with contemporary lifestyles."
+  },
+  "featuredProducts": {
+    "title": "Featured Products",
+    "quickView": "Quick View"
+  },
+  "newProducts": {
+    "title": "New Products",
+    "quickView": "Quick View"
+  },
+  "material": {
+    "title": "Material",
+    "bamboo": "Bamboo",
+    "rattan": "Rattan/ Wicker",
+    "seagrass": "Seagrass/ Sedge",
+    "waterHyacinth": "Water Hyacinth",
+    "loofah": "Loofah",
+    "jute": "Jute",
+    "wood": "Wood"
+  },
+  "aboutUs": {
+    "title": "About Us"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
+  },
+  "news": {
+    "title": "News"
+  },
+  "jute": {
+    "title": "Jute"
+  }
 }

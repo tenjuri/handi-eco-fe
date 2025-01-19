@@ -12,7 +12,8 @@ const useProducts = () => {
     {
       name: "Rattan & Water Hyacinth Basket",
       slug: "rattan-water-hyacinth-basket",
-      description: "",
+      description:
+        "Crafted from high-quality water hyacinth, this storage basket features a trendy zigzag pattern that adds a contemporary touch to any space. Its stylish design makes it a versatile addition to home decor while offering practical storage solutions.",
       material: ["rattan"],
       category: "home-decor",
       url: "/product/rattan-water-hyacinth-basket",
@@ -23,8 +24,9 @@ const useProducts = () => {
     {
       name: "This New Collection Is an Earthy, Rustic Call for Minimalism",
       slug: "new-collection-earthy-rustic",
-      description: "",
-      material: ["rattan"],
+      description:
+        "This New Collection Is an Earthy, Rustic Call for Minimalism",
+      material: ["water-hyacinth"],
       category: "home-decor",
       url: "/product/new-collection-earthy-rustic",
       images:
@@ -34,7 +36,8 @@ const useProducts = () => {
     {
       name: "Relaxing chair, natural rattan",
       slug: "relaxing-chair-natural-rattan",
-      description: "",
+      description:
+        "Handcrafted rattan chair, designed for relaxation and comfort. Crafted by skilled artisans in Vietnam, this rattan chair offers a natural, eco-friendly seating solution.",
       material: ["rattan"],
       category: "home-decor",
       url: "/product/relaxing-chair-natural-rattan",
@@ -47,7 +50,7 @@ const useProducts = () => {
       slug: "2-tiered-japandi-round-walnut-wood-coffee-table",
       description:
         "A flat natural wood top gives given open, airy appeal with a rattan base, making the coffee table ideal for adding engaging visual intrigue in a contemporary.",
-      material: ["bamboo"],
+      material: ["wood"],
       category: "home-decor",
       url: "/product/2-tiered-japandi-round-walnut-wood-coffee-table",
       images:
@@ -57,7 +60,8 @@ const useProducts = () => {
     {
       name: "Creative Bamboo Weaving Handmade Table Lamp",
       slug: "creative-bamboo-weaving-handmade-table-lamp",
-      description: "",
+      description:
+        "Provides just the right amount of light and diffuses it evenly, bright but not blinding, muted but efficient. Plug in table lamp for quick and easy use, Perfect for reading, nursing or working in living room, bedroom, office, study room, nursery room or college dorm.",
       material: ["bamboo"],
       category: "home-decor",
       url: "/product/creative-bamboo-weaving-handmade-table-lamp",
@@ -212,7 +216,7 @@ const useProducts = () => {
       description:
         "Loofahs — sometimes spelled luffas — are popular shower accessories used for cleaning and exfoliating your skin. Some people think that “all-natural” loofahs are made of sea sponge or dried coral because of their coarse, spongy consistency. But natural loofahs are actually made from a gourd in the cucumber family.",
       material: ["loofah"],
-      category: "kitchen-dinning",
+      category: "bathroom-laundry",
       url: "/product/natural-loofah-sponge",
       images:
         "https://media.handi-eco.vn/images/material/all-product/natural-loofah-sponge.jpg",
@@ -224,7 +228,7 @@ const useProducts = () => {
       description:
         "Loofahs — sometimes spelled luffas — are popular shower accessories used for cleaning and exfoliating your skin. Some people think that “all-natural” loofahs are made of sea sponge or dried coral because of their coarse, spongy consistency. But natural loofahs are actually made from a gourd in the cucumber family.",
       material: ["loofah"],
-      category: "kitchen-dinning",
+      category: "bathroom-laundry",
       url: "/product/loofah-sponge",
       images:
         "https://media.handi-eco.vn/images/material/all-product/loofah-sponge.jpg",
@@ -246,7 +250,7 @@ const useProducts = () => {
       description:
         "Handcrafted bamboo basket made in Vietnam by skilled artisans",
       material: ["bamboo"],
-      category: "kitchen-dinning",
+      category: "home-decor",
       url: "/product/woven-bamboo-wall-lamp",
       images:
         "https://media.handi-eco.vn/images/material/all-product/woven-bamboo-wall-lamp.jpg",
@@ -425,6 +429,50 @@ const useProducts = () => {
       url: "/product/wooden-cup-manufacturer",
       images:
         "https://media.handi-eco.vn/images/material/all-product/wooden-cup-manufacturer.jpg",
+    },
+    {
+      name: "Chardin home Jute Braided Boho Oval Throw Rug",
+      slug: "chardin-home-jute-braided-boho-oval-throw-rug",
+      description:
+        "Sophisticated Natural Earthen Charm; Jute rugs exude a rustic elegance. Their natural color and texture add warmth and character to any space. Whether your decor is coastal, farmhouse, or bohemian, a braided jute rug complements various styles",
+      material: ["jute"],
+      category: "home-decor",
+      url: "/product/chardin-home-jute-braided-boho-oval-throw-rug",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/chardin-home-jute-braided-boho-oval-throw-rug.jpg",
+    },
+    {
+      name: "Savi Home Hand Woven Jute Braided Scalloped Rug",
+      slug: "savi-home-hand-woven-jute-braided-scalloped-rug",
+      description:
+        "Meticulously hand- Scalloped braided by skilled artisans, this 4' diameter round rug exudes the charm of traditional craftsmanship",
+      material: ["jute"],
+      category: "home-decor",
+      url: "/product/savi-home-hand-woven-jute-braided-scalloped-rug",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/savi-home-hand-woven-jute-braided-scalloped-rug.jpg",
+    },
+    {
+      name: "Handmade Tucked & Braided Round Jute Cotton Area Rug",
+      slug: "handmade-tucked-braided-round-jute-cotton-area-rug",
+      description:
+        "Elevate your home décor with the Triangle Weavers Jute Cotton Area Rug, crafted from 100% natural jute fibers, blended with cotton sourced from India. Embrace the rustic elegance of pure style with this versatile natural cotton jute rug that seamlessly blends with any room—from the bedroom to the living room, dining room, kitchen, or hallway. Add a touch of warmth and sophistication to your space with our indoor area rug",
+      material: ["jute"],
+      category: "home-decor",
+      url: "/product/handmade-tucked-braided-round-jute-cotton-area-rug",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/handmade-tucked-braided-round-jute-cotton-area-rug.jpg",
+    },
+    {
+      name: "Hausattire Hand Woven Jute Crochet Rug",
+      slug: "hausattire-hand-woven-jute-crochet-rug",
+      description:
+        "With its meticulous hand-woven crochet construction, this rug not only epitomizes farmhouse charm but also exudes bohemian and coastal vibes, creating a versatile aesthetic that suits various decor themes. The natural color palette adds an understated elegance, seamlessly blending with the existing decor in any room. Transform your space into a haven of style and comfort with this rug that embodies the perfect blend of craftsmanship and design",
+      material: ["jute"],
+      category: "home-decor",
+      url: "/product/hausattire-hand-woven-jute-crochet-rug",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/hausattire-hand-woven-jute-crochet-rug.jpg",
     },
   ];
   return { products };

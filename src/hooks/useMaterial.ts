@@ -14,7 +14,7 @@ const useMaterial = () => {
       amount: 4,
     },
     {
-      name: "Rattan",
+      name: "Rattan/ Wicker",
       key: "rattan",
       slug: "rattan",
       url: "/category/rattan",
@@ -22,7 +22,7 @@ const useMaterial = () => {
       amount: 4,
     },
     {
-      name: "Seagrass",
+      name: "Seagrass/ Sedge",
       key: "seagrass",
       slug: "seagrass",
       url: "/category/seagrass",
@@ -44,6 +44,15 @@ const useMaterial = () => {
       url: "/category/loofah",
       image: Rattan,
       amount: 4,
+    },
+    {
+      name: "Jute",
+      key: "jute",
+      slug: "jute",
+      url: "/category/jute",
+      image: Bamboo,
+      amount: 4,
+      hide: true,
     },
     {
       name: "Wood",

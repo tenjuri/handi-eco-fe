@@ -57,7 +57,7 @@ const Material: React.FC<PropType> = ({ slug }) => {
         <div className="mt-10 md:mt-0 grid grid-cols-1 md:grid-cols-3 w-full md:w-[800px] gap-8 mx-auto">
           {filteredProducts.map((product) => (
             <div key={product.name} className="w-full">
-              <Link href={product.url}>
+              <Link href={product.url} className="cursor-pointer">
                 <Image
                   src={product.images}
                   alt={product.name}

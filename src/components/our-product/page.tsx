@@ -51,9 +51,11 @@ const OurProduct: React.FC<PropType> = (props) => {
                 </p>
               ))}
             </div>
-            <Link href={item.link} target="_blank">
-              <Button className="w-max bg-gold-app">{item.btnLabel}</Button>
-            </Link>
+            {!item.hideLink && (
+              <Link href={item.link} target="_blank">
+                <Button className="w-max bg-gold-app">{item.btnLabel}</Button>
+              </Link>
+            )}
           </div>
           <div>
             <img

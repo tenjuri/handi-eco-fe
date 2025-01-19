@@ -39,11 +39,11 @@ const MobileMenu: React.FC<PropType> = ({ open, setOpenMenu }) => {
       url: "/material/bamboo",
     },
     {
-      name: "Rattan",
+      name: "Rattan/ Wicker",
       url: "/material/rattan",
     },
     {
-      name: "Seagrass",
+      name: "Seagrass/ Sedge",
       url: "/material/seagrass",
     },
     {
@@ -53,6 +53,10 @@ const MobileMenu: React.FC<PropType> = ({ open, setOpenMenu }) => {
     {
       name: "Loofah",
       url: "/material/loofah",
+    },
+    {
+      name: "Jute",
+      url: "/material/jute",
     },
     {
       name: "Wood",

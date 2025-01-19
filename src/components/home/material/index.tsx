@@ -24,12 +24,14 @@ const Material: React.FC<Props> = ({ dictionary }) => {
   const { materials } = useMaterial();
   const router = useRouter();
   const langMaterial = useMemo(() => {
-    return materials.map((ma) => {
-      return {
-        ...ma,
-        name: dictionary.material[ma.key as keyof typeof dictionary.material],
-      };
-    });
+    return materials
+      .filter((ma) => !ma.hide)
+      .map((ma) => {
+        return {
+          ...ma,
+          name: dictionary.material[ma.key as keyof typeof dictionary.material],
+        };
+      });
   }, [materials, dictionary.material]);
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -181,7 +183,7 @@ const Material: React.FC<Props> = ({ dictionary }) => {
               </div>
             </div>
             <span
-              className="text-sm md:text-lg font-semibold"
+              className="text-sm md:text-lg font-semibold cursor-pointer"
               onClick={() => {
                 router.push(`/material/${material.slug}`);
               }}

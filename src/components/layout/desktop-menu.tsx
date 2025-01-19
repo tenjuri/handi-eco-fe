@@ -67,6 +67,10 @@ const DesktopMenu: React.FC<NavBarProps> = ({ dictionary }) => {
         url: `/${lang}/material/loofah`,
       },
       {
+        name: dictionary.material.jute,
+        url: `/${lang}/material/jute`,
+      },
+      {
         name: dictionary.material.wood,
         url: `/${lang}/material/wood`,
       },
