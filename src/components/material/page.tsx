@@ -29,7 +29,7 @@ const Material: React.FC<PropType> = ({ slug }) => {
   }, [slug, materials]);
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-4">
+    <div className="w-full max-w-[1440px] mx-auto px-4 pb-10">
       <div>
         <Link href="/" className="cursor-pointer font-medium">
           HOME
@@ -63,7 +63,7 @@ const Material: React.FC<PropType> = ({ slug }) => {
                   alt={product.name}
                   width={250}
                   height={300}
-                  className="w-full h-[300px] object-fit"
+                  className="w-full h-[400px] md:h-[200px] lg:h-[280px] object-fit"
                 />
                 <p className="mt-1 text-[#777777]">{materialName(product)}</p>
                 <p className="line-clamp-2">{product.name}</p>

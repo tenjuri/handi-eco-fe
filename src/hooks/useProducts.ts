@@ -10,6 +10,84 @@ export type ProductType = {
 const useProducts = () => {
   const products = [
     {
+      name: "Wooden Table",
+      slug: "wooden-table",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      material: ["wood"],
+      category: "home-decor",
+      url: "/product/wooden-table",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/wooden-table.jpg",
+    },
+    {
+      name: "Wooden and Rattan Table",
+      slug: "wooden-and-rattan-table",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      material: ["wood"],
+      category: "home-decor",
+      url: "/product/wooden-and-rattan-table",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/wooden-and-rattan-table.jpg",
+    },
+    {
+      name: "Wooden Rattan Decorative Coffee Table",
+      slug: "wooden-rattan-decorative-coffee-table",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      material: ["wood", "rattan"],
+      category: "home-decor",
+      url: "/product/wooden-rattan-decorative-coffee-table",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/wooden-rattan-decorative-coffee-table.jpg",
+    },
+    {
+      name: "Decorative Coffee Table",
+      slug: "decorative-coffee-table",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      material: ["rattan"],
+      category: "home-decor",
+      url: "/product/decorative-coffee-table",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/decorative-coffee-table.jpg",
+    },
+    {
+      name: "Decorative Coffee Table 2",
+      slug: "decorative-coffee-table-2",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      material: ["rattan"],
+      category: "home-decor",
+      url: "/product/decorative-coffee-table-2",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/decorative-coffee-table-2.jpg",
+    },
+    {
+      name: "Water Hyacinth Table With Wooden Legs",
+      slug: "water-hyacinth-table-with-wooden-legs",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      material: ["water-hyacinth", "wood"],
+      category: "home-decor",
+      url: "/product/water-hyacinth-table-with-wooden-legs",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/water-hyacinth-table-with-wooden-legs.jpg",
+    },
+    // VINTAGE PATTERNED DECORATIVE TABLE
+    {
+      name: "Vintage Patterned Decorative Table",
+      description:
+        "To guarantee safety for users, all products undergo strict quality checks and are crafted using non-toxic, eco-friendly finishes. Additionally, we embrace waste minimization by repurposing offcuts and leftovers into smaller accessories, maximizing the utility of each material.",
+      slug: "vintage-patterned-decorative-table",
+      material: ["rattan", "bamboo"],
+      category: "home-decor",
+      url: "/product/vintage-patterned-decorative-table",
+      images:
+        "https://media.handi-eco.vn/images/material/all-product/vintage-patterned-decorative-table.jpg",
+    },
+    {
       name: "Rattan & Water Hyacinth Basket",
       slug: "rattan-water-hyacinth-basket",
       description:
