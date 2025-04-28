@@ -36,6 +36,7 @@ const OurTeam: React.FC<Props> = ({ dictionary }) => {
                     </a>
                   </div>
                 )}
+
                 <div className="mt-1 flex items-center gap-2">
                   <MailIcon className="text-gold-app w-5 h-" />
                   <a href={`mailto:${team.mail}`} className="cursor-pointer">
