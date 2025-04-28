@@ -53,7 +53,7 @@ const Footer: React.FC<FooterProps> = ({ lang, dictionary }) => {
               <div className="w-12 h-1 bg-gold-app mt-1"></div>
             </div>
             <div className="col-span-1 grid grid-cols-1 lg:grid-cols-2 gap-10 mt-2">
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <p className="font-bold text-lg leading-[100%]">Peter Nguyen</p>
                 <div className="mt-2 flex items-center gap-2">
                   <LucidePhoneCall className="text-gold-app w-5 h-5" />
@@ -67,7 +67,7 @@ const Footer: React.FC<FooterProps> = ({ lang, dictionary }) => {
                   <HomeIcon className="text-gold-app w-6 h-6 min-w-5" />
                   99 Cau Dien, Phuc Dien, Bac Tu Liem, Hanoi, Viet Nam
                 </div>
-              </div>
+              </div> */}
               <div className="flex flex-col">
                 <p className="font-bold text-lg leading-[100%]">
                   Duc Thien Andree
