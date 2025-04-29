@@ -14,9 +14,12 @@ const OurTeam: React.FC<Props> = ({ dictionary }) => {
       <div className="max-w-[1440px] mt-10 mx-auto p-10">
         <span className="text-3xl font-bold">{dictionary.ourTeam.title}</span>
         <p className="mt-5">{dictionary.ourTeam.description}</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-6">
+        <div className="flex flex-col lg:flex-row justify-center gap-4 mt-6">
           {ourTeams.map((team) => (
-            <div key={team.name} className="flex flex-col gap-6 p-4 xl:p-10">
+            <div
+              key={team.name}
+              className="flex mx-auto lg:mx-0 flex-col gap-6 p-4 xl:p-10"
+            >
               <img
                 src={team.image.src}
                 alt={team.name}

@@ -18,13 +18,6 @@ export const useOurTeam = () => {
       mail: "Elly@handi-eco.vn",
       image: OurTeam3,
     },
-    {
-      name: "Peter Nguyen",
-      position: "Assistant Manager",
-      phone: "",
-      mail: "Peter@handi-eco.vn",
-      image: OurTeam1,
-    },
   ];
   return { ourTeams };
 };

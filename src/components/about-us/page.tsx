@@ -118,11 +118,11 @@ const AboutUs: React.FC = () => {
       </h1>
       <p>We’d love to hear from you and discuss how we can collaborate:</p>
 
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-4 mt-8">
+      <div className="max-w-6xl mx-auto flex flex-col justify-center lg:flex-row gap-4 mt-8">
         {ourTeams.map((ourTeam) => (
           <div
             key={ourTeam.name}
-            className="flex flex-col md:flex-row items-center gap-4 mt-8"
+            className="flex flex-col md:flex-row mx-auto items-center gap-4 mt-8"
           >
             <Image
               src={ourTeam.image.src}
