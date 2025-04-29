@@ -1,4 +1,3 @@
-import OurTeam1 from "@/assets/images/our-team/our-team-1.jpg";
 import OurTeam2 from "@/assets/images/our-team/our-team-2.jpg";
 import OurTeam3 from "@/assets/images/our-team/our-team-3.jpg";
 
