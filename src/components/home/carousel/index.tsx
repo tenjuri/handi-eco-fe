@@ -83,7 +83,7 @@ const CarouselSection: React.FC<PropType> = (props) => {
 
   const openCatalog = () => {
     window.open(
-      "https://drive.google.com/file/d/1mhewktGpokYjzcwV9tLDTe_jqXQ4C-mo/view",
+      "https://drive.google.com/file/d/1FwbQQ8pl6m923RVvtWz-Ya1oeJUeL0-e/view?usp=drive_link",
       "_blank"
     );
   };
