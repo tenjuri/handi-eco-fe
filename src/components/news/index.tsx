@@ -1,8 +1,8 @@
+"use client";
 import React from "react";
 import axiosInstance from "@/utils/axiosConfig";
 import { useRouter } from "next/navigation";
 import { New } from "@/model/new.model";
-import Image from "next/image";
 import { Skeleton } from "antd";
 import { useQuery } from "@tanstack/react-query";
 
@@ -15,7 +15,7 @@ const News: React.FC = () => {
     queryFn: () =>
       axiosInstance.get("/news/all").then((res) => res.data as New[]),
     staleTime: 1000 * 60 * 5, // 5 minutes
-    gcTime: 1000 * 60 * 5, // 5 minutes
+    refetchOnWindowFocus: false,
   });
 
   return (
@@ -31,7 +31,7 @@ const News: React.FC = () => {
               className="border border-gray-200 rounded-lg p-4 cursor-pointer shadow-md group"
               onClick={() => router.push(`/news/${item.slug}`)}
             >
-              <Image
+              <img
                 src={item.banner}
                 alt={item.title}
                 width={250}

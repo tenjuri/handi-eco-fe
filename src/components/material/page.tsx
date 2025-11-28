@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import useProducts, { type ProductType } from "@/hooks/useProducts";
 import useMaterial from "@/hooks/useMaterial";
 
@@ -58,7 +57,7 @@ const Material: React.FC<PropType> = ({ slug }) => {
           {filteredProducts.map((product) => (
             <div key={product.name} className="w-full">
               <Link href={product.url} className="cursor-pointer">
-                <Image
+                <img
                   src={product.images}
                   alt={product.name}
                   width={250}

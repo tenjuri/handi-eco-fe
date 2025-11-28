@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Artisans from "@/components/about-us/artisans";
 import { useOurTeam } from "@/hooks/useOurTeam";
 
@@ -97,14 +96,14 @@ const AboutUs: React.FC = () => {
         Communicate with foreign partners
       </h1>
       <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <Image
+        <img
           src="https://media.handi-eco.vn/images/about-us/communicate-1.jpg"
           alt="communication"
           width={1000}
           height={1000}
           className="w-full h-full object-cover"
         />
-        <Image
+        <img
           src="https://media.handi-eco.vn/images/about-us/communicate-2.jpg"
           alt="communication"
           width={1000}
@@ -124,7 +123,7 @@ const AboutUs: React.FC = () => {
             key={ourTeam.name}
             className="flex flex-col md:flex-row mx-auto items-center gap-4 mt-8"
           >
-            <Image
+            <img
               src={ourTeam.image.src}
               alt={ourTeam.name}
               width={200}

@@ -6,6 +6,7 @@ import { getDictionary } from "../../../get-dictionary";
 
 import NavBar from "../../components/layout/nav-bar";
 import Footer from "../../components/layout/footer";
+import Providers from "./Providers";
 
 export const metadata: Metadata = {
   title: "Handi&Eco",
@@ -72,7 +73,7 @@ export default async function Root(props: {
         <div className="min-h-screen relative flex flex-col justify-between">
           <NavBar lang={params.lang} dictionary={dictionary} />
           <div className="flex flex-col flex-grow h-full relative w-full">
-            {children}
+            <Providers>{children}</Providers>
           </div>
           <Footer lang={params.lang} dictionary={dictionary} />
         </div>

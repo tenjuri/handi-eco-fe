@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import axiosInstance from "@/utils/axiosConfig";
-import Image from "next/image";
 import Carousel from "./carousel";
 import { type getDictionary } from "../../../../get-dictionary";
 import { New } from "@/model/new.model";
@@ -63,7 +62,7 @@ const News: React.FC<Props> = ({ dictionary }) => {
                         </>
                       ) : null}
                     </div>
-                    <Image
+                    <img
                       src={item.banner}
                       alt={item.title}
                       width={200}

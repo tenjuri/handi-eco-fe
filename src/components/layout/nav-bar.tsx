@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { MenuIcon, ChevronDown } from "lucide-react";
 import {
   HoverCard,
@@ -44,7 +43,7 @@ const NavBar: React.FC<NavBarProps> = ({ lang, dictionary }) => {
     <nav className="m-auto sticky top-0 z-[999] bg-[#11434C] w-full border-b border-[#D4A875]">
       <div className="max-w-[1440px] m-auto flex items-center gap-6 h-12 px-5 relative">
         <Link href={`/${lang}`} className="cursor-pointer">
-          <Image
+          <img
             src="/logo-gold.png"
             alt="logo"
             width={792}

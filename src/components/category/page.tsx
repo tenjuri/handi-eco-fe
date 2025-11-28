@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import useProducts, { type ProductType } from "@/hooks/useProducts";
 import useCategory from "@/hooks/useCategory";
 
@@ -39,7 +38,7 @@ const Category: React.FC<PropType> = ({ slug }) => {
           {filteredProducts.map((product) => (
             <div key={product.name} className="">
               <Link href={product.url}>
-                <Image
+                <img
                   src={product.images}
                   alt={product.name}
                   width={250}
