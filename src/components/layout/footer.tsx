@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { LucidePhoneCall, MailIcon, HomeIcon } from "lucide-react";
-import Image from "next/image";
 
 import { Locale } from "../../../i18n-config";
 import { type getDictionary } from "../../../get-dictionary";
@@ -16,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ lang, dictionary }) => {
       <div className="max-w-[1440px] m-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="col-span-1 grid grid-cols-2 gap-10">
-            <Image
+            <img
               src="/logo-lg.jpg"
               alt="logo"
               className="w-36 h-36"

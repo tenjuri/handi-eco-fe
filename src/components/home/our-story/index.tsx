@@ -1,6 +1,5 @@
 import React from "react";
 import { getDictionary } from "../../../../get-dictionary";
-import Image from "next/image";
 
 type Props = {
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
@@ -17,14 +16,14 @@ const OurStory: React.FC<Props> = ({ dictionary }) => {
             <p className="text-justify">{dictionary.ourStory.description}</p>
           </div>
           <div className="">
-            <Image
+            <img
               src="https://media.handi-eco.vn/images/our-story/our-story.png"
               alt=""
               width={1118}
               height={720}
               className="w-full h-full object-cover hidden lg:block"
             />
-            <Image
+            <img
               src="https://media.handi-eco.vn/images/our-story/our-story-2.png"
               alt=""
               width={1284}

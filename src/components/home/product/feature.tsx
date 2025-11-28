@@ -3,7 +3,6 @@ import React, { useMemo } from "react";
 import EmblaCarousel from "./carousel/embla-carousel";
 import { EmblaOptionsType } from "embla-carousel";
 import Link from "next/link";
-import Image from "next/image";
 
 import useProducts from "@/hooks/useProducts";
 import useCategory from "@/hooks/useCategory";
@@ -28,7 +27,7 @@ const Feature: React.FC<FeatureProps> = ({ dictionary }) => {
     return filteredProducts.map((item, index) => (
       <div className="embla__slide" key={index + "feature"}>
         <div className="relative group overflow-hidden w-full">
-          <Image
+          <img
             className="embla__slide__img rounded-3xl"
             src={item.images}
             alt={item.name}
